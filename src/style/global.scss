@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Barrio|Montserrat:700');
+
+body,
+html {
+  font-family: "Noto Sans SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+:root {
+  --cr-white: #ffffff;
+  --cr-bg-1: hsl(240, 7%, 97%);
+  --cr-bg-2: hsl(203, 100%, 95%);
+  --cr-bg-3: hsl(203, 100%, 97%);
+  --cr-icon-1: #667093;
+  --cr-blue-1: #324ac0;
+  --cr-font-1: #00114b;
+  --cr-font-2: #667093;
+  --cr-font-3: #c7cbd5;
+  --mg-200: 200px;
+  --mg-180: 180px;
+  --mg-160: 160px;
+  --mg-140: 140px;
+  --mg-120: 120px;
+  --mg-100: 100px;
+  --mg-80: 80px;
+  --mg-40: 40px;
+  --mg-32: 32px;
+  --font-46: 700 46px/67px "Noto Sans SC";
+  --font-32: 700 32px/46px "Noto Sans SC";
+  --font-28: 500 28px/41px "Noto Sans SC";
+  --font-18: 500 18px/18px "Noto Sans SC";
+  --font-16-500: 500 16px/27px "Noto Sans SC";
+  --font-16-300: 300 16px/27px "Noto Sans SC";
+  --font-12: 400 12px/20px "Noto Sans SC";
+  --shadow-1: 0 2px 5px rgba(103, 110, 144, 0.2),
+    0 0 0 1px rgba(103, 110, 144, 0.05);
+  --shadow-2: 0 3px 7px rgba(103, 110, 144, 0.25),
+    0 0 0 1px rgba(103, 110, 144, 0.08);
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --ease-1: all 0.25s ease-out;
+  --ease-2: all 0.15s ease-out;
+}
