@@ -20,11 +20,62 @@ export const Container = styled.main`
     color: var(--cr-font-1);
     margin-bottom: var(--mg-120);
   }
+
+  .hide-nav {
+    opacity: 0;
+    top: -100%;
+  }
+
+  .navScrolled {
+    top: 0;
+    z-index: 999;
+    position: fixed;
+    display: inline-flex;
+    margin-right: 40px;
+
+    a {
+      position: relative;
+      font: var(--font-16-300);
+      color: var(--cr-font-2);
+      margin-right: 32px;
+      display: flex;
+      justify-content: center;
+      transition: var(--ease-1);
+
+      &::before {
+        position: absolute;
+        bottom: -4px;
+        content: "";
+        display: block;
+        width: 40%;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--cr-blue-1);
+        opacity: 0;
+        transform: scaleX(0);
+        transition: var(--ease-2);
+      }
+
+      &:hover {
+        color: var(--cr-blue-1);
+        font: var(--font-16-500);
+
+        &::before {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 `;
 
 export const Nav = styled.nav`
   z-index: 999;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -64,32 +115,6 @@ export const Nav = styled.nav`
       display: flex;
       justify-content: center;
       transition: var(--ease-1);
-      /* animation: navItemShow 0.5s ease-out forwards;
-      transform: translateX(-40%);
-      opacity: 0;
-
-      @keyframes navItemShow {
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-
-      &:nth-of-type(1) {
-        animation-delay: 0.7s;
-      }
-      &:nth-of-type(2) {
-        animation-delay: 0.75s;
-      }
-      &:nth-of-type(3) {
-        animation-delay: 0.8s;
-      }
-      &:nth-of-type(4) {
-        animation-delay: 0.85s;
-      }
-      &:nth-of-type(5) {
-        animation-delay: 0.9s;
-      } */
 
       &::before {
         position: absolute;
@@ -123,6 +148,7 @@ export const Nav = styled.nav`
 
   .right {
     display: flex;
+
     a {
       display: flex;
       justify-content: center;
@@ -149,11 +175,11 @@ export const Nav = styled.nav`
         display: block;
         width: 100%;
         height: 100%;
-        background: var(--cr-bg-1);
+        background: var(--cr-white);
         opacity: 0;
-        transform: scale(0.7);
+        transform: scale(0.88);
         z-index: -1;
-        border-radius: var(--radius-6);
+        border-radius: 100%;
         transition: var(--ease-1);
       }
 
@@ -166,7 +192,8 @@ export const Nav = styled.nav`
         &::after {
           opacity: 1;
           transform: scale(1);
-          background-color: var(--cr-bg-3);
+          background: var(--cr-white);
+          box-shadow: var(--shadow-1);
         }
       }
     }
@@ -234,12 +261,12 @@ export const Header = styled.header`
       width: 100%;
       height: 100%;
       animation: heroBgShow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
-      transform-origin: bottom;
+      transform-origin: left;
       opacity: 0;
 
       @keyframes heroBgShow {
         from {
-          transform: scale3d(1, 0, 1);
+          transform: scale3d(0, 1, 1);
           opacity: 0;
         }
         to {

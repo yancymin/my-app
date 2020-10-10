@@ -14,6 +14,7 @@ import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Parallax from "parallax-js";
+import Mouse from "./components/mouse/mouse";
 import logo_s from "./assets/logo-s.svg";
 import hero_0 from "./assets/hero_pic/0.png";
 import hero_1 from "./assets/hero_pic/1.png";
@@ -32,6 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const data_nav = ["设计", "组件", "主题", "资源", "团队"];
 const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
+let isNavScroll = true;
 const sectionTitles = [
   ["设计与开发", "开始使用 Arco Design"],
   ["设计与开发", "开始使用 Arco Design"],
@@ -66,7 +68,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Nav>
+        <Nav className={this.isNavScroll ? "navScroll" : null}>
           <div className="nav-wrap">
             <div className="left">
               <img src={logo_s} alt="" className="logo-s" />
@@ -79,6 +81,34 @@ class App extends Component {
               })}
             </div>
             <div className="right">
+              <a href="/" className="icon">
+                <InlineSVG icon={iconSearch} />
+              </a>
+              <a href="/" className="icon">
+                <InlineSVG icon={iconLang} />
+              </a>
+              <a href="/" className="login btn-white">
+                登录
+              </a>
+            </div>
+          </div>
+        </Nav>
+        <Nav className={isNavScroll ? "navScrolled" : "hide-nav"}>
+          <div className="nav-wrap">
+            <div className="left">
+              <img src={logo_s} alt="" className="logo-s" />
+              <img src={heroLogo} alt="" className="logo-s" />
+            </div>
+            <div className="right">
+              <div className="navScrolled">
+                {data_nav.map((item, index) => {
+                  return (
+                    <a href="/" className="navItem">
+                      {item}
+                    </a>
+                  );
+                })}
+              </div>
               <a href="/" className="icon">
                 <InlineSVG icon={iconSearch} />
               </a>
@@ -146,6 +176,7 @@ class App extends Component {
                 设计语言
               </a>
             </div>
+            <Mouse />
           </section>
         </Header>
         <LogoWall className="logo-wall">
@@ -207,8 +238,21 @@ class App extends Component {
     const heroBtns = document.querySelectorAll(".buttons");
     const heroLogo = document.querySelectorAll(".hero-logo");
     const heroImgs = document.querySelectorAll(".hero");
+    const navItems = document.querySelectorAll(".navItem");
 
     //------- HERO --------//
+
+    TweenMax.staggerFrom(
+      navItems,
+      0.4,
+      {
+        opacity: 0,
+        x: -10,
+        delay: 1.3,
+        ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+      },
+      0.1
+    );
 
     TweenMax.staggerFrom(
       [heroLogo, chars, heroBtns],
@@ -224,10 +268,10 @@ class App extends Component {
 
     TweenMax.staggerFrom(
       heroImgs,
-      1,
+      0.8,
       {
         opacity: 0,
-        y: 250,
+        y: -300,
         delay: 0.8,
         ease: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
@@ -260,77 +304,6 @@ class App extends Component {
         scrub: true,
       },
     });
-
-  //   var html = document.documentElement;
-  //   var body = document.body;
-
-  //   var scroller = {
-  //     target: document.querySelector("body"),
-  //     ease: 0.04, // <= scroll speed
-  //     endY: 0,
-  //     y: 0,
-  //     resizeRequest: 1,
-  //     scrollRequest: 0,
-  //   };
-
-  //   var requestId = null;
-
-  //   gsap.set(scroller.target, {
-  //     rotation: 0.01,
-  //     force3D: true,
-  //   });
-
-  //   window.addEventListener("load", onLoad);
-
-  //   function onLoad() {
-  //     updateScroller();
-  //     window.focus();
-  //     window.addEventListener("resize", onResize);
-  //     document.addEventListener("scroll", onScroll);
-  //   }
-
-  //   function updateScroller() {
-  //     var resized = scroller.resizeRequest > 0;
-
-  //     if (resized) {
-  //       var height = scroller.target.clientHeight;
-  //       body.style.height = height + "px";
-  //       scroller.resizeRequest = 0;
-  //     }
-
-  //     var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
-
-  //     scroller.endY = scrollY;
-  //     scroller.y += (scrollY - scroller.y) * scroller.ease;
-
-  //     if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
-  //       scroller.y = scrollY;
-  //       scroller.scrollRequest = 0;
-  //     }
-
-  //     gsap.set(scroller.target, {
-  //       y: -scroller.y,
-  //     });
-
-  //     requestId =
-  //       scroller.scrollRequest > 0
-  //         ? requestAnimationFrame(updateScroller)
-  //         : null;
-  //   }
-
-  //   function onScroll() {
-  //     scroller.scrollRequest++;
-  //     if (!requestId) {
-  //       requestId = requestAnimationFrame(updateScroller);
-  //     }
-  //   }
-
-  //   function onResize() {
-  //     scroller.resizeRequest++;
-  //     if (!requestId) {
-  //       requestId = requestAnimationFrame(updateScroller);
-  //     }
-  //   }
   }
 }
 
