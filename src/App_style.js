@@ -9,6 +9,17 @@ export const Container = styled.main`
       box-shadow: var(--shadow-2) !important;
     }
   }
+
+  .sectionEye {
+    font: var(--font-32);
+    color: var(--cr-font-3);
+    margin-top: var(--mg-160);
+  }
+  .sectionTitle {
+    font: var(--font-46);
+    color: var(--cr-font-1);
+    margin-bottom: var(--mg-120);
+  }
 `;
 
 export const Nav = styled.nav`
@@ -19,8 +30,8 @@ export const Nav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
-  animation: navShow 0.6s ease-out forwards 0.5s;
-  transform: translateY(-10%);
+  animation: navShow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.35s;
+  transform: translateY(-100%);
   opacity: 0;
 
   @keyframes navShow {
@@ -53,7 +64,7 @@ export const Nav = styled.nav`
       display: flex;
       justify-content: center;
       transition: var(--ease-1);
-      animation: navItemShow 0.5s ease-out forwards;
+      /* animation: navItemShow 0.5s ease-out forwards;
       transform: translateX(-40%);
       opacity: 0;
 
@@ -78,7 +89,7 @@ export const Nav = styled.nav`
       }
       &:nth-of-type(5) {
         animation-delay: 0.9s;
-      }
+      } */
 
       &::before {
         position: absolute;
@@ -193,11 +204,16 @@ export const Header = styled.header`
     height: 88vh;
 
     picture {
-      height: 62%;
+      height: 70%;
 
       img {
         position: absolute;
         width: 48vw;
+        z-index: 1;
+
+        &:nth-of-type(6) {
+          z-index: 0;
+        }
       }
     }
   }
@@ -333,19 +349,141 @@ export const Header = styled.header`
               top: 18px;
             }
           }
+        }
+      }
+    }
+  }
+`;
 
-          /* span {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            right: 6px;
-            top: 5px;
-            border-radius: var(--radius-4);
-            background: var(--cr-white);
-          } */
+export const LogoWall = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0 160px 0;
+  width: 100%;
+  max-width: 1200px;
+
+  h3 {
+    font: vacr(--font-16-300);
+    color: var(--cr-font-2);
+    margin-bottom: var(--mg-32);
+  }
+
+  .logos-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    img {
+      height: 40px;
+      filter: saturate(0.5) contrast(1.4);
+    }
+  }
+`;
+
+export const StartSection = styled.section`
+  text-align: center;
+
+  .card-wrap {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 2fr;
+    grid-template-columns: 2fr 1.3fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 40px;
+
+    .card {
+      height: 400px;
+      text-align: left;
+      background: var(--cr-bg-1);
+      padding: 68px 64px;
+      border-radius: var(--radius-24);
+      overflow: hidden;
+      transition: var(--ease-1);
+
+      &:hover {
+        background: var(--cr-bg-2);
+      }
+
+      .left {
+        max-width: 300px;
+      }
+
+      h4 {
+        font: var(--font-28);
+        color: var(--cr-font-1);
+        margin-bottom: var(--mg-24);
+      }
+
+      p {
+        font: var(--font-16-300);
+        color: var(--cr-font-2);
+        margin-bottom: var(--mg-56);
+      }
+
+      a {
+        font: var(--font-16-500);
+        color: var(--cr-blue-1);
+        display: flex;
+        align-items: center;
+
+        & > span {
+          display: inline-flex;
+        }
+      }
+
+      .left > .link {
+        display: inline-flex;
+        box-shadow: var(--shadow-1);
+        background: var(--cr-white);
+        padding: 10px 20px;
+        border-radius: var(--radius-6);
+
+        span {
+          margin-left: 8px;
+        }
+      }
+
+      .links {
+        display: grid;
+        grid-template-rows: 2fr;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 16px;
+        grid-column-gap: 32px;
+        max-width: fit-content;
+        transform: translateX(-14px);
+
+        .link {
+          transition: var(--ease-2);
+          span {
+            transition: var(--ease-2);
+          }
+          &:hover {
+            transform: translateX(12px);
+            span {
+              &:first-child {
+                opacity: 1;
+                transform: translateX(6px);
+                transition-delay: 0.1s;
+              }
+              &:last-child {
+                opacity: 0;
+                transform: translateX(12px);
+              }
+            }
+          }
+        }
+
+        span {
+          &:first-child {
+            opacity: 0;
+            margin-right: 10px;
+            margin-left: 0;
+            transform: translateX(-4px);
+          }
+          &:last-child {
+            margin-left: 4px;
+          }
         }
       }
     }

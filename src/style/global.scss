@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Barrio|Montserrat:700');
+@import url("https://fonts.googleapis.com/css?family=Barrio|Montserrat:700");
 
 body,
 html {
@@ -22,8 +22,8 @@ body {
 :root {
   --cr-white: #ffffff;
   --cr-bg-1: hsl(240, 7%, 97%);
-  --cr-bg-2: hsl(203, 100%, 95%);
-  --cr-bg-3: hsl(203, 100%, 97%);
+  --cr-bg-2: hsl(203, 100%, 96%);
+  --cr-bg-3: hsl(203, 100%, 97.5%);
   --cr-icon-1: #667093;
   --cr-blue-1: #324ac0;
   --cr-font-1: #00114b;
@@ -36,8 +36,10 @@ body {
   --mg-120: 120px;
   --mg-100: 100px;
   --mg-80: 80px;
+  --mg-56: 56px;
   --mg-40: 40px;
   --mg-32: 32px;
+  --mg-24: 24px;
   --font-46: 700 46px/67px "Noto Sans SC";
   --font-32: 700 32px/46px "Noto Sans SC";
   --font-28: 500 28px/41px "Noto Sans SC";
@@ -51,6 +53,7 @@ body {
     0 0 0 1px rgba(103, 110, 144, 0.08);
   --radius-4: 4px;
   --radius-6: 6px;
+  --radius-24: 24px;
   --ease-1: all 0.25s ease-out;
   --ease-2: all 0.15s ease-out;
 }

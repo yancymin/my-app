@@ -9,6 +9,7 @@
     "gsap": "^3.5.1",
     "inline-svg-react": "^0.2.0",
     "node-sass": "^4.14.1",
+    "parallax-js": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
