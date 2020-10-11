@@ -61,7 +61,7 @@ export const Container = styled.main`
     box-shadow: var(--shadow-3);
 
     .logo-s {
-      margin-right: 12px;
+      margin-right: 16px;
     }
 
     .left {
