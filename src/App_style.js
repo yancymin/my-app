@@ -481,8 +481,8 @@ export const StartSection = styled.section`
     display: grid;
     grid-template-rows: 2fr;
     grid-template-columns: 2fr 1.3fr;
-    grid-row-gap: 40px;
-    grid-column-gap: 40px;
+    grid-row-gap: 48px;
+    grid-column-gap: 48px;
 
     .card-1 {
       .right {
@@ -710,7 +710,7 @@ export const DesignPr = styled.section`
 
 export const Comp = styled.section`
   width: 100vw;
-  height: 300vh;
+  height: 120vh;
   /* padding: 120px 0 0 0; */
   background: var(--cr-bg-1);
   display: flex;

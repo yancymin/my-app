@@ -446,11 +446,11 @@ class App extends Component {
       scrollTrigger: {
         trigger: "#designPr",
         toggleActions: "play none none reset",
-        markers: true,
         id: "comp-title",
         start: "top top",
         end: "bottom +=100px",
         scrub: 1,
+        markers: false,
         pin: false,
         pinSpacing: false,
       },
@@ -485,13 +485,13 @@ class App extends Component {
 
     gsap.to("#cover", {
       yPercent: 0,
-      ease: "none",
+      ease: "cubic-bezier(0, 0.55, 0.45, 1)",
       scrollTrigger: {
         trigger: "#comp .window",
         toggleActions: "play none none reset",
         start: "top", // the default values
         end: "bottom",
-        scrub: true,
+        scrub: 1,
         maker: false,
         onUpdate: (self) => {
           console.log(
@@ -503,7 +503,7 @@ class App extends Component {
             self.getVelocity()
           );
 
-          if (self.progress.toFixed(3) >= 1.000) {
+          if (self.progress.toFixed(3) >= 1.0) {
             console.log("2");
           }
         },
