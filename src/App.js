@@ -7,6 +7,7 @@ import {
   LogoWall,
   StartSection,
   DesignPr,
+  Comp,
 } from "./App_style.js";
 import InlineSVG from "inline-svg-react";
 import {
@@ -41,6 +42,7 @@ import designPr_1 from "./assets/designPr/1.png";
 import designPr_2 from "./assets/designPr/2.png";
 import designPr_3 from "./assets/designPr/3.png";
 import designPr_4 from "./assets/designPr/4.png";
+import comp_bg from "./assets/comp/bg.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +55,7 @@ const sectionTitles = [
     "浪漫与务实",
     "务实是同理心，浪漫是想象力。务实是通过 Arco Design 去解决大部分需求，最大程度提升效率。让设计师与开发者能去做更「浪漫」的发挥想象力事情。",
   ],
+  ["组件系统", "灵活全面的组件库"],
 ];
 const data_start = [
   {
@@ -111,7 +114,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNavScroll: false,
+      isNavScroll: true,
     };
   }
 
@@ -249,9 +252,11 @@ class App extends Component {
             </div>
           </section>
         </Header>
-        <StartSection>
-          <span className="sectionEye">{sectionTitles[0][0]}</span>
-          <h2 className="sectionTitle">{sectionTitles[0][1]}</h2>
+        <StartSection id="start-card">
+          <div className="title">
+            <span className="sectionEye">{sectionTitles[0][0]}</span>
+            <h2 className="sectionTitle">{sectionTitles[0][1]}</h2>
+          </div>
           <div className="card-wrap">
             {data_start.map((item, index) => {
               if (index === 0) {
@@ -294,7 +299,7 @@ class App extends Component {
             })}
           </div>
         </StartSection>
-        <DesignPr>
+        <DesignPr id="designPr">
           <div className="container">
             <div className="left">
               <span className="sectionEye">{sectionTitles[1][0]}</span>
@@ -314,6 +319,16 @@ class App extends Component {
             </div>
           </div>
         </DesignPr>
+        <Comp id="comp">
+          <div className="title" id="comp-title">
+            <span className="sectionEye">{sectionTitles[2][0]}</span>
+            <h2 className="sectionTitle">{sectionTitles[2][1]}</h2>
+          </div>
+          <div className="window">
+            <span id="cover"></span>
+            <img src={comp_bg} alt="compbg" />
+          </div>
+        </Comp>
       </Container>
     );
   }
@@ -327,28 +342,22 @@ class App extends Component {
     const mySplitText = new SplitText("#slogan", { type: "chars" });
     const chars = mySplitText.chars;
 
+    // ScrollTrigger.defaults({
+    //   markers: true,
+    // })
+
     //------------ NAV ---------//
-
-    ScrollTrigger.create({
-      trigger: "#nav2",
-      start: "top top",
-      endTrigger: "body",
-      onUpdate: (self) => {
-        console.log(
-          "progress:",
-          self.progress.toFixed(3),
-          "direction:",
-          self.direction,
-          "velocity",
-          self.getVelocity()
-        );
-
-        if (self.progress.toFixed(3) > 0.8) {
-          this.setState({ isNavScroll: true });
-        } else {
-          this.setState({ isNavScroll: false });
-        }
+    gsap.to("#nav2", {
+      scrollTrigger: {
+        trigger: ".parallax-2 .right-wrap",
+        toggleActions: "play none none reset",
+        markers: false,
+        id: "nav2",
+        start: "bottom top",
+        end: "bottom bottom",
+        scrub: 1,
       },
+      y: 0,
     });
 
     //------- HERO --------//
@@ -414,6 +423,8 @@ class App extends Component {
         start: "top", // the default values
         // end: "bottom top",
         scrub: true,
+        maker: false,
+        id: "parallax-1",
       },
     });
 
@@ -421,11 +432,83 @@ class App extends Component {
       yPercent: 5,
       ease: "none",
       scrollTrigger: {
-        trigger: "body",
+        trigger: "header",
         start: "top", // the default values
         // end: "bottom top",
         scrub: true,
+        maker: false,
+        id: "parallax-2",
       },
+    });
+
+    //------------ COMP ---------//
+    gsap.to("#comp-title", {
+      scrollTrigger: {
+        trigger: "#designPr",
+        toggleActions: "play none none reset",
+        markers: true,
+        id: "comp-title",
+        start: "top top",
+        end: "bottom +=100px",
+        scrub: 1,
+        pin: false,
+        pinSpacing: false,
+      },
+      y: 0,
+    });
+
+    gsap.to("#start-card .card-wrap", {
+      yPercent: -10,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#start-card",
+        toggleActions: "play none none reset",
+        start: "top", // the default values
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+
+    gsap.to("#designPr .right", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#designPr",
+        toggleActions: "play none none reset",
+        start: "top", // the default values
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+
+    gsap.to("#cover", {
+      yPercent: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#comp .window",
+        toggleActions: "play none none reset",
+        start: "top", // the default values
+        end: "bottom",
+        scrub: true,
+        maker: false,
+        onUpdate: (self) => {
+          console.log(
+            "progress:",
+            self.progress.toFixed(3),
+            "direction:",
+            self.direction,
+            "velocity",
+            self.getVelocity()
+          );
+
+          if (self.progress.toFixed(3) >= 1.000) {
+            console.log("2");
+          }
+        },
+      },
+      y: 770,
     });
   }
 }

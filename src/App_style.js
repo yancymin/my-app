@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .btn {
     transition: var(--ease-3) !important;
@@ -50,11 +53,12 @@ export const Container = styled.main`
     z-index: 999;
     position: fixed;
     display: inline-flex;
-    background: rgb(255 255 255 / 0.75);
-    backdrop-filter: blur(20px);
+    background: rgb(255 255 255 / 1);
+    /* backdrop-filter: blur(20px); */
     transition: var(--ease-1);
     animation: none;
     border-bottom: 1px solid var(--cr-line-2);
+    box-shadow: var(--shadow-3);
 
     .logo-s {
       margin-right: 12px;
@@ -470,6 +474,7 @@ export const LogoWall = styled.div`
 export const StartSection = styled.section`
   text-align: center;
   margin: var(--mg-160) 0;
+  max-width: 1200px;
 
   .card-wrap {
     width: 100%;
@@ -645,10 +650,8 @@ export const StartSection = styled.section`
 `;
 
 export const DesignPr = styled.section`
-  position: absolute;
   display: flex;
   justify-content: center;
-  left: 0;
   width: 100vw;
   padding: 120px 0;
   background: var(--cr-bg-1);
@@ -701,6 +704,46 @@ export const DesignPr = styled.section`
         width: 120px;
         margin-bottom: var(--mg-24);
       }
+    }
+  }
+`;
+
+export const Comp = styled.section`
+  width: 100vw;
+  height: 300vh;
+  /* padding: 120px 0 0 0; */
+  background: var(--cr-bg-1);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+
+  .title {
+    text-align: center;
+    margin-bottom: var(--mg-80);
+    /* margin-top */
+  }
+
+  .window {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: var(--radius-32);
+    overflow: hidden;
+    box-shadow:  0 0 0 16px rgba(147, 157, 168, 0.1);
+
+    span {
+      position: absolute;
+      display: inline-block;
+      width: 110%;
+      height: 100%;
+      background: #eaeaea;
+      mix-blend-mode: difference;
+      top: -100%;
+    }
+
+    img {
+      width: 100%;
     }
   }
 `;
