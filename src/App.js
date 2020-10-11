@@ -14,7 +14,6 @@ import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Parallax from "parallax-js";
-import Mouse from "./components/mouse/mouse";
 import logo_s from "./assets/logo-s.svg";
 import hero_0 from "./assets/hero_pic/0.png";
 import hero_1 from "./assets/hero_pic/1.png";
@@ -28,12 +27,15 @@ import logo_3 from "./assets/logos/3.png";
 import logo_4 from "./assets/logos/4.png";
 import logo_5 from "./assets/logos/5.png";
 import logo_6 from "./assets/logos/6.png";
+import card_1 from "./assets/cards/1.png";
+import card_2 from "./assets/cards/2.png";
+import card_3 from "./assets/cards/3.png";
+import card_4 from "./assets/cards/4.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const data_nav = ["设计", "组件", "主题", "资源", "团队"];
 const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
-let isNavScroll = true;
 const sectionTitles = [
   ["设计与开发", "开始使用 Arco Design"],
   ["设计与开发", "开始使用 Arco Design"],
@@ -44,31 +46,42 @@ const data_start = [
     des:
       "Arco Design 包含了众多精心设计的组件，覆盖主流前端框架，让各路开发者都能得心应手。",
     btn: ["快速上手", "React.js", "Flutter Web", "Vue.js"],
+    imgs: card_1,
   },
   {
     title: "完备的生态",
     des:
       "包含设计资源、图标库等在内的完善生态，让极致体验触及产品中的每一处细节。",
     btn: "了解更多",
+    imgs: card_2,
   },
   {
     title: "设计指南",
     des:
       "了解 Arco Design 的设计思想以及我们如何将其应用于整个设计系统，这里有包括全局色、文字、图标和布局的指南。",
     btn: "了解更多",
+    imgs: card_3,
   },
   {
     title: "社区与贡献",
     des: "Arco Design System 即将开源，如果你有任何意见请随时与我们联系。",
     btn: "了解更多",
+    imgs: card_4,
   },
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isNavScroll: false,
+    };
+  }
+
   render() {
     return (
       <Container>
-        <Nav className={this.isNavScroll ? "navScroll" : null}>
+        <Nav>
           <div className="nav-wrap">
             <div className="left">
               <img src={logo_s} alt="" className="logo-s" />
@@ -87,20 +100,23 @@ class App extends Component {
               <a href="/" className="icon">
                 <InlineSVG icon={iconLang} />
               </a>
-              <a href="/" className="login btn-white">
+              <a href="/" className="login btn-white btn">
                 登录
               </a>
             </div>
           </div>
         </Nav>
-        <Nav className={isNavScroll ? "navScrolled" : "hide-nav"}>
+        <Nav
+          className={this.state.isNavScroll ? "navScrolled" : "hide-nav"}
+          id="nav2"
+        >
           <div className="nav-wrap">
             <div className="left">
               <img src={logo_s} alt="" className="logo-s" />
-              <img src={heroLogo} alt="" className="logo-s" />
+              <InlineSVG icon={heroLogo} />
             </div>
             <div className="right">
-              <div className="navScrolled">
+              <div className="nav-item-wrap">
                 {data_nav.map((item, index) => {
                   return (
                     <a href="/" className="navItem">
@@ -115,7 +131,7 @@ class App extends Component {
               <a href="/" className="icon">
                 <InlineSVG icon={iconLang} />
               </a>
-              <a href="/" className="login btn-white">
+              <a href="/" className="login btn-white btn">
                 登录
               </a>
             </div>
@@ -163,32 +179,39 @@ class App extends Component {
             </picture>
           </section>
           <section className="right parallax-2">
-            <InlineSVG icon={heroLogo} className="hero-logo" />
-            <h1 id="slogan">
-              <strong>企业级</strong>设计系统，
-              <br />让<strong>设计者</strong>和<strong>开发者</strong>更专注
-              <br />
-              实现极致的用户体验。
-            </h1>
-            <div className="buttons">
-              <a href="/">开始使用</a>
-              <a href="/" className="btn-white">
-                设计语言
-              </a>
+            <div className="right-wrap">
+              <InlineSVG icon={heroLogo} className="hero-logo" />
+              <h1 id="slogan">
+                <strong>企业级</strong>设计系统，
+                <br />让<strong>设计者</strong>和<strong>开发者</strong>更专注
+                <br />
+                实现极致的用户体验。
+              </h1>
+              <div className="buttons">
+                <a href="/" className="btn">
+                  开始使用
+                </a>
+                <a href="/" className="btn-white btn">
+                  设计语言
+                </a>
+              </div>
+              <LogoWall className="logo-wall">
+                <h3>使用 Arco Design System 构建</h3>
+                <div className="logos-wrap">
+                  {data_logos.map((item) => {
+                    return (
+                      <img
+                        src={item}
+                        className="logo-wall-item"
+                        alt="logo-wall"
+                      />
+                    );
+                  })}
+                </div>
+              </LogoWall>
             </div>
-            <Mouse />
           </section>
         </Header>
-        <LogoWall className="logo-wall">
-          <h3>使用 Arco Design System 构建</h3>
-          <div className="logos-wrap">
-            {data_logos.map((item) => {
-              return (
-                <img src={item} className="logo-wall-item" alt="logo-wall" />
-              );
-            })}
-          </div>
-        </LogoWall>
         <StartSection>
           <span className="sectionEye">{sectionTitles[0][0]}</span>
           <h2 className="sectionTitle">{sectionTitles[0][1]}</h2>
@@ -196,7 +219,7 @@ class App extends Component {
             {data_start.map((item, index) => {
               if (index === 0) {
                 return (
-                  <div className="card">
+                  <div className="card card-1">
                     <div className="left">
                       <h4>{item.title}</h4>
                       <p>{item.des}</p>
@@ -211,17 +234,23 @@ class App extends Component {
                         })}
                       </div>
                     </div>
+                    <div className="right">
+                      <img src={card_1} alt="" />
+                    </div>
                   </div>
                 );
               }
               return (
-                <div className="card">
+                <div className="card card-2">
                   <div className="left">
                     <h4>{item.title}</h4>
                     <p>{item.des}</p>
-                    <a href="/" className="link">
+                    <a href="/" className="link btn">
                       {item.btn} <InlineSVG icon={cardArrow2} />
                     </a>
+                  </div>
+                  <div className="right">
+                    <img src={item.imgs} alt="img" />
                   </div>
                 </div>
               );
@@ -233,12 +262,37 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const mySplitText = new SplitText("#slogan", { type: "chars" }); //{type:"chars,words,lines"}打散成字、词、行
-    const chars = mySplitText.chars;
     const heroBtns = document.querySelectorAll(".buttons");
     const heroLogo = document.querySelectorAll(".hero-logo");
     const heroImgs = document.querySelectorAll(".hero");
     const navItems = document.querySelectorAll(".navItem");
+    const logoWall = document.querySelectorAll(".logo-wall");
+    const mySplitText = new SplitText("#slogan", { type: "chars" });
+    const chars = mySplitText.chars;
+
+    //------------ NAV ---------//
+
+    ScrollTrigger.create({
+      trigger: "#nav2",
+      start: "top top",
+      endTrigger: "body",
+      onUpdate: (self) => {
+        console.log(
+          "progress:",
+          self.progress.toFixed(3),
+          "direction:",
+          self.direction,
+          "velocity",
+          self.getVelocity()
+        );
+
+        if (self.progress.toFixed(3) > 0.8) {
+          this.setState({ isNavScroll: true });
+        } else {
+          this.setState({ isNavScroll: false });
+        }
+      },
+    });
 
     //------- HERO --------//
 
@@ -255,36 +309,48 @@ class App extends Component {
     );
 
     TweenMax.staggerFrom(
-      [heroLogo, chars, heroBtns],
-      0.5,
+      [heroLogo, chars, heroBtns, logoWall],
+      0.4,
       {
         opacity: 0,
-        y: 80,
-        delay: 1.5,
+        y: 60,
+        delay: 1.2,
         ease: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
       0.02
     );
 
     TweenMax.staggerFrom(
+      ".logo-wall-item",
+      0.4,
+      {
+        opacity: 0,
+        y: 40,
+        delay: 2,
+        ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+      },
+      0.05
+    );
+
+    TweenMax.staggerFrom(
       heroImgs,
-      0.8,
+      0.6,
       {
         opacity: 0,
         y: -300,
         delay: 0.8,
-        ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+        ease: "cubic-bezier(0, 0.55, 0.45, 1)",
       },
-      0.04
+      0.03
     );
 
     const scene = document.getElementById("scene");
     setTimeout(() => {
       new Parallax(scene);
-    }, 2000);
+    }, 3000);
 
     gsap.to(".parallax-1", {
-      yPercent: -30,
+      yPercent: -10,
       ease: "none",
       scrollTrigger: {
         trigger: "header",
@@ -295,7 +361,7 @@ class App extends Component {
     });
 
     gsap.to(".parallax-2", {
-      yPercent: 10,
+      yPercent: 5,
       ease: "none",
       scrollTrigger: {
         trigger: "body",

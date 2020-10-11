@@ -4,6 +4,14 @@ export const Container = styled.main`
   max-width: 1200px;
   width: 100%;
 
+  .btn {
+    transition: var(--ease-3) !important;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
   .btn-white {
     &:hover {
       box-shadow: var(--shadow-2) !important;
@@ -15,59 +23,83 @@ export const Container = styled.main`
     color: var(--cr-font-3);
     margin-top: var(--mg-160);
   }
+
   .sectionTitle {
     font: var(--font-46);
     color: var(--cr-font-1);
     margin-bottom: var(--mg-120);
   }
 
-  .hide-nav {
-    opacity: 0;
-    top: -100%;
+  .navScrolled {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .navScrolled {
-    top: 0;
+  .hide-nav {
+    opacity: 0;
+  }
+
+  #nav2 {
     z-index: 999;
     position: fixed;
     display: inline-flex;
-    margin-right: 40px;
+    background: rgb(255 255 255 / 0.75);
+    backdrop-filter: blur(20px);
+    transition: var(--ease-1);
+    animation: none;
+    border-bottom: 1px solid var(--cr-line-2);
 
-    a {
-      position: relative;
-      font: var(--font-16-300);
-      color: var(--cr-font-2);
-      margin-right: 32px;
-      display: flex;
-      justify-content: center;
-      transition: var(--ease-1);
+    .logo-s {
+      margin-right: 12px;
+    }
 
-      &::before {
-        position: absolute;
-        bottom: -4px;
-        content: "";
-        display: block;
-        width: 40%;
-        height: 2px;
-        border-radius: 2px;
-        background: var(--cr-blue-1);
-        opacity: 0;
-        transform: scaleX(0);
-        transition: var(--ease-2);
+    .left {
+      svg {
+        transform-origin: left center;
+        transform: scale(0.8);
       }
+    }
 
-      &:hover {
-        color: var(--cr-blue-1);
-        font: var(--font-16-500);
+    .nav-item-wrap {
+      margin-right: 40px;
+      display: flex;
+
+      a {
+        position: relative;
+        font: var(--font-16-300);
+        color: var(--cr-font-2);
+        margin-right: 32px;
+        display: flex;
+        justify-content: center;
+        transition: var(--ease-1);
 
         &::before {
-          opacity: 1;
-          transform: scaleX(1);
+          position: absolute;
+          bottom: -4px;
+          content: "";
+          display: block;
+          width: 40%;
+          height: 2px;
+          border-radius: 2px;
+          background: var(--cr-blue-1);
+          opacity: 0;
+          transform: scaleX(0);
+          transition: var(--ease-2);
         }
-      }
 
-      &:last-child {
-        margin-right: 0;
+        &:hover {
+          color: var(--cr-blue-1);
+          font: var(--font-16-500);
+
+          &::before {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -93,11 +125,11 @@ export const Nav = styled.nav`
   }
 
   .nav-wrap {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 24px 0;
+    padding: 24px 40px;
   }
 
   .left {
@@ -219,7 +251,7 @@ export const Nav = styled.nav`
 
 export const Header = styled.header`
   width: 100%;
-  height: 88vh;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -228,14 +260,16 @@ export const Header = styled.header`
     position: absolute;
     left: 0;
     width: 50vw;
-    height: 88vh;
+    height: 100vh;
 
     picture {
-      height: 70%;
+      filter: brightness(1.05);
+      /* margin-left: -5%; */
+      height: 60%;
 
       img {
         position: absolute;
-        width: 48vw;
+        max-width: 800px;
         z-index: 1;
 
         &:nth-of-type(6) {
@@ -281,8 +315,13 @@ export const Header = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    right: -6vw;
+    right: 0;
     left: unset;
+    align-items: center;
+
+    .right-wrap {
+      margin-top: var(--mg-40);
+    }
 
     .hero-logo {
       display: inline-block;
@@ -385,10 +424,19 @@ export const Header = styled.header`
 export const LogoWall = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 120px 0 160px 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: var(--mg-140);
   width: 100%;
-  max-width: 1200px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 500px;
+    height: 1px;
+    background: var(--cr-line-1);
+    margin-bottom: var(--mg-56);
+  }
 
   h3 {
     font: vacr(--font-16-300);
@@ -398,18 +446,23 @@ export const LogoWall = styled.div`
 
   .logos-wrap {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: flex-start;
+    width: 560px;
+    flex-wrap: wrap;
+    margin-left: -10px;
 
     img {
       height: 40px;
-      filter: saturate(0.5) contrast(1.4);
+      filter: saturate(0.3) contrast(1.4);
+      margin-right: var(--mg-24);
+      margin-bottom: var(--mg-16);
     }
   }
 `;
 
 export const StartSection = styled.section`
   text-align: center;
+  margin-top: var(--mg-160);
 
   .card-wrap {
     width: 100%;
@@ -419,17 +472,84 @@ export const StartSection = styled.section`
     grid-row-gap: 40px;
     grid-column-gap: 40px;
 
+    .card-1 {
+      .right {
+        position: absolute;
+        bottom: -51px;
+        right: -68px;
+        text-align: right;
+
+        img {
+          width: 370px;
+        }
+      }
+    }
+
+    .card-2 {
+      .right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+        z-index: -1;
+
+        img {
+          width: 50%;
+        }
+      }
+    }
+
     .card {
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        .left {
+          max-width: 310px;
+        }
+        .right {
+          z-index: -1;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .card {
+      position: relative;
       height: 400px;
       text-align: left;
-      background: var(--cr-bg-1);
+      /* background: var(--cr-bg-1); */
+      border: 1px solid var(--cr-line-1);
       padding: 68px 64px;
-      border-radius: var(--radius-24);
+      border-radius: var(--radius-16);
       overflow: hidden;
       transition: var(--ease-1);
 
+      &::after {
+        z-index: -1;
+        opacity: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--cr-bg-3);
+        transform: scale3d(0.96, 0.96, 0.96);
+        border-radius: var(--radius-16);
+        transition: var(--ease-1);
+        mix-blend-mode: multiply;
+      }
+
       &:hover {
-        background: var(--cr-bg-2);
+        /* background: var(--cr-bg-2); */
+        border-color: transparent;
+
+        &::after {
+          opacity: 1;
+          transform: scale3d(1, 1, 1);
+        }
       }
 
       .left {
@@ -445,7 +565,7 @@ export const StartSection = styled.section`
       p {
         font: var(--font-16-300);
         color: var(--cr-font-2);
-        margin-bottom: var(--mg-56);
+        margin-bottom: var(--mg-40);
       }
 
       a {

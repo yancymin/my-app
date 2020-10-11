@@ -10,6 +10,7 @@ html {
 
 body {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 #root {
@@ -29,6 +30,8 @@ body {
   --cr-font-1: #00114b;
   --cr-font-2: #667093;
   --cr-font-3: #c7cbd5;
+  --cr-line-1: hsl(230, 13%, 91%);
+  --cr-line-2: hsl(230, 13%, 95%);
   --mg-200: 200px;
   --mg-180: 180px;
   --mg-160: 160px;
@@ -40,6 +43,7 @@ body {
   --mg-40: 40px;
   --mg-32: 32px;
   --mg-24: 24px;
+  --mg-16: 16px;
   --font-46: 700 46px/67px "Noto Sans SC";
   --font-32: 700 32px/46px "Noto Sans SC";
   --font-28: 500 28px/41px "Noto Sans SC";
@@ -53,7 +57,9 @@ body {
     0 0 0 1px rgba(103, 110, 144, 0.08);
   --radius-4: 4px;
   --radius-6: 6px;
+  --radius-16: 16px;
   --radius-24: 24px;
   --ease-1: all 0.25s ease-out;
   --ease-2: all 0.15s ease-out;
+  --ease-3: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
