@@ -548,7 +548,7 @@ export const StartSection = styled.section`
         top: 0;
         left: 0;
         background: var(--cr-bg-3);
-        transform: scale3d(0.96, 0.96, 0.96);
+        transform: scale3d(0.95, 0.95, 0.95);
         border-radius: var(--radius-16);
         transition: var(--ease-1);
         mix-blend-mode: multiply;
@@ -711,8 +711,8 @@ export const DesignPr = styled.section`
 export const Comp = styled.section`
   width: 100vw;
   height: 160vh;
-  /* padding: 120px 0 0 0; */
-  background: var(--cr-bg-1);
+  padding: 160px 0 0 0;
+  background: var(--cr-white);
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -720,7 +720,7 @@ export const Comp = styled.section`
 
   .title {
     text-align: center;
-    margin-bottom: var(--mg-80);
+    margin-bottom: var(--mg-60);
     /* margin-top */
   }
 
