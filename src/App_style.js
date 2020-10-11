@@ -30,6 +30,13 @@ export const Container = styled.main`
     margin-bottom: var(--mg-120);
   }
 
+  .sectionDes {
+    text-align: left;
+    font: var(--font-16-300);
+    color: var(--cr-font-2);
+    max-width: 400px;
+  }
+
   .navScrolled {
     opacity: 1;
     transform: translateY(0);
@@ -462,7 +469,7 @@ export const LogoWall = styled.div`
 
 export const StartSection = styled.section`
   text-align: center;
-  margin-top: var(--mg-160);
+  margin: var(--mg-160) 0;
 
   .card-wrap {
     width: 100%;
@@ -632,6 +639,67 @@ export const StartSection = styled.section`
             margin-left: 4px;
           }
         }
+      }
+    }
+  }
+`;
+
+export const DesignPr = styled.section`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  width: 100vw;
+  padding: 120px 0;
+  background: var(--cr-bg-1);
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      /* display: flex;
+      flex-direction: column; */
+
+      .sectionDes {
+        margin-top: -60px;
+      }
+    }
+
+    .right {
+      display: grid;
+      grid-template-rows: 2fr;
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+
+      .design-card {
+        padding: 40px;
+        border-radius: var(--radius-16);
+        /* background: var(--cr-white); */
+        transition: var(--ease-1);
+
+        &:hover {
+          background: var(--cr-white);
+        }
+      }
+
+      h5 {
+        font: var(--font-28);
+        color: var(--cr-font-1);
+        margin-bottom: var(--mg-16);
+      }
+
+      p {
+        font: var(--font-16-300);
+        color: var(--cr-font-2);
+      }
+
+      img {
+        width: 120px;
+        margin-bottom: var(--mg-24);
       }
     }
   }
