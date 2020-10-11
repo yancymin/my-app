@@ -663,8 +663,8 @@ export const DesignPr = styled.section`
     justify-content: space-between;
 
     .left {
-      /* display: flex;
-      flex-direction: column; */
+      display: flex;
+      flex-direction: column;
 
       .sectionDes {
         margin-top: -60px;

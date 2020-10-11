@@ -485,7 +485,7 @@ class App extends Component {
 
     gsap.to("#cover", {
       yPercent: 0,
-      ease: "cubic-bezier(0, 0.55, 0.45, 1)",
+      ease: "none",
       scrollTrigger: {
         trigger: "#comp .window",
         toggleActions: "play none none reset",
