@@ -508,7 +508,7 @@ class App extends Component {
           }
         },
       },
-      y: 770,
+      y: 800,
     });
   }
 }

@@ -710,7 +710,7 @@ export const DesignPr = styled.section`
 
 export const Comp = styled.section`
   width: 100vw;
-  height: 120vh;
+  height: 160vh;
   /* padding: 120px 0 0 0; */
   background: var(--cr-bg-1);
   display: flex;
@@ -736,10 +736,10 @@ export const Comp = styled.section`
       position: absolute;
       display: inline-block;
       width: 110%;
-      height: 100%;
+      height: 110%;
       background: #eaeaea;
       mix-blend-mode: difference;
-      top: -100%;
+      top: -110%;
     }
 
     img {
