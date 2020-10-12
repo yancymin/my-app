@@ -7,6 +7,30 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: center;
 
+  .search-hide {
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(0) scale3d(1.25, 1.25, 1.25);
+  }
+
+  .search-show {
+    z-index: 9999;
+    opacity: 1;
+    transform: translateY(0) scale3d(1, 1, 1);
+    filter: blur(0) !important;
+  }
+
+  #search-modal {
+    position: fixed;
+    top: 25vh;
+    width: 700px;
+    transition: var(--ease-3);
+    transition-duration: 0.3s !important;
+    transform-origin: bottom;
+    will-change: transform;
+    filter: blur(60px);
+  }
+
   .btn {
     transition: var(--ease-3) !important;
 
@@ -55,6 +79,7 @@ export const Container = styled.main`
     display: inline-flex;
     background: rgb(255 255 255 / 0.88);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transition: var(--ease-1);
     animation: none;
     border-bottom: 1px solid var(--cr-line-2);
@@ -196,17 +221,28 @@ export const Nav = styled.nav`
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 24px;
+      /* margin-right: 24px; */
+
+
+      &:nth-of-type(1) {
+        margin-right: 28px;
+      }
 
       &:last-child {
         margin-right: 0;
       }
     }
+
+    i {
+      display: inline-grid;
+    }
+
     .icon {
       position: relative;
       padding: 8px;
       border-radius: var(--radius-6);
       cursor: pointer;
+      margin-right: 20px;
 
       svg path {
         transition: var(--ease-1);
