@@ -53,8 +53,8 @@ export const Container = styled.main`
     z-index: 999;
     position: fixed;
     display: inline-flex;
-    background: rgb(255 255 255 / 1);
-    /* backdrop-filter: blur(20px); */
+    background: rgb(255 255 255 / 0.88);
+    backdrop-filter: blur(20px);
     transition: var(--ease-1);
     animation: none;
     border-bottom: 1px solid var(--cr-line-2);
@@ -516,6 +516,28 @@ export const StartSection = styled.section`
 
     .card {
       &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        a {
+          transition: var(--ease-2) !important;
+
+          svg path {
+            transition: var(--ease-2);
+          }
+        }
+
+        &:hover {
+          a {
+            color: var(--cr-white);
+            background: var(--cr-blue-1) !important;
+            svg path {
+              fill: white;
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(2),
       &:nth-of-type(4) {
         &:hover {
           .right {
@@ -570,13 +592,20 @@ export const StartSection = styled.section`
       &:hover {
         background: transparent;
         border-color: transparent;
+        box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.04),
+          0px 100px 80px rgba(122, 124, 131, 0.09),
+          0px 41.7776px 33.4221px rgba(122, 124, 131, 0.0673083),
+          0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
+          0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
+          0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
+          0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);
 
         h4 {
           color: var(--cr-blue-1);
         }
 
         &::after {
-          opacity: 1;
+          /* opacity: 1; */
           transform: scale3d(1, 1, 1);
         }
       }
@@ -671,7 +700,7 @@ export const DesignPr = styled.section`
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding: 80px 0;
+  padding: 40px 0;
   background: var(--cr-blue-1);
 
   .container {
