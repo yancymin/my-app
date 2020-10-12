@@ -342,6 +342,30 @@ class App extends Component {
     const mySplitText = new SplitText("#slogan", { type: "chars" });
     const chars = mySplitText.chars;
 
+    const startCard = new SplitText("#start-card .title", { type: "chars" });
+    const startCardChars = startCard.chars;
+
+    // function ttt() {
+    // TweenMax.staggerFrom(
+    //   startCardChars,
+    //   1,
+    //   {
+    //     opacity: 0,
+    //     y: 60,
+    //     ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+    //     scrollTrigger: {
+    //       trigger: "#start-card",
+    //       toggleActions: "play none none none",
+    //       start: "-60%", // the default values
+    //       end: "bottom",
+    //       scrub: false,
+    //     },
+    //   },
+    //   0.02
+    // );
+    // }
+
+
     // ScrollTrigger.defaults({
     //   markers: true,
     // })
@@ -349,11 +373,10 @@ class App extends Component {
     //------------ NAV ---------//
     gsap.to("#nav2", {
       scrollTrigger: {
-        trigger: ".parallax-2 .right-wrap",
+        trigger: "header",
         toggleActions: "play none none reset",
-        markers: false,
         id: "nav2",
-        start: "bottom top",
+        start: "65% top",
         end: "bottom bottom",
         scrub: 1,
       },
@@ -415,8 +438,8 @@ class App extends Component {
       new Parallax(scene);
     }, 3000);
 
-    gsap.to(".parallax-1", {
-      yPercent: -10,
+    gsap.to("header", {
+      yPercent: -20,
       ease: "none",
       scrollTrigger: {
         trigger: "header",
@@ -424,22 +447,21 @@ class App extends Component {
         // end: "bottom top",
         scrub: true,
         maker: false,
-        id: "parallax-1",
       },
     });
 
-    gsap.to(".parallax-2", {
-      yPercent: 5,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "header",
-        start: "top", // the default values
-        // end: "bottom top",
-        scrub: true,
-        maker: false,
-        id: "parallax-2",
-      },
-    });
+    // gsap.to(".parallax-2", {
+    //   yPercent: 5,
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: "header",
+    //     start: "top", // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //     maker: false,
+    //     id: "parallax-2",
+    //   },
+    // });
 
     //------------ COMP ---------//
     gsap.to("#comp-title", {
@@ -470,7 +492,7 @@ class App extends Component {
       },
     });
 
-    gsap.to("#designPr .right", {
+    gsap.to("#designPr", {
       yPercent: -20,
       ease: "none",
       scrollTrigger: {
