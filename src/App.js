@@ -38,10 +38,10 @@ import logo_6 from "./assets/logos/6.png";
 import card_1 from "./assets/cards/1.png";
 import comp_bg from "./assets/comp/bg.png";
 import search_modal from "./assets/search_modal.png";
-
-gsap.registerPlugin(ScrollTrigger);
+import comp_card from "./assets/comp/comp-card.png";
 
 const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
+gsap.registerPlugin(ScrollTrigger);
 
 class App extends Component {
   constructor(props) {
@@ -266,15 +266,19 @@ class App extends Component {
           </div>
         </DesignPr>
         <Comp id="comp">
+          <span id="cover"></span>
           <div className="title" id="comp-title">
             <span className="sectionEye">{sectionTitles[2][0]}</span>
             <h2 className="sectionTitle">{sectionTitles[2][1]}</h2>
           </div>
-          <div className="window">
-            <span id="cover"></span>
-            <img src={comp_bg} alt="compbg" />
+          <div className="window-wrap">
+            <img src={comp_card} alt="comp_card" id="comp-card" />
+            <div className="window" id="window">
+              <img src={comp_bg} alt="compbg" />
+            </div>
           </div>
         </Comp>
+        <div className="block"></div>
       </Container>
     );
   }
@@ -287,9 +291,8 @@ class App extends Component {
     const logoWall = document.querySelectorAll(".logo-wall");
     const mySplitText = new SplitText("#slogan", { type: "chars" });
     const chars = mySplitText.chars;
-
-    const startCard = new SplitText("#start-card .title", { type: "chars" });
-    const startCardChars = startCard.chars;
+    // const startCard = new SplitText("#start-card .title", { type: "chars" });
+    // const startCardChars = startCard.chars;
 
     // function ttt() {
     // TweenMax.staggerFrom(
@@ -302,7 +305,7 @@ class App extends Component {
     //     scrollTrigger: {
     //       trigger: "#start-card",
     //       toggleActions: "play none none none",
-    //       start: "-60%", // the default values
+    //       start: "-60%",
     //       end: "bottom",
     //       scrub: false,
     //     },
@@ -316,19 +319,20 @@ class App extends Component {
     // })
 
     //------------ NAV ---------//
-    gsap.to("#nav2", {
-      scrollTrigger: {
-        trigger: "header",
-        toggleActions: "play none none reset",
-        id: "nav2",
-        start: "65% top",
-        end: "bottom bottom",
-        scrub: 1,
-      },
-      y: 0,
-    });
 
-    //------- HERO --------//
+    // gsap.to("#nav2", {
+    //   scrollTrigger: {
+    //     trigger: "header",
+    //     toggleActions: "play none none reset",
+    //     id: "nav2",
+    //     start: "65% top",
+    //     end: "bottom bottom",
+    //     scrub: 1,
+    //   },
+    //   y: 0,
+    // });
+
+    //------- HERO SECTION --------//
 
     TweenMax.staggerFrom(
       navItems,
@@ -388,27 +392,45 @@ class App extends Component {
       ease: "none",
       scrollTrigger: {
         trigger: "header",
-        start: "top", // the default values
+        start: "top",
         // end: "bottom top",
         scrub: true,
         maker: false,
       },
     });
 
-    // gsap.to(".parallax-2", {
-    //   yPercent: 5,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: "header",
-    //     start: "top", // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //     maker: false,
-    //     id: "parallax-2",
-    //   },
-    // });
+    //------------ START SECTION ---------//
 
-    //------------ COMP ---------//
+    gsap.to("#start-card", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#start-card",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+
+    //------------ DESIGNPR SECTION ---------//
+
+    gsap.to("#designPr", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#designPr",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+
+    //------------ COMP SECTION ---------//
+
     gsap.to("#comp-title", {
       scrollTrigger: {
         trigger: "#designPr",
@@ -424,59 +446,51 @@ class App extends Component {
       y: 0,
     });
 
-    gsap.to("#start-card", {
+    let tl = gsap.timeline({
+      // yes, we can add it to an entire timeline!
       yPercent: -20,
-      ease: "none",
       scrollTrigger: {
-        trigger: "#start-card",
+        trigger: "#comp",
+        pin: true, // pin the trigger element while active
+        pinSpacing: true,
+        start: "280px", // when the top of the trigger hits the top of the viewport
+        end: "bottom", // end after scrolling 500px beyond the start
         toggleActions: "play none none reset",
-        start: "top", // the default values
-        // end: "bottom top",
-        scrub: true,
-        maker: false,
+        markers: true,
+        id: "cover",
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        // snap: {
+        //   snapTo: "labels", // snap to the closest label in the timeline
+        //   duration: 0.3, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+        //   // delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+        //   ease: "none", // the ease of the snap animation ("power3" by default)
+        // },
       },
     });
 
-    gsap.to("#designPr", {
-      yPercent: -20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#designPr",
-        toggleActions: "play none none reset",
-        start: "top", // the default values
-        // end: "bottom top",
-        scrub: true,
-        maker: false,
-      },
-    });
+    // add animations and labels to the timeline
+    tl.addLabel("start")
+      .to("#cover", { y: "90%", autoAlpha: 1 })
+      .addLabel("right")
+      .to("#window", { x: "40%", autoAlpha: 1 })
+      .addLabel("end");
 
-    gsap.to("#cover", {
-      yPercent: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#comp .window",
-        toggleActions: "play none none reset",
-        start: "top", // the default values
-        end: "bottom",
-        scrub: 1,
-        maker: false,
-        onUpdate: (self) => {
-          console.log(
-            "progress:",
-            self.progress.toFixed(3),
-            "direction:",
-            self.direction,
-            "velocity",
-            self.getVelocity()
-          );
-
-          if (self.progress.toFixed(3) >= 1.0) {
-            console.log("2");
-          }
-        },
-      },
-      y: 800,
-    });
+    // gsap.to("#cover", {
+    //   yPercent: 0,
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: "#comp .window",
+    //     toggleActions: "play none none reset",
+    //     start: "top",
+    //     end: "bottom",
+    //     scrub: 1,
+    //     markers: true,
+    //     id: "cover",
+    //     pin: true,
+    //     pinSpacing: true,
+    //   },
+    //   y: 0,
+    // });
   }
 }
 

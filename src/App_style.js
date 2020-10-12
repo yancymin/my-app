@@ -7,6 +7,33 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: center;
 
+  #comp-card {
+    mix-blend-mode: difference;
+    width: 366px;
+    position: absolute;
+  }
+
+  .window-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  #cover {
+    z-index: 2;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #cbcbcb;
+    mix-blend-mode: difference;
+    top: -110%;
+  }
+
+  .block {
+    height: 300vh;
+  }
+
   .search-hide {
     z-index: -1;
     opacity: 0;
@@ -74,6 +101,7 @@ export const Container = styled.main`
   }
 
   #nav2 {
+    display: none !important;
     z-index: 999;
     position: fixed;
     display: inline-flex;
@@ -222,7 +250,6 @@ export const Nav = styled.nav`
       justify-content: center;
       align-items: center;
       /* margin-right: 24px; */
-
 
       &:nth-of-type(1) {
         margin-right: 28px;
@@ -862,6 +889,7 @@ export const DesignPr = styled.section`
 `;
 
 export const Comp = styled.section`
+  position: relative;
   width: 100vw;
   height: 160vh;
   padding: 160px 0 0 0;
@@ -870,6 +898,7 @@ export const Comp = styled.section`
   align-items: center;
   /* justify-content: center; */
   flex-direction: column;
+  overflow: hidden;
 
   .title {
     text-align: center;
@@ -884,16 +913,6 @@ export const Comp = styled.section`
     border-radius: var(--radius-32);
     overflow: hidden;
     box-shadow: 0 0 0 16px rgba(147, 157, 168, 0.1);
-
-    span {
-      position: absolute;
-      display: inline-block;
-      width: 110%;
-      height: 110%;
-      background: #eaeaea;
-      mix-blend-mode: difference;
-      top: -110%;
-    }
 
     img {
       width: 100%;
