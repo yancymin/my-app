@@ -689,7 +689,8 @@ export const DesignPr = styled.section`
       }
 
       .sectionEye {
-        opacity: 0.7;
+        opacity: 0.4;
+        color: var(--cr-white);
       }
 
       .sectionDes {
