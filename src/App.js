@@ -426,7 +426,7 @@ class App extends Component {
       0.6,
       {
         opacity: 0,
-        y: -300,
+        y: 300,
         delay: 0.8,
         ease: "cubic-bezier(0, 0.55, 0.45, 1)",
       },
