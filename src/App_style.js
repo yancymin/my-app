@@ -275,12 +275,15 @@ export const Header = styled.header`
 
     picture {
       filter: brightness(1.05);
-      /* margin-left: -5%; */
-      height: 60%;
+      margin-left: -4%;
+      width: 100%;
+      height: 640px;
+      max-height: fit-content;
+      margin-top: -6%;
 
       img {
         position: absolute;
-        max-width: 800px;
+        max-width: 96%;
         z-index: 1;
 
         &:nth-of-type(6) {
@@ -481,8 +484,8 @@ export const StartSection = styled.section`
     display: grid;
     grid-template-rows: 2fr;
     grid-template-columns: 2fr 1.3fr;
-    grid-row-gap: 48px;
-    grid-column-gap: 48px;
+    grid-row-gap: 24px;
+    grid-column-gap: 24px;
 
     .card-1 {
       .right {
@@ -514,6 +517,14 @@ export const StartSection = styled.section`
     .card {
       &:nth-of-type(2),
       &:nth-of-type(4) {
+        &:hover {
+          .right {
+            img {
+              filter: brightness(1.03);
+            }
+          }
+        }
+
         .left {
           max-width: 310px;
         }
@@ -521,6 +532,7 @@ export const StartSection = styled.section`
           z-index: -1;
           img {
             width: 100%;
+            transition: var(--ease-1);
           }
         }
       }
@@ -528,14 +540,15 @@ export const StartSection = styled.section`
 
     .card {
       position: relative;
-      height: 400px;
+      height: 420px;
       text-align: left;
-      /* background: var(--cr-bg-1); */
-      border: 1px solid var(--cr-line-1);
+      background: var(--cr-bg-1);
+      /* border: 1px solid var(--cr-line-1); */
       padding: 68px 64px;
       border-radius: var(--radius-16);
       overflow: hidden;
       transition: var(--ease-1);
+      mix-blend-mode: multiply;
 
       &::after {
         z-index: -1;
@@ -548,15 +561,19 @@ export const StartSection = styled.section`
         top: 0;
         left: 0;
         background: var(--cr-bg-3);
-        transform: scale3d(0.95, 0.95, 0.95);
+        transform: scale3d(0.96, 0.96, 0.96);
         border-radius: var(--radius-16);
         transition: var(--ease-1);
         mix-blend-mode: multiply;
       }
 
       &:hover {
-        /* background: var(--cr-bg-2); */
+        background: transparent;
         border-color: transparent;
+
+        h4 {
+          color: var(--cr-blue-1);
+        }
 
         &::after {
           opacity: 1;
@@ -572,6 +589,7 @@ export const StartSection = styled.section`
         font: var(--font-28);
         color: var(--cr-font-1);
         margin-bottom: var(--mg-24);
+        transition: var(--ease-1);
       }
 
       p {
@@ -653,8 +671,8 @@ export const DesignPr = styled.section`
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding: 120px 0;
-  background: var(--cr-bg-1);
+  padding: 80px 0;
+  background: var(--cr-blue-1);
 
   .container {
     width: 100%;
@@ -666,8 +684,18 @@ export const DesignPr = styled.section`
       display: flex;
       flex-direction: column;
 
+      h2 {
+        color: var(--cr-white);
+      }
+
+      .sectionEye {
+        opacity: 0.7;
+      }
+
       .sectionDes {
         margin-top: -60px;
+        color: var(--cr-white);
+        opacity: 0.7;
       }
     }
 
@@ -679,30 +707,90 @@ export const DesignPr = styled.section`
       grid-column-gap: 20px;
 
       .design-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
         padding: 40px;
         border-radius: var(--radius-16);
         /* background: var(--cr-white); */
         transition: var(--ease-1);
+        overflow: hidden;
+
+        img {
+          &:last-child {
+            position: absolute;
+            bottom: -40px;
+            transform: scale(0.9);
+            opacity: 0;
+            align-self: center;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          transform: scale(0.9);
+          opacity: 0;
+          transition: all 0.2s ease-out;
+          transform-origin: top;
+          border-radius: var(--radius-16);
+        }
 
         &:hover {
-          background: var(--cr-white);
+          h5 {
+            color: var(--cr-blue-1);
+            transform: translateY(-130px);
+          }
+          p {
+            color: var(--cr-font-2);
+            transform: translateY(-130px);
+          }
+          &::after {
+            background: var(--cr-white);
+            opacity: 1;
+            transform: scale(1);
+          }
+
+          img {
+            &:first-child {
+              transform: translateY(-100%);
+              opacity: 0;
+            }
+
+            &:last-child {
+              opacity: 1;
+              transform: translateY(-45%) scale(1.4);
+            }
+          }
         }
       }
 
       h5 {
         font: var(--font-28);
-        color: var(--cr-font-1);
+        color: var(--cr-white);
         margin-bottom: var(--mg-16);
+        transition: var(--ease-2);
       }
 
       p {
         font: var(--font-16-300);
-        color: var(--cr-font-2);
+        color: var(--cr-white);
+        opacity: 0.7;
+        transition: var(--ease-2);
+        transition-delay: 0.01s;
       }
 
       img {
         width: 120px;
         margin-bottom: var(--mg-24);
+        transition: var(--ease-2);
       }
     }
   }
@@ -730,7 +818,7 @@ export const Comp = styled.section`
     max-width: 1200px;
     border-radius: var(--radius-32);
     overflow: hidden;
-    box-shadow:  0 0 0 16px rgba(147, 157, 168, 0.1);
+    box-shadow: 0 0 0 16px rgba(147, 157, 168, 0.1);
 
     span {
       position: absolute;

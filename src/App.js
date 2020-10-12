@@ -313,6 +313,7 @@ class App extends Component {
                     <img src={item.img} alt="design" />
                     <h5>{item.title}</h5>
                     <p>{item.des}</p>
+                    <img src={item.img} alt="design" />
                   </div>
                 );
               })}
@@ -479,8 +480,8 @@ class App extends Component {
       y: 0,
     });
 
-    gsap.to("#start-card .card-wrap", {
-      yPercent: -10,
+    gsap.to("#start-card", {
+      yPercent: -20,
       ease: "none",
       scrollTrigger: {
         trigger: "#start-card",
