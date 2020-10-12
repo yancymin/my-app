@@ -750,7 +750,7 @@ export const DesignPr = styled.section`
           }
           p {
             color: var(--cr-font-2);
-            transform: translateY(-130px);
+            transform: translateY(-136px);
           }
           &::after {
             background: var(--cr-white);
@@ -766,7 +766,7 @@ export const DesignPr = styled.section`
 
             &:last-child {
               opacity: 1;
-              transform: translateY(-45%) scale(1.4);
+              transform: translateY(-47%) scale(1.4);
             }
           }
         }
@@ -784,7 +784,6 @@ export const DesignPr = styled.section`
         color: var(--cr-white);
         opacity: 0.7;
         transition: var(--ease-2);
-        transition-delay: 0.01s;
       }
 
       img {
