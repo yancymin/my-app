@@ -19,6 +19,7 @@ export const sectionTitles = [
     ],
     ["组件系统", "灵活全面的组件库", "Arco Design 目前支持 React、Vue、Flutter 三种前端框架，设计系统中每个组件都满足特定的交互与UI 需求，是创造极致用户体验的基础。"],
     ["快速上手", "你是 <strong>设计师</strong> or <strong>工程师</strong>？"],
+    ["工具与资源", "完备的生态", "包含设计资源、图标库等在内的完善生态，让极致体验触及产品中的每一处细节。"]
 ];
 export const data_start = [
     {
@@ -85,3 +86,27 @@ export const data_getStarted = [
         img: engineer
     }
 ];
+
+export const data_tools = [
+    {
+        title: "Arco Theme Lab",
+        des: "主题实验室",
+        tag: "主题",
+    },
+    {
+        title: "Arco Charts Library",
+        des: "开箱即用的 React 图表库",
+        tag: "图表",
+    },
+    {
+        title: "Arco Design Pro",
+        des: "通用页面的最佳实践",
+        tag: "模版",
+    },
+    {
+        title: "Arco Motion",
+        des: "组件动效库及规范",
+        tag: "动效",
+    },
+]
+

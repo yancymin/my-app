@@ -9,6 +9,7 @@ import {
   DesignPr,
   Comp,
   GetStarted,
+  Tools,
 } from "./App_style.js";
 import InlineSVG from "inline-svg-react";
 import {
@@ -24,6 +25,7 @@ import {
   data_start,
   data_designPr,
   data_getStarted,
+  data_tools,
 } from "./data";
 import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
@@ -49,6 +51,7 @@ import comp_col_3 from "./assets/comp/col-3.png";
 import comp_col_4 from "./assets/comp/col-4.png";
 import search_modal from "./assets/search_modal.png";
 import comp_card from "./assets/comp/comp-card.png";
+import tools_pic from "./assets/tools/tools-pic.png";
 
 const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
 gsap.registerPlugin(ScrollTrigger);
@@ -308,7 +311,8 @@ class App extends Component {
                     <h4>{item.title}</h4>
                     <p>{item.des}</p>
                     <a href="/" className="link btn">
-                      快速上手<InlineSVG icon={cardArrow2} />
+                      快速上手
+                      <InlineSVG icon={cardArrow2} />
                     </a>
                   </div>
                   <div className="right">
@@ -319,6 +323,33 @@ class App extends Component {
             })}
           </div>
         </GetStarted>
+        <Tools>
+          <div className="title">
+            <img src={tools_pic} alt="" className="left" />
+            <div className="right">
+              <span className="sectionEye">{sectionTitles[4][0]}</span>
+              <h2 className="sectionTitle">{sectionTitles[4][1]}</h2>
+              <p className="sectionDes">{sectionTitles[4][2]}</p>
+            </div>
+          </div>
+          <div className="tools-list-wrap">
+            {data_tools.map((item) => {
+              return (
+                <div className="tools-list-item">
+                  <h5>
+                    <InlineSVG icon={cardArrow} />
+                    {item.title}
+                  </h5>
+                  <p>{item.des}</p>
+                  <i>{item.tag}</i>
+                </div>
+              );
+            })}
+          </div>
+          <a href="/" className="btn">
+            开始使用
+          </a>
+        </Tools>
         <div className="block"></div>
       </Container>
     );
