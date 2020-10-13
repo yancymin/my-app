@@ -1162,6 +1162,18 @@ export const Tools = styled.section`
       transition: var(--ease-1);
       border-bottom: 1px solid var(--cr-line-1);
 
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--cr-line-1);
+        position: absolute;
+        bottom: 0;
+        transform: scaleX(0);
+        transition: var(--ease-2);
+      }
+
       &:hover {
         h5 {
           color: var(--cr-blue-1);
@@ -1174,6 +1186,11 @@ export const Tools = styled.section`
         }
         i {
           color: var(--cr-white);
+          background: var(--cr-blue-1);
+        }
+
+        &::after {
+          transform: scaleX(1);
           background: var(--cr-blue-1);
         }
       }
