@@ -8,6 +8,11 @@ import designPr_3 from "./assets/designPr/3.png";
 import designPr_4 from "./assets/designPr/4.png";
 import designer from "./assets/getStarted/designer.png";
 import engineer from "./assets/getStarted/engineer.png";
+import blog_pic_1 from "./assets/blog/pic-1.png";
+import blog_pic_2 from "./assets/blog/pic-2.png";
+import blog_pic_3 from "./assets/blog/pic-3.png";
+import blog_pic_4 from "./assets/blog/pic-4.png";
+import blog_pic_5 from "./assets/blog/pic-5.png";
 
 export const data_nav = ["设计", "组件", "主题", "资源", "团队"];
 export const sectionTitles = [
@@ -19,7 +24,8 @@ export const sectionTitles = [
     ],
     ["组件系统", "灵活全面的组件库", "Arco Design 目前支持 React、Vue、Flutter 三种前端框架，设计系统中每个组件都满足特定的交互与UI 需求，是创造极致用户体验的基础。"],
     ["快速上手", "你是 <strong>设计师</strong> or <strong>工程师</strong>？"],
-    ["工具与资源", "完备的生态", "包含设计资源、图标库等在内的完善生态，让极致体验触及产品中的每一处细节。"]
+    ["工具与资源", "完备的生态", "包含设计资源、图标库等在内的完善生态，让极致体验触及产品中的每一处细节。"],
+    ["最新文章", "我们的博客"]
 ];
 export const data_start = [
     {
@@ -107,6 +113,34 @@ export const data_tools = [
         title: "Arco Motion",
         des: "组件动效库及规范",
         tag: "动效",
+    },
+]
+
+export const data_blog = [
+    {
+        img: blog_pic_1,
+        title: "Arco 设计语言",
+        des: "设计系统和音乐谱曲一样有着韵律之美,对每个信息模信息模块的排版的考量块的排版的对元素之间重复与对比等规律的潜在...",
+    },
+    {
+        img: blog_pic_2,
+        title: "数据可视化探索",
+        des: "目前以图形化设计资产的形式和大家见面，使用 ETCG 的思路设计（ETCG 分别是 案例 example ，模板template..",
+    },
+    {
+        img: blog_pic_3,
+        title: "写给设计师的栅格指南",
+        des: "常见的栅格系统通常被划分为 12 栅格或 24 栅格，划分的格子越多，承载的内容越精细。通常，在信息繁杂的中...",
+    },
+    {
+        img: blog_pic_4,
+        title: "用户故事地图浅析",
+        des: "中后台产品大多通过产品化工具来给用户提效，随着用户的应用场景开始延伸到线上线下各个角落，设计师也开始...",
+    },
+    {
+        img: blog_pic_5,
+        title: "情感化设计",
+        des: "之前跟用户聊天，他说用某个产品经常有种想离职的冲动，但每天却不得不继续使用，于是我们想探究造成...",
     },
 ]
 

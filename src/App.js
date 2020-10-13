@@ -10,6 +10,7 @@ import {
   Comp,
   GetStarted,
   Tools,
+  Blog,
 } from "./App_style.js";
 import InlineSVG from "inline-svg-react";
 import {
@@ -27,10 +28,12 @@ import {
   data_designPr,
   data_getStarted,
   data_tools,
+  data_blog,
 } from "./data";
 import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/Draggable";
 import Parallax from "parallax-js";
 import logo_s from "./assets/logo-s.svg";
 import hero_0 from "./assets/hero_pic/0.png";
@@ -56,6 +59,7 @@ import tools_pic from "./assets/tools/tools-pic.png";
 
 const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Draggable);
 
 class App extends Component {
   constructor(props) {
@@ -352,6 +356,31 @@ class App extends Component {
             <InlineSVG icon={btnArrow} />
           </a>
         </Tools>
+        <Blog>
+          <div className="title">
+            <span className="sectionEye">{sectionTitles[5][0]}</span>
+            <h2 className="sectionTitle">{sectionTitles[5][1]}</h2>
+            <a href="/" className="btn btn-white">
+              全部文章
+            </a>
+          </div>
+          <div className="blog-container" id="blog-container">
+            <div id="blog-drag">
+              {data_blog.map((item) => {
+                return (
+                  <div className="card">
+                    <img src={item.img} alt="" />
+                    <div className="bottom">
+                      <h5>{item.title}</h5>
+                      <p>{item.des}</p>
+                      <InlineSVG icon={cardArrow2} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Blog>
         <div className="block"></div>
       </Container>
     );
@@ -369,6 +398,16 @@ class App extends Component {
       linesClass: "split-parent",
     });
     const childSplit = new SplitText("#slogan", { type: "chars" });
+
+    Draggable.create("#blog-drag", {
+      type: "x",
+      bounds: "#blog-container",
+      edgeResistance: 0,
+      dragResistance: 0.5,
+      autoScroll: true,
+      inertia: true,
+      throwProps: true,
+    });
 
     // ScrollTrigger.defaults({
     //   markers: true,
