@@ -11,6 +11,7 @@ import {
   GetStarted,
   Tools,
   Blog,
+  FooterSection,
 } from "./App_style.js";
 import InlineSVG from "inline-svg-react";
 import {
@@ -29,6 +30,7 @@ import {
   data_getStarted,
   data_tools,
   data_blog,
+  data_footer,
 } from "./data";
 import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
@@ -352,7 +354,7 @@ class App extends Component {
             })}
           </div>
           <a href="/" className="btn">
-            开始使用
+            查看全部
             <InlineSVG icon={btnArrow} />
           </a>
         </Tools>
@@ -373,7 +375,7 @@ class App extends Component {
                     <div className="bottom">
                       <h5>{item.title}</h5>
                       <p>{item.des}</p>
-                      <InlineSVG icon={cardArrow2} />
+                      {/* <InlineSVG icon={cardArrow2} /> */}
                     </div>
                   </div>
                 );
@@ -381,7 +383,40 @@ class App extends Component {
             </div>
           </div>
         </Blog>
-        <div className="block"></div>
+        <FooterSection>
+          <div className="footer-wrap">
+            <div className="top">
+              <div className="left">
+                {data_footer.main.map((item) => {
+                  return (
+                    <ul className="link-list">
+                      <h6>{item.title}</h6>
+                      {item.links.map((item_2) => {
+                        return <li key={item_2}>{item_2}</li>;
+                      })}
+                    </ul>
+                  );
+                })}
+              </div>
+              <div className="right">
+                <div className="feedback">
+                  <h6>{data_footer.input.feedback.title}</h6>
+                  <p>{data_footer.input.feedback.des}</p>
+                  <a href="/">{data_footer.input.feedback.btn}</a>
+                </div>
+                <div className="newsletter">
+                  <h6>{data_footer.input.newsletter.title}</h6>
+                  <p>{data_footer.input.newsletter.des}</p>
+                  <input
+                    type="text"
+                    placeholder={data_footer.input.newsletter.placeholder}
+                  />
+                  <a href="/">{data_footer.input.newsletter.btn}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FooterSection>
       </Container>
     );
   }
@@ -564,7 +599,7 @@ class App extends Component {
         start: "400px", // when the top of the trigger hits the top of the viewport
         end: "bottom", // end after scrolling 500px beyond the start
         toggleActions: "play none none reset",
-        markers: true,
+        markers: false,
         id: "cover",
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         // snap: {

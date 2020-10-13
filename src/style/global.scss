@@ -55,12 +55,20 @@ body {
   --font-18: 500 18px/18px "Noto Sans SC";
   --font-16-500: 500 16px/27px "Noto Sans SC";
   --font-16-300: 300 16px/27px "Noto Sans SC";
+  --font-14: 400 14px/14px "Noto Sans SC";
   --font-12: 400 12px/20px "Noto Sans SC";
   --shadow-1: 0 2px 5px rgba(103, 110, 144, 0.2),
     0 0 0 1px rgba(103, 110, 144, 0.05);
   --shadow-2: 0 3px 7px rgba(103, 110, 144, 0.25),
     0 0 0 1px rgba(103, 110, 144, 0.08);
-  --shadow-3: 0 2px 16px rgba(103, 110, 144, 0.15);;
+  --shadow-3: 0 2px 16px rgba(103, 110, 144, 0.15);
+  --shadow-4: 0px -2px 12px rgba(0, 0, 0, 0.04),
+    0px 100px 80px rgba(122, 124, 131, 0.09),
+    0px 41.7776px 33.4221px rgba(122, 124, 131, 0.0673083),
+    0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
+    0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
+    0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
+    0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);  //card hover
   --radius-4: 4px;
   --radius-6: 6px;
   --radius-16: 16px;

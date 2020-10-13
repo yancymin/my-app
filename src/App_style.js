@@ -690,13 +690,7 @@ export const StartSection = styled.section`
       &:hover {
         background: transparent;
         border-color: transparent;
-        box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.04),
-          0px 100px 80px rgba(122, 124, 131, 0.09),
-          0px 41.7776px 33.4221px rgba(122, 124, 131, 0.0673083),
-          0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
-          0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
-          0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
-          0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);
+        box-shadow: var(--shadow-4);
 
         h4 {
           color: var(--cr-blue-1);
@@ -1019,13 +1013,7 @@ export const GetStarted = styled.section`
       &:hover {
         background: transparent;
         border-color: transparent;
-        box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.04),
-          0px 100px 80px rgba(122, 124, 131, 0.09),
-          0px 41.7776px 33.4221px rgba(122, 124, 131, 0.0673083),
-          0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
-          0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
-          0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
-          0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);
+        box-shadow: var(--shadow-4);
 
         h4 {
           color: var(--cr-blue-1);
@@ -1325,17 +1313,12 @@ export const Blog = styled.section`
       border-radius: var(--radius-16);
       background: var(--cr-bg-1);
       transition: var(--ease-1);
+      cursor: pointer;
 
       &:hover {
         background: transparent;
         border-color: transparent;
-        box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.04),
-          0px 100px 80px rgba(122, 124, 131, 0.09),
-          0px 41.7776px 33.4221px rgba(122, 124, 131, 0.0673083),
-          0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
-          0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
-          0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
-          0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);
+        box-shadow: var(--shadow-4);
 
         h5 {
           color: var(--cr-blue-1);
@@ -1352,7 +1335,7 @@ export const Blog = styled.section`
       p {
         font: var(--font-16-300);
         color: var(--cr-font-2);
-        margin-bottom: var(--mg-40);
+        /* margin-bottom: var(--mg-40); */
       }
 
       span {
@@ -1370,6 +1353,56 @@ export const Blog = styled.section`
 
       .bottom {
         padding: 64px;
+      }
+    }
+  }
+`;
+
+export const FooterSection = styled.footer`
+  width: 100%;
+  padding: 80px 0 120px 0;
+  background: var(--cr-blue-1);
+  display: flex;
+  justify-content: center;
+
+  .footer-wrap {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .top {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 2fr 1fr;
+      grid-column-gap: 80px;
+
+      .left {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 40px;
+
+        .link-list {
+          display: grid;
+          grid-template-rows: 4fr;
+          grid-template-columns: 1fr;
+          align-items: flex-start;
+          grid-row-gap: 16px;
+          grid-template-rows: max-content;
+          grid-template-columns: max-content;
+
+          h6 {
+            font: var(--font-16-500);
+            color: var(--cr-white);
+          }
+          li {
+            font: var(--font-14);
+            color: var(--cr-white);
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
       }
     }
   }

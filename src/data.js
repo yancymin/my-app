@@ -114,6 +114,16 @@ export const data_tools = [
         des: "组件动效库及规范",
         tag: "动效",
     },
+    {
+        title: "Arco Font Library",
+        des: "字体配置平台",
+        tag: "字体",
+    },
+    {
+        title: "Arco Illustration Library",
+        des: "平台插画库",
+        tag: "插画",
+    },
 ]
 
 export const data_blog = [
@@ -144,3 +154,41 @@ export const data_blog = [
     },
 ]
 
+export const data_footer = {
+    main: [
+        {
+            title: "设计",
+            links: ["设计语言", "设计原则"]
+        },
+        {
+            title: "组件",
+            links: ["技术文档", "用法示例", "最佳实践", "动效规范"]
+        },
+        {
+            title: "资源",
+            links: ["图标库", "图表库", "插画库", "字体库"]
+        },
+        {
+            title: "社区",
+            links: ["知乎专栏", "Awesome Arco Design", "常见问题"]
+        },
+        {
+            title: "关于 Arco",
+            links: ["团队介绍", "加入我们"]
+        },
+    ],
+    input: {
+        feedback: {
+            title: "反馈",
+            des: "我们期待看到你的反馈，交流让 Arco 更好。",
+            btn: "意见反馈"
+        },
+        newsletter: {
+            title: "邮件订阅",
+            des: "欢迎订阅我们的邮件推送。",
+            btn: "订阅",
+            placeholder: "输入邮箱订阅"
+        }
+    },
+    other: "2020 Ⓡ ByteDance Co., Ltd. All rights reserved."
+}
