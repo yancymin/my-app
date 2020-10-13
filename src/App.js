@@ -18,7 +18,13 @@ import {
   cardArrow,
   cardArrow2,
 } from "./assets/svg";
-import { data_nav, sectionTitles, data_start, data_designPr } from "./data";
+import {
+  data_nav,
+  sectionTitles,
+  data_start,
+  data_designPr,
+  data_getStarted,
+} from "./data";
 import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -293,6 +299,24 @@ class App extends Component {
               className="sectionTitle"
               dangerouslySetInnerHTML={{ __html: sectionTitles[3][1] }}
             ></h2>
+          </div>
+          <div className="card-wrap">
+            {data_getStarted.map((item) => {
+              return (
+                <div className="card card-2">
+                  <div className="left">
+                    <h4>{item.title}</h4>
+                    <p>{item.des}</p>
+                    <a href="/" className="link btn">
+                      快速上手<InlineSVG icon={cardArrow2} />
+                    </a>
+                  </div>
+                  <div className="right">
+                    <img src={item.img} alt="img" />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </GetStarted>
         <div className="block"></div>

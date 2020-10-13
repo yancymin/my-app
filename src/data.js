@@ -6,6 +6,8 @@ import designPr_1 from "./assets/designPr/1.png";
 import designPr_2 from "./assets/designPr/2.png";
 import designPr_3 from "./assets/designPr/3.png";
 import designPr_4 from "./assets/designPr/4.png";
+import designer from "./assets/getStarted/designer.png";
+import engineer from "./assets/getStarted/engineer.png";
 
 export const data_nav = ["设计", "组件", "主题", "资源", "团队"];
 export const sectionTitles = [
@@ -69,4 +71,17 @@ export const data_designPr = [
         des: "开放包容是解决问题的思路",
         img: designPr_4,
     },
+];
+
+export const data_getStarted = [
+    {
+        title: "设计师",
+        des: "使用 Arco UI 套件进行界面设计",
+        img: designer,
+    },
+    {
+        title: "工程师",
+        des: "开始使用 Arco 组件库构建你的项目",
+        img: engineer
+    }
 ];
