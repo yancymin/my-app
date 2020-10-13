@@ -1303,7 +1303,8 @@ export const Blog = styled.section`
   }
 
   .blog-container {
-    overflow-x: scroll;
+    width: 0;
+    /* overflow-x: scroll; */
 
     &::-webkit-scrollbar {
       display: none;
@@ -1315,6 +1316,7 @@ export const Blog = styled.section`
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-column-gap: 24px;
       width: 300%;
+      /* padding:  */
     }
 
     .card {
@@ -1322,11 +1324,29 @@ export const Blog = styled.section`
       overflow: hidden;
       border-radius: var(--radius-16);
       background: var(--cr-bg-1);
+      transition: var(--ease-1);
+
+      &:hover {
+        background: transparent;
+        border-color: transparent;
+        box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.04),
+          0px 100px 80px rgba(122, 124, 131, 0.09),
+          0px 41.7776px 33.4221px rgba(122, 124, 131, 0.0673083),
+          0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
+          0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
+          0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
+          0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);
+
+        h5 {
+          color: var(--cr-blue-1);
+        }
+      }
 
       h5 {
         font: var(--font-28);
         color: var(--cr-font-1);
         margin-bottom: var(--mg-24);
+        transition: var(--ease-1);
       }
 
       p {
