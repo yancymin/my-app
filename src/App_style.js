@@ -7,6 +7,37 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: center;
 
+  .col {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .col-1 {
+    max-width: 440px;
+    height: 1159px;
+    width: 100%;
+  }
+  .col-2 {
+    max-width: 282px;
+    width: 100%;
+    height: 1384px;
+  }
+  .col-3 {
+    max-width: 318px;
+    width: 100%;
+    height: 1234px;
+    margin-top: 75px;
+  }
+  .col-4 {
+    max-width: 480px;
+    width: 100%;
+    height: 1340px;
+    margin-top: 22px;
+  }
+
   .split-parent {
     overflow: hidden;
   }
@@ -30,7 +61,7 @@ export const Container = styled.main`
     width: 100%;
     height: 100%;
     background: #cbcbcb;
-    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
     top: -110%;
   }
 
@@ -911,12 +942,16 @@ export const Comp = styled.section`
   }
 
   .window {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
+    height: 770px;
     max-width: 1200px;
     border-radius: var(--radius-32);
     overflow: hidden;
-    box-shadow: 0 0 0 16px rgba(147, 157, 168, 0.1);
+    box-shadow: 0 0 0 16px rgb(41 50 60 / 10%);
+    background: var(--cr-bg-1);
 
     img {
       width: 100%;

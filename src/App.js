@@ -36,7 +36,10 @@ import logo_4 from "./assets/logos/4.png";
 import logo_5 from "./assets/logos/5.png";
 import logo_6 from "./assets/logos/6.png";
 import card_1 from "./assets/cards/1.png";
-import comp_bg from "./assets/comp/bg.png";
+import comp_col_1 from "./assets/comp/col-1.png";
+import comp_col_2 from "./assets/comp/col-2.png";
+import comp_col_3 from "./assets/comp/col-3.png";
+import comp_col_4 from "./assets/comp/col-4.png";
 import search_modal from "./assets/search_modal.png";
 import comp_card from "./assets/comp/comp-card.png";
 
@@ -274,7 +277,10 @@ class App extends Component {
           <div className="window-wrap">
             <img src={comp_card} alt="comp_card" id="comp-card" />
             <div className="window" id="window">
-              <img src={comp_bg} alt="compbg" />
+              <img src={comp_col_1} alt="comp_col" className="col-1 col" />
+              <img src={comp_col_2} alt="comp_col" className="col-2 col" />
+              <img src={comp_col_3} alt="comp_col" className="col-3 col" />
+              <img src={comp_col_4} alt="comp_col" className="col-4 col" />
             </div>
           </div>
         </Comp>
@@ -465,6 +471,20 @@ class App extends Component {
 
     // add animations and labels to the timeline
     tl.addLabel("start")
+      .to(
+        ".col",
+        { yPercent: -30, autoAlpha: 1 },
+        TweenMax.staggerFrom(
+          ".col",
+          20,
+          {
+            // y: 40,
+            // delay: 1,
+            ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+          },
+        )
+      )
+      .addLabel("cover")
       .to("#cover", { y: "90%", autoAlpha: 1 })
       .addLabel("right")
       .to("#window", { x: "40%", autoAlpha: 1 })
