@@ -8,6 +8,7 @@ import {
   StartSection,
   DesignPr,
   Comp,
+  GetStarted,
 } from "./App_style.js";
 import InlineSVG from "inline-svg-react";
 import {
@@ -273,6 +274,7 @@ class App extends Component {
           <div className="title" id="comp-title">
             <span className="sectionEye">{sectionTitles[2][0]}</span>
             <h2 className="sectionTitle">{sectionTitles[2][1]}</h2>
+            <p className="sectionDes">{sectionTitles[2][2]}</p>
           </div>
           <div className="window-wrap">
             <img src={comp_card} alt="comp_card" id="comp-card" />
@@ -284,6 +286,15 @@ class App extends Component {
             </div>
           </div>
         </Comp>
+        <GetStarted>
+          <div className="title">
+            <span className="sectionEye">{sectionTitles[3][0]}</span>
+            <h2
+              className="sectionTitle"
+              dangerouslySetInnerHTML={{ __html: sectionTitles[3][1] }}
+            ></h2>
+          </div>
+        </GetStarted>
         <div className="block"></div>
       </Container>
     );
@@ -449,12 +460,12 @@ class App extends Component {
 
     let tl = gsap.timeline({
       // yes, we can add it to an entire timeline!
-      yPercent: -20,
+      yPercent: 20,
       scrollTrigger: {
         trigger: "#comp",
         pin: true, // pin the trigger element while active
         pinSpacing: true,
-        start: "280px", // when the top of the trigger hits the top of the viewport
+        start: "400px", // when the top of the trigger hits the top of the viewport
         end: "bottom", // end after scrolling 500px beyond the start
         toggleActions: "play none none reset",
         markers: true,
@@ -474,18 +485,14 @@ class App extends Component {
       .to(
         ".col",
         { yPercent: -30, autoAlpha: 1 },
-        TweenMax.staggerFrom(
-          ".col",
-          20,
-          {
-            // y: 40,
-            // delay: 1,
-            ease: "cubic-bezier(0.16, 1, 0.3, 1)",
-          },
-        )
+        TweenMax.staggerFrom(".col", 20, {
+          // y: 40,
+          // delay: 1,
+          ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+        })
       )
       .addLabel("cover")
-      .to("#cover", { y: "90%", autoAlpha: 1 })
+      .to("#cover", { y: "105%", autoAlpha: 1 })
       .addLabel("right")
       .to("#window", { x: "40%", autoAlpha: 1 })
       .addLabel("end");

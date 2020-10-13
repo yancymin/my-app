@@ -60,9 +60,9 @@ export const Container = styled.main`
     display: inline-block;
     width: 100%;
     height: 100%;
-    background: #cbcbcb;
+    background: hsl(0 0% 88% / 1);
     mix-blend-mode: exclusion;
-    top: -110%;
+    top: -118%;
   }
 
   .block {
@@ -935,6 +935,13 @@ export const Comp = styled.section`
   flex-direction: column;
   overflow: hidden;
 
+  .sectionDes {
+    max-width: 600px;
+    text-align: center;
+    margin-top: -60px;
+    margin-bottom: var(--mg-120);
+  }
+
   .title {
     text-align: center;
     margin-bottom: var(--mg-60);
@@ -956,5 +963,17 @@ export const Comp = styled.section`
     img {
       width: 100%;
     }
+  }
+`;
+
+export const GetStarted = styled.section`
+  padding: 80px 0 160px 0;
+
+  .title {
+    text-align: center;
+  }
+
+  strong {
+    color: var(--cr-blue-1);
   }
 `;

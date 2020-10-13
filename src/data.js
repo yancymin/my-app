@@ -15,7 +15,8 @@ export const sectionTitles = [
         "浪漫与务实",
         "务实是同理心，浪漫是想象力。务实是通过 Arco Design 去解决大部分需求，最大程度提升效率。让设计师与开发者能去做更「浪漫」的发挥想象力事情。",
     ],
-    ["组件系统", "灵活全面的组件库"],
+    ["组件系统", "灵活全面的组件库", "Arco Design 目前支持 React、Vue、Flutter 三种前端框架，设计系统中每个组件都满足特定的交互与UI 需求，是创造极致用户体验的基础。"],
+    ["快速上手", "你是 <strong>设计师</strong> or <strong>工程师</strong>？"],
 ];
 export const data_start = [
     {
