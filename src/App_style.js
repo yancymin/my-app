@@ -1222,23 +1222,38 @@ export const Tools = styled.section`
   }
 
   a {
+    display: inline-flex;
+    align-items: center;
     width: fit-content;
     justify-self: center;
-    display: inline-block;
     padding: 13px 40px;
     font: var(--font-18);
     box-shadow: var(--shadow-1);
     background: var(--cr-white);
     border-radius: var(--radius-6);
-    margin-right: 20px;
-    transition: var(--ease-1);
     position: relative;
     background: var(--cr-blue-1);
     color: var(--cr-white);
     padding: 13px 40px;
+    margin-top: -40px;
+    transition: var(--ease-1);
+
+    span {
+      display: contents;
+
+      svg path {
+        transition: var(--ease-1);
+      }
+    }
 
     &:hover {
       background: var(--cr-font-1);
+
+      svg {
+        path {
+          fill: rgb(100, 233, 242);
+        }
+      }
     }
   }
 `;

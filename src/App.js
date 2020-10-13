@@ -18,6 +18,7 @@ import {
   heroLogo,
   cardArrow,
   cardArrow2,
+  btnArrow,
 } from "./assets/svg";
 import {
   data_nav,
@@ -348,6 +349,7 @@ class App extends Component {
           </div>
           <a href="/" className="btn">
             开始使用
+            <InlineSVG icon={btnArrow} />
           </a>
         </Tools>
         <div className="block"></div>
