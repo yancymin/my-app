@@ -289,30 +289,12 @@ class App extends Component {
     const heroimg = document.querySelectorAll(".hero");
     const navItems = document.querySelectorAll(".navItem");
     const logoWall = document.querySelectorAll(".logo-wall");
-    const mySplitText = new SplitText("#slogan", { type: "chars" });
-    const chars = mySplitText.chars;
-    // const startCard = new SplitText("#start-card .title", { type: "chars" });
-    // const startCardChars = startCard.chars;
 
-    // function ttt() {
-    // TweenMax.staggerFrom(
-    //   startCardChars,
-    //   1,
-    //   {
-    //     opacity: 0,
-    //     y: 60,
-    //     ease: "cubic-bezier(0.16, 1, 0.3, 1)",
-    //     scrollTrigger: {
-    //       trigger: "#start-card",
-    //       toggleActions: "play none none none",
-    //       start: "-60%",
-    //       end: "bottom",
-    //       scrub: false,
-    //     },
-    //   },
-    //   0.02
-    // );
-    // }
+    const parentSplit = new SplitText("#slogan", {
+      type: "lines",
+      linesClass: "split-parent",
+    });
+    const childSplit = new SplitText("#slogan", { type: "chars" });
 
     // ScrollTrigger.defaults({
     //   markers: true,
@@ -334,6 +316,19 @@ class App extends Component {
 
     //------- HERO SECTION --------//
 
+    gsap.from(childSplit.chars, {
+      duration: 0.35,
+      ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+      yPercent: 100,
+      stagger: 0.018,
+      delay: 1.1,
+      // Remove the extra markup when it's done
+      onComplete: () => {
+        parentSplit.revert();
+        childSplit.revert();
+      },
+    });
+
     TweenMax.staggerFrom(
       navItems,
       0.4,
@@ -347,15 +342,15 @@ class App extends Component {
     );
 
     TweenMax.staggerFrom(
-      [heroLogo, chars, heroBtns, logoWall],
+      [heroLogo, heroBtns, logoWall],
       0.4,
       {
         opacity: 0,
         y: 60,
-        delay: 1.2,
+        delay: 1.25,
         ease: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
-      0.02
+      0.03
     );
 
     TweenMax.staggerFrom(
@@ -364,10 +359,10 @@ class App extends Component {
       {
         opacity: 0,
         y: 40,
-        delay: 2,
+        delay: 1.3,
         ease: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
-      0.05
+      0.04
     );
 
     TweenMax.staggerFrom(

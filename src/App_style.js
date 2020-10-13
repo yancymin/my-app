@@ -7,6 +7,10 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: center;
 
+  .split-parent {
+    overflow: hidden;
+  }
+
   #comp-card {
     mix-blend-mode: difference;
     width: 366px;
@@ -831,7 +835,7 @@ export const DesignPr = styled.section`
           background: transparent;
           transform: scale(0.9);
           opacity: 0;
-          transition: all 0.2s ease-out;
+          transition: all 0.3s ease-out;
           transform-origin: top;
           border-radius: var(--radius-16);
         }
@@ -869,20 +873,20 @@ export const DesignPr = styled.section`
         font: var(--font-28);
         color: var(--cr-white);
         margin-bottom: var(--mg-16);
-        transition: var(--ease-2);
+        transition: var(--ease-1);
       }
 
       p {
         font: var(--font-16-300);
         color: var(--cr-white);
         opacity: 0.7;
-        transition: var(--ease-2);
+        transition: var(--ease-1);
       }
 
       img {
         width: 120px;
         margin-bottom: var(--mg-24);
-        transition: var(--ease-2);
+        transition: var(--ease-1);
       }
     }
   }
