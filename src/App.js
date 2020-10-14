@@ -21,6 +21,11 @@ import {
   cardArrow,
   cardArrow2,
   btnArrow,
+  footerLogo,
+  dribbble,
+  figma,
+  behance,
+  twitter,
 } from "./assets/svg";
 import {
   data_nav,
@@ -402,17 +407,31 @@ class App extends Component {
                 <div className="feedback">
                   <h6>{data_footer.input.feedback.title}</h6>
                   <p>{data_footer.input.feedback.des}</p>
-                  <a href="/">{data_footer.input.feedback.btn}</a>
+                  <a href="/" className="btn">
+                    {data_footer.input.feedback.btn}
+                  </a>
                 </div>
                 <div className="newsletter">
                   <h6>{data_footer.input.newsletter.title}</h6>
                   <p>{data_footer.input.newsletter.des}</p>
-                  <input
-                    type="text"
-                    placeholder={data_footer.input.newsletter.placeholder}
-                  />
-                  <a href="/">{data_footer.input.newsletter.btn}</a>
+                  <div className="input-wrap">
+                    <input
+                      type="text"
+                      placeholder={data_footer.input.newsletter.placeholder}
+                    />
+                    <a href="/">{data_footer.input.newsletter.btn}</a>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div className="bottom">
+              <p>{data_footer.other}</p>
+              <InlineSVG icon={footerLogo} />
+              <div className="social">
+                <InlineSVG icon={dribbble} />
+                <InlineSVG icon={figma} />
+                <InlineSVG icon={behance} />
+                <InlineSVG icon={twitter} />
               </div>
             </div>
           </div>

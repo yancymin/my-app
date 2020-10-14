@@ -1360,7 +1360,7 @@ export const Blog = styled.section`
 
 export const FooterSection = styled.footer`
   width: 100%;
-  padding: 80px 0 120px 0;
+  padding: 120px 0 0 0;
   background: var(--cr-blue-1);
   display: flex;
   justify-content: center;
@@ -1372,10 +1372,12 @@ export const FooterSection = styled.footer`
     flex-direction: column;
 
     .top {
+      position: relative;
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: 2fr 1fr;
       grid-column-gap: 80px;
+      margin-bottom: var(--mg-80);
 
       .left {
         display: grid;
@@ -1388,19 +1390,154 @@ export const FooterSection = styled.footer`
           grid-template-rows: 4fr;
           grid-template-columns: 1fr;
           align-items: flex-start;
-          grid-row-gap: 16px;
-          grid-template-rows: max-content;
+          grid-row-gap: 8px;
+          grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
           grid-template-columns: max-content;
 
           h6 {
             font: var(--font-16-500);
             color: var(--cr-white);
+            margin-bottom: 12px;
           }
           li {
             font: var(--font-14);
             color: var(--cr-white);
             opacity: 0.7;
             cursor: pointer;
+            transition: var(--ease-1);
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .right {
+        position: absolute;
+        display: grid;
+        row-gap: 40px;
+        right: 0;
+
+        h6 {
+          font: var(--font-16-500);
+          color: var(--cr-white);
+          margin-bottom: var(--mg-8);
+        }
+        p {
+          font: var(--font-14);
+          color: var(--cr-white);
+          opacity: 0.7;
+        }
+
+        .feedback {
+          a {
+            display: inline-block;
+            font: var(--font-14);
+            font-weight: 500;
+            box-shadow: var(--shadow-1);
+            background: var(--cr-white);
+            border-radius: var(--radius-6);
+            color: var(--cr-blue-1);
+            padding: 12px 24px;
+            transition: var(--ease-1);
+            margin-top: var(--mg-24);
+          }
+        }
+
+        .newsletter {
+          .input-wrap {
+            position: relative;
+            padding: 0 2px 0 0;
+            background: var(--cr-white);
+            border-radius: var(--radius-6);
+            margin-top: var(--mg-24);
+          }
+
+          input {
+            position: absolute;
+            display: inline-block;
+            font: var(--font-14);
+            font-weight: 500;
+            box-shadow: var(--shadow-1);
+            background: var(--cr-white);
+            border-radius: var(--radius-6);
+            color: var(--cr-blue-1);
+            padding: 12px 24px;
+            transition: var(--ease-1);
+            border: none;
+            width: 100%;
+          }
+
+          input::placeholder {
+            color: var(--cr-font-3);
+            font-weight: 300;
+          }
+
+          a {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            display: inline-block;
+            font: var(--font-14);
+            font-weight: 500;
+            box-shadow: var(--shadow-1);
+            background: var(--cr-blue-1);
+            border-radius: var(--radius-4);
+            color: var(--cr-white);
+            padding: 12px 16px;
+            transition: var(--ease-1);
+          }
+        }
+      }
+    }
+
+    .bottom {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--mg-180);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px 0;
+
+      p {
+        color: var(--cr-white);
+        font: var(--font-12);
+        opacity: 0.6;
+      }
+
+      .social {
+        span {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 24px;
+          height: 24px;
+          position: relative;
+          margin-left: 16px;
+          cursor: pointer;
+
+          &:hover {
+            &::after {
+              opacity: 0.1;
+              transform: scale(1);
+            }
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            /* top: 0;
+            left: 0; */
+            border-radius: 100%;
+            width: 126%;
+            height: 126%;
+            background: var(--cr-white);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: var(--ease-3);
           }
         }
       }
