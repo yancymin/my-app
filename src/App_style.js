@@ -1391,16 +1391,16 @@ export const FooterSection = styled.footer`
           grid-template-columns: 1fr;
           align-items: flex-start;
           grid-row-gap: 8px;
-          grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+          grid-template-rows: 1.6fr 1fr 1fr 1fr 1fr;
           grid-template-columns: max-content;
 
           h6 {
-            font: var(--font-16-500);
+            font: var(--font-18);
             color: var(--cr-white);
             margin-bottom: 12px;
           }
           li {
-            font: var(--font-14);
+            font: var(--font-16-300);
             color: var(--cr-white);
             opacity: 0.7;
             cursor: pointer;
@@ -1420,12 +1420,12 @@ export const FooterSection = styled.footer`
         right: 0;
 
         h6 {
-          font: var(--font-16-500);
+          font: var(--font-18);
           color: var(--cr-white);
           margin-bottom: var(--mg-8);
         }
         p {
-          font: var(--font-14);
+          font: var(--font-16-300);
           color: var(--cr-white);
           opacity: 0.7;
         }
