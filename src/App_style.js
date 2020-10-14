@@ -137,17 +137,16 @@ export const Container = styled.main`
   }
 
   #nav2 {
-    display: none !important;
+    /* display: none !important; */
     z-index: 999;
     position: fixed;
     display: inline-flex;
-    background: rgb(255 255 255 / 0.88);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgb(255 255 255 / 1);
+    /* backdrop-filter: blur(20px); */
     transition: var(--ease-1);
     animation: none;
-    border-bottom: 1px solid var(--cr-line-2);
-    box-shadow: var(--shadow-3);
+    /* border-bottom: 1px solid var(--cr-line-2); */
+    /* box-shadow: var(--shadow-3); */
 
     .logo-s {
       margin-right: 16px;
@@ -1629,6 +1628,10 @@ export const FooterSection = styled.footer`
         color: var(--cr-white);
         font: var(--font-12);
         opacity: 0.6;
+      }
+
+      .footer-logo {
+        margin-left: -80px;
       }
 
       .social {

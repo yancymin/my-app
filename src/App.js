@@ -26,7 +26,7 @@ import {
   figma,
   behance,
   twitter,
-  footerFeedback
+  footerFeedback,
 } from "./assets/svg";
 import {
   data_nav,
@@ -443,7 +443,7 @@ class App extends Component {
             </div>
             <div className="bottom">
               <p>{data_footer.other}</p>
-              <InlineSVG icon={footerLogo} />
+              <InlineSVG className="footer-logo" icon={footerLogo} />
               <div className="social">
                 <InlineSVG icon={dribbble} />
                 <InlineSVG icon={figma} />
@@ -486,17 +486,17 @@ class App extends Component {
 
     //------------ NAV ---------//
 
-    // gsap.to("#nav2", {
-    //   scrollTrigger: {
-    //     trigger: "header",
-    //     toggleActions: "play none none reset",
-    //     id: "nav2",
-    //     start: "65% top",
-    //     end: "bottom bottom",
-    //     scrub: 1,
-    //   },
-    //   y: 0,
-    // });
+    gsap.to("#nav2", {
+      scrollTrigger: {
+        trigger: "header",
+        toggleActions: "play none none reset",
+        id: "nav2",
+        start: "65% top",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+      y: 0,
+    });
 
     //------- HERO SECTION --------//
 
@@ -628,6 +628,9 @@ class App extends Component {
     let tl = gsap.timeline({
       // yes, we can add it to an entire timeline!
       yPercent: 20,
+      // onStart: () => {
+ 
+      // },
       scrollTrigger: {
         trigger: "#comp",
         pin: true, // pin the trigger element while active
@@ -645,6 +648,19 @@ class App extends Component {
         //   ease: "none", // the ease of the snap animation ("power3" by default)
         // },
       },
+    });
+
+    
+    gsap.to("#nav2", {
+      scrollTrigger: {
+        trigger: "#designPr",
+        toggleActions: "play none none reset",
+        id: "nav2",
+        start: "-10%",
+        end: "-9%",
+        scrub: 1,
+      },
+      y: -100,
     });
 
     // add animations and labels to the timeline
