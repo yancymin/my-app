@@ -6,6 +6,7 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--cr-white);
 
   .col {
     margin-right: 40px;
@@ -364,6 +365,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  background: var(--cr-white);
 
   section {
     position: absolute;
@@ -582,8 +584,8 @@ export const StartSection = styled.section`
     display: grid;
     grid-template-rows: 2fr;
     grid-template-columns: 2fr 1.3fr;
-    grid-row-gap: 24px;
-    grid-column-gap: 24px;
+    grid-row-gap: 40px;
+    grid-column-gap: 40px;
 
     .card-1 {
       .right {
@@ -1125,11 +1127,11 @@ export const Tools = styled.section`
     align-items: center;
 
     .left {
-      width: 280px;
+      width: 337px;
       justify-self: center;
     }
     .sectionTitle {
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
   }
 
@@ -1240,7 +1242,7 @@ export const Tools = styled.section`
     background: var(--cr-blue-1);
     color: var(--cr-white);
     padding: 13px 40px;
-    margin-top: -40px;
+    margin-top: 40px;
     transition: var(--ease-1);
 
     span {
@@ -1272,6 +1274,7 @@ export const Blog = styled.section`
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 2fr;
   grid-column-gap: 80px;
+  background: var(--cr-white);
 
   .title {
     .sectionTitle {
@@ -1359,6 +1362,9 @@ export const Blog = styled.section`
 `;
 
 export const FooterSection = styled.footer`
+  position: fixed;
+  bottom: -130px;
+  z-index: -1;
   width: 100%;
   padding: 120px 0 0 0;
   background: var(--cr-blue-1);
@@ -1512,6 +1518,7 @@ export const FooterSection = styled.footer`
       margin-top: var(--mg-160);
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding: 40px 0;
+      align-items: center;
 
       p {
         color: var(--cr-white);

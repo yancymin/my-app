@@ -84,49 +84,18 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
-        <img
-          src={search_modal}
-          alt="search_modal"
-          id="search-modal"
-          className={this.state.isSearch ? "search-show" : "search-hide"}
-        />
-        <Nav>
-          <div className="nav-wrap">
-            <div className="left">
-              <img src={logo_s} alt="" className="logo-s" />
-              {data_nav.map((item, index) => {
-                return (
-                  <a href="/" className="navItem">
-                    {item}
-                  </a>
-                );
-              })}
-            </div>
-            <div className="right">
-              <i className="icon" onClick={() => this.handleSearchClick()}>
-                <InlineSVG icon={iconSearch} />
-              </i>
-              <a href="/" className="icon">
-                <InlineSVG icon={iconLang} />
-              </a>
-              <a href="/" className="login btn-white btn">
-                登录
-              </a>
-            </div>
-          </div>
-        </Nav>
-        <Nav
-          className={this.state.isNavScroll ? "navScrolled" : "hide-nav"}
-          id="nav2"
-        >
-          <div className="nav-wrap">
-            <div className="left">
-              <img src={logo_s} alt="" className="logo-s" />
-              <InlineSVG icon={heroLogo} />
-            </div>
-            <div className="right">
-              <div className="nav-item-wrap">
+      <>
+        <Container>
+          <img
+            src={search_modal}
+            alt="search_modal"
+            id="search-modal"
+            className={this.state.isSearch ? "search-show" : "search-hide"}
+          />
+          <Nav>
+            <div className="nav-wrap">
+              <div className="left">
+                <img src={logo_s} alt="" className="logo-s" />
                 {data_nav.map((item, index) => {
                   return (
                     <a href="/" className="navItem">
@@ -135,260 +104,292 @@ class App extends Component {
                   );
                 })}
               </div>
-              <i className="icon" onClick={() => this.handleSearchClick()}>
-                <InlineSVG icon={iconSearch} />
-              </i>
-              <a href="/" className="icon">
-                <InlineSVG icon={iconLang} />
-              </a>
-              <a href="/" className="login btn-white btn">
-                登录
-              </a>
-            </div>
-          </div>
-        </Nav>
-        <Header>
-          <section className="left parallax-1">
-            <picture id="scene">
-              <img
-                data-depth="0.2"
-                src={hero_1}
-                alt="hero_1"
-                className="hero"
-              />
-              <img
-                data-depth="0.1"
-                src={hero_2}
-                alt="hero_2"
-                className="hero"
-              />
-              <img
-                data-depth="0.2"
-                src={hero_3}
-                alt="hero_3"
-                className="hero"
-              />
-              <img
-                data-depth="0.1"
-                src={hero_4}
-                alt="hero_4"
-                className="hero"
-              />
-              <img
-                data-depth="0.1"
-                src={hero_5}
-                alt="hero_5"
-                className="hero"
-              />
-              <img
-                data-depth="0.04"
-                src={hero_0}
-                alt="hero_0"
-                className="hero"
-              />
-            </picture>
-          </section>
-          <section className="right parallax-2">
-            <div className="right-wrap">
-              <InlineSVG icon={heroLogo} className="hero-logo" />
-              <h1 id="slogan">
-                <strong>企业级</strong>设计系统，
-                <br />让<strong>设计者</strong>和<strong>开发者</strong>更专注
-                <br />
-                实现极致的用户体验。
-              </h1>
-              <div className="buttons">
-                <a href="/" className="btn">
-                  开始使用
+              <div className="right">
+                <i className="icon" onClick={() => this.handleSearchClick()}>
+                  <InlineSVG icon={iconSearch} />
+                </i>
+                <a href="/" className="icon">
+                  <InlineSVG icon={iconLang} />
                 </a>
-                <a href="/" className="btn-white btn">
-                  设计语言
+                <a href="/" className="login btn-white btn">
+                  登录
                 </a>
               </div>
-              <LogoWall className="logo-wall">
-                <h3>使用 Arco Design System 构建</h3>
-                <div className="logos-wrap">
-                  {data_logos.map((item) => {
+            </div>
+          </Nav>
+          <Nav
+            className={this.state.isNavScroll ? "navScrolled" : "hide-nav"}
+            id="nav2"
+          >
+            <div className="nav-wrap">
+              <div className="left">
+                <img src={logo_s} alt="" className="logo-s" />
+                <InlineSVG icon={heroLogo} />
+              </div>
+              <div className="right">
+                <div className="nav-item-wrap">
+                  {data_nav.map((item, index) => {
                     return (
-                      <img
-                        src={item}
-                        className="logo-wall-item"
-                        alt="logo-wall"
-                      />
+                      <a href="/" className="navItem">
+                        {item}
+                      </a>
                     );
                   })}
                 </div>
-              </LogoWall>
+                <i className="icon" onClick={() => this.handleSearchClick()}>
+                  <InlineSVG icon={iconSearch} />
+                </i>
+                <a href="/" className="icon">
+                  <InlineSVG icon={iconLang} />
+                </a>
+                <a href="/" className="login btn-white btn">
+                  登录
+                </a>
+              </div>
             </div>
-          </section>
-        </Header>
-        <StartSection id="start-card">
-          <div className="title">
-            <span className="sectionEye">{sectionTitles[0][0]}</span>
-            <h2 className="sectionTitle">{sectionTitles[0][1]}</h2>
-          </div>
-          <div className="card-wrap">
-            {data_start.map((item, index) => {
-              if (index === 0) {
+          </Nav>
+          <Header>
+            <section className="left parallax-1">
+              <picture id="scene">
+                <img
+                  data-depth="0.2"
+                  src={hero_1}
+                  alt="hero_1"
+                  className="hero"
+                />
+                <img
+                  data-depth="0.1"
+                  src={hero_2}
+                  alt="hero_2"
+                  className="hero"
+                />
+                <img
+                  data-depth="0.2"
+                  src={hero_3}
+                  alt="hero_3"
+                  className="hero"
+                />
+                <img
+                  data-depth="0.1"
+                  src={hero_4}
+                  alt="hero_4"
+                  className="hero"
+                />
+                <img
+                  data-depth="0.1"
+                  src={hero_5}
+                  alt="hero_5"
+                  className="hero"
+                />
+                <img
+                  data-depth="0.04"
+                  src={hero_0}
+                  alt="hero_0"
+                  className="hero"
+                />
+              </picture>
+            </section>
+            <section className="right parallax-2">
+              <div className="right-wrap">
+                <InlineSVG icon={heroLogo} className="hero-logo" />
+                <h1 id="slogan">
+                  <strong>企业级</strong>设计系统，
+                  <br />让<strong>设计者</strong>和<strong>开发者</strong>更专注
+                  <br />
+                  实现极致的用户体验。
+                </h1>
+                <div className="buttons">
+                  <a href="/" className="btn">
+                    开始使用
+                  </a>
+                  <a href="/" className="btn-white btn">
+                    设计语言
+                  </a>
+                </div>
+                <LogoWall className="logo-wall">
+                  <h3>使用 Arco Design System 构建</h3>
+                  <div className="logos-wrap">
+                    {data_logos.map((item) => {
+                      return (
+                        <img
+                          src={item}
+                          className="logo-wall-item"
+                          alt="logo-wall"
+                        />
+                      );
+                    })}
+                  </div>
+                </LogoWall>
+              </div>
+            </section>
+          </Header>
+          <StartSection id="start-card">
+            <div className="title">
+              <span className="sectionEye">{sectionTitles[0][0]}</span>
+              <h2 className="sectionTitle">{sectionTitles[0][1]}</h2>
+            </div>
+            <div className="card-wrap">
+              {data_start.map((item, index) => {
+                if (index === 0) {
+                  return (
+                    <div className="card card-1">
+                      <div className="left">
+                        <h4>{item.title}</h4>
+                        <p>{item.des}</p>
+                        <div className="links">
+                          {item.btn.map((link) => {
+                            return (
+                              <a href="/" className="link">
+                                <InlineSVG icon={cardArrow} />
+                                {link} <InlineSVG icon={cardArrow} />
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      <div className="right">
+                        <img src={card_1} alt="" />
+                      </div>
+                    </div>
+                  );
+                }
                 return (
-                  <div className="card card-1">
+                  <div className="card card-2">
                     <div className="left">
                       <h4>{item.title}</h4>
                       <p>{item.des}</p>
-                      <div className="links">
-                        {item.btn.map((link) => {
-                          return (
-                            <a href="/" className="link">
-                              <InlineSVG icon={cardArrow} />
-                              {link} <InlineSVG icon={cardArrow} />
-                            </a>
-                          );
-                        })}
-                      </div>
+                      <a href="/" className="link btn">
+                        {item.btn} <InlineSVG icon={cardArrow2} />
+                      </a>
                     </div>
                     <div className="right">
-                      <img src={card_1} alt="" />
+                      <img src={item.img} alt="img" />
                     </div>
-                  </div>
-                );
-              }
-              return (
-                <div className="card card-2">
-                  <div className="left">
-                    <h4>{item.title}</h4>
-                    <p>{item.des}</p>
-                    <a href="/" className="link btn">
-                      {item.btn} <InlineSVG icon={cardArrow2} />
-                    </a>
-                  </div>
-                  <div className="right">
-                    <img src={item.img} alt="img" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </StartSection>
-        <DesignPr id="designPr">
-          <div className="container">
-            <div className="left">
-              <span className="sectionEye">{sectionTitles[1][0]}</span>
-              <h2 className="sectionTitle">{sectionTitles[1][1]}</h2>
-              <p className="sectionDes">{sectionTitles[1][2]}</p>
-            </div>
-            <div className="right">
-              {data_designPr.map((item, index) => {
-                return (
-                  <div className="design-card">
-                    <img src={item.img} alt="design" />
-                    <h5>{item.title}</h5>
-                    <p>{item.des}</p>
-                    <img src={item.img} alt="design" />
                   </div>
                 );
               })}
             </div>
-          </div>
-        </DesignPr>
-        <Comp id="comp">
-          <span id="cover"></span>
-          <div className="title" id="comp-title">
-            <span className="sectionEye">{sectionTitles[2][0]}</span>
-            <h2 className="sectionTitle">{sectionTitles[2][1]}</h2>
-            <p className="sectionDes">{sectionTitles[2][2]}</p>
-          </div>
-          <div className="window-wrap">
-            <img src={comp_card} alt="comp_card" id="comp-card" />
-            <div className="window" id="window">
-              <img src={comp_col_1} alt="comp_col" className="col-1 col" />
-              <img src={comp_col_2} alt="comp_col" className="col-2 col" />
-              <img src={comp_col_3} alt="comp_col" className="col-3 col" />
-              <img src={comp_col_4} alt="comp_col" className="col-4 col" />
-            </div>
-          </div>
-        </Comp>
-        <GetStarted>
-          <div className="title">
-            <span className="sectionEye">{sectionTitles[3][0]}</span>
-            <h2
-              className="sectionTitle"
-              dangerouslySetInnerHTML={{ __html: sectionTitles[3][1] }}
-            ></h2>
-          </div>
-          <div className="card-wrap">
-            {data_getStarted.map((item) => {
-              return (
-                <div className="card card-2">
-                  <div className="left">
-                    <h4>{item.title}</h4>
-                    <p>{item.des}</p>
-                    <a href="/" className="link btn">
-                      快速上手
-                      <InlineSVG icon={cardArrow2} />
-                    </a>
-                  </div>
-                  <div className="right">
-                    <img src={item.img} alt="img" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </GetStarted>
-        <Tools>
-          <div className="title">
-            <img src={tools_pic} alt="" className="left" />
-            <div className="right">
-              <span className="sectionEye">{sectionTitles[4][0]}</span>
-              <h2 className="sectionTitle">{sectionTitles[4][1]}</h2>
-              <p className="sectionDes">{sectionTitles[4][2]}</p>
-            </div>
-          </div>
-          <div className="tools-list-wrap">
-            {data_tools.map((item) => {
-              return (
-                <div className="tools-list-item">
-                  <h5>
-                    <InlineSVG icon={cardArrow} />
-                    {item.title}
-                  </h5>
-                  <p>{item.des}</p>
-                  <i>{item.tag}</i>
-                </div>
-              );
-            })}
-          </div>
-          <a href="/" className="btn">
-            查看全部
-            <InlineSVG icon={btnArrow} />
-          </a>
-        </Tools>
-        <Blog>
-          <div className="title">
-            <span className="sectionEye">{sectionTitles[5][0]}</span>
-            <h2 className="sectionTitle">{sectionTitles[5][1]}</h2>
-            <a href="/" className="btn btn-white">
-              全部文章
-            </a>
-          </div>
-          <div className="blog-container" id="blog-container">
-            <div id="blog-drag">
-              {data_blog.map((item) => {
-                return (
-                  <div className="card">
-                    <img src={item.img} alt="" />
-                    <div className="bottom">
+          </StartSection>
+          <DesignPr id="designPr">
+            <div className="container">
+              <div className="left">
+                <span className="sectionEye">{sectionTitles[1][0]}</span>
+                <h2 className="sectionTitle">{sectionTitles[1][1]}</h2>
+                <p className="sectionDes">{sectionTitles[1][2]}</p>
+              </div>
+              <div className="right">
+                {data_designPr.map((item, index) => {
+                  return (
+                    <div className="design-card">
+                      <img src={item.img} alt="design" />
                       <h5>{item.title}</h5>
                       <p>{item.des}</p>
-                      {/* <InlineSVG icon={cardArrow2} /> */}
+                      <img src={item.img} alt="design" />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </DesignPr>
+          <Comp id="comp">
+            <span id="cover"></span>
+            <div className="title" id="comp-title">
+              <span className="sectionEye">{sectionTitles[2][0]}</span>
+              <h2 className="sectionTitle">{sectionTitles[2][1]}</h2>
+              <p className="sectionDes">{sectionTitles[2][2]}</p>
+            </div>
+            <div className="window-wrap">
+              <img src={comp_card} alt="comp_card" id="comp-card" />
+              <div className="window" id="window">
+                <img src={comp_col_1} alt="comp_col" className="col-1 col" />
+                <img src={comp_col_2} alt="comp_col" className="col-2 col" />
+                <img src={comp_col_3} alt="comp_col" className="col-3 col" />
+                <img src={comp_col_4} alt="comp_col" className="col-4 col" />
+              </div>
+            </div>
+          </Comp>
+          <GetStarted id="get-start">
+            <div className="title">
+              <span className="sectionEye">{sectionTitles[3][0]}</span>
+              <h2
+                className="sectionTitle"
+                dangerouslySetInnerHTML={{ __html: sectionTitles[3][1] }}
+              ></h2>
+            </div>
+            <div className="card-wrap">
+              {data_getStarted.map((item) => {
+                return (
+                  <div className="card card-2">
+                    <div className="left">
+                      <h4>{item.title}</h4>
+                      <p>{item.des}</p>
+                      <a href="/" className="link btn">
+                        快速上手
+                        <InlineSVG icon={cardArrow2} />
+                      </a>
+                    </div>
+                    <div className="right">
+                      <img src={item.img} alt="img" />
                     </div>
                   </div>
                 );
               })}
             </div>
-          </div>
-        </Blog>
-        <FooterSection>
+          </GetStarted>
+          <Tools id="tools">
+            <div className="title">
+              <img src={tools_pic} alt="" className="left" />
+              <div className="right">
+                <span className="sectionEye">{sectionTitles[4][0]}</span>
+                <h2 className="sectionTitle">{sectionTitles[4][1]}</h2>
+                <p className="sectionDes">{sectionTitles[4][2]}</p>
+                <a href="/" className="btn">
+                  查看全部
+                  <InlineSVG icon={btnArrow} />
+                </a>
+              </div>
+            </div>
+            <div className="tools-list-wrap">
+              {data_tools.map((item) => {
+                return (
+                  <div className="tools-list-item">
+                    <h5>
+                      <InlineSVG icon={cardArrow} />
+                      {item.title}
+                    </h5>
+                    <p>{item.des}</p>
+                    <i>{item.tag}</i>
+                  </div>
+                );
+              })}
+            </div>
+          </Tools>
+          <Blog id="blog">
+            <div className="title">
+              <span className="sectionEye">{sectionTitles[5][0]}</span>
+              <h2 className="sectionTitle">{sectionTitles[5][1]}</h2>
+              <a href="/" className="btn btn-white">
+                全部文章
+              </a>
+            </div>
+            <div className="blog-container" id="blog-container">
+              <div id="blog-drag">
+                {data_blog.map((item) => {
+                  return (
+                    <div className="card">
+                      <img src={item.img} alt="" />
+                      <div className="bottom">
+                        <h5>{item.title}</h5>
+                        <p>{item.des}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </Blog>
+        </Container>
+        <FooterSection id="footer">
           <div className="footer-wrap">
             <div className="top">
               <div className="left">
@@ -422,7 +423,7 @@ class App extends Component {
                       required
                     />
                     <input
-                    className="submit"
+                      className="submit"
                       type="submit"
                       for="email"
                       value={data_footer.input.newsletter.btn}
@@ -444,7 +445,7 @@ class App extends Component {
             </div>
           </div>
         </FooterSection>
-      </Container>
+      </>
     );
   }
 
@@ -671,6 +672,65 @@ class App extends Component {
     //   },
     //   y: 0,
     // });
+
+    //------------ GET START SECTION ---------//
+
+    gsap.to("#get-start", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#get-start",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+
+    //------------ TOOLS SECTION ---------//
+
+    gsap.to("#tools", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#tools",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+
+    //------------ BLOG SECTION ---------//
+
+    gsap.to("#blog", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#blog",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+    //------------ FOOTER SECTION ---------//
+
+    gsap.to("#footer", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#footer",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
   }
 }
 
