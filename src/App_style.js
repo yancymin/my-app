@@ -1267,14 +1267,20 @@ export const Tools = styled.section`
 
 export const Blog = styled.section`
   width: 100%;
-  max-width: 1200px;
-  padding: 160px 0;
-  display: grid;
-  justify-self: center;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 80px;
-  background: var(--cr-white);
+  display: flex;
+  justify-content: center;
+
+  .blog-wrap {
+    width: 100%;
+    max-width: 1200px;
+    padding: 160px 0 180px 0;
+    display: grid;
+    justify-self: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 80px;
+    background: var(--cr-white);
+  }
 
   .title {
     .sectionTitle {
@@ -1283,14 +1289,20 @@ export const Blog = styled.section`
   }
 
   a {
+    display: inline-flex;
     font: var(--font-18);
     box-shadow: var(--shadow-1);
-    background: var(--cr-white);
+    background: var(--cr-blue-1);
     border-radius: var(--radius-6);
-    color: var(--cr-blue-1);
+    color: var(--cr-white);
     margin-right: 20px;
     transition: var(--ease-1);
-    padding: 13px 40px;
+    padding: 16px 40px;
+
+    &:hover {
+      background: var(--cr-font-1);
+      transform: translateY(-2px);
+    }
   }
 
   .blog-container {
@@ -1319,7 +1331,7 @@ export const Blog = styled.section`
       cursor: pointer;
 
       &:hover {
-        background: transparent;
+        background: var(--cr-white);
         border-color: transparent;
         box-shadow: var(--shadow-4);
 
@@ -1356,6 +1368,79 @@ export const Blog = styled.section`
 
       .bottom {
         padding: 64px;
+      }
+    }
+  }
+  .arrows {
+    display: flex;
+    position: absolute;
+    right: 32px;
+    bottom: 80px;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 100px;
+      width: 44px;
+      height: 44px;
+      border-radius: 100%;
+      margin-right: 8px;
+      cursor: pointer;
+      transition: var(--ease-1);
+
+      svg path {
+        fill: var(--cr-icon-1);
+      }
+
+      &::after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        display: block;
+        width: 44px;
+        height: 44px;
+        border-radius: 100%;
+        background: var(--cr-white);
+        transition: var(--ease-1);
+        transform: scale(0.9);
+      }
+
+      &:hover {
+        svg path {
+          fill: var(--cr-blue-1);
+        }
+
+        &:first-child {
+          &::after {
+            transform: rotate(180deg) scale(1);
+          }
+        }
+        &::after {
+          box-shadow: var(--shadow-1);
+          transform: scale(1);
+        }
+      }
+
+      &:active {
+        svg path {
+          fill: var(--cr-white);
+        }
+        &::after {
+          background: var(--cr-blue-1);
+        }
+      }
+
+      &:first-child {
+        transform: rotate(180deg);
+
+        &::after {
+          transform: rotate(180deg) scale(0.9);
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
@@ -1465,7 +1550,6 @@ export const FooterSection = styled.footer`
             display: inline-block;
             font: var(--font-14);
             font-weight: 500;
-            box-shadow: var(--shadow-1);
             background: hsl(230 59% 38% / 1);
             border-radius: var(--radius-6);
             color: var(--cr-white);
@@ -1474,6 +1558,10 @@ export const FooterSection = styled.footer`
             border: none;
             width: 100%;
             border: none;
+
+            &:hover {
+              background: hsl(230 59% 32% / 1);
+            }
 
             &:focus ~ .submit {
               opacity: 1;

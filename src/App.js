@@ -365,26 +365,32 @@ class App extends Component {
             </div>
           </Tools>
           <Blog id="blog">
-            <div className="title">
-              <span className="sectionEye">{sectionTitles[5][0]}</span>
-              <h2 className="sectionTitle">{sectionTitles[5][1]}</h2>
-              <a href="/" className="btn btn-white">
-                全部文章
-              </a>
+            <div className="arrows">
+              <InlineSVG icon={cardArrow} />
+              <InlineSVG icon={cardArrow} />
             </div>
-            <div className="blog-container" id="blog-container">
-              <div id="blog-drag">
-                {data_blog.map((item) => {
-                  return (
-                    <div className="card">
-                      <img src={item.img} alt="" />
-                      <div className="bottom">
-                        <h5>{item.title}</h5>
-                        <p>{item.des}</p>
+            <div className="blog-wrap">
+              <div className="title">
+                <span className="sectionEye">{sectionTitles[5][0]}</span>
+                <h2 className="sectionTitle">{sectionTitles[5][1]}</h2>
+                <a href="/" className="btn">
+                  全部文章
+                </a>
+              </div>
+              <div className="blog-container" id="blog-container">
+                <div id="blog-drag">
+                  {data_blog.map((item) => {
+                    return (
+                      <div className="card">
+                        <img src={item.img} alt="" />
+                        <div className="bottom">
+                          <h5>{item.title}</h5>
+                          <p>{item.des}</p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </Blog>
