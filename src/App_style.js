@@ -1116,7 +1116,8 @@ export const Tools = styled.section`
   grid-row-gap: 120px;
   grid-column-gap: 24px;
   padding: 160px 0;
-  border-top: 1px solid var(--cr-line-1);
+  /* border-top: 1px solid var(--cr-line-1); */
+  background: var(--cr-bg-1);
 
   .title {
     max-width: 970px;
@@ -1146,6 +1147,10 @@ export const Tools = styled.section`
     grid-column-gap: 80px;
 
     .tools-list-item {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
       cursor: pointer;
       position: relative;
       padding: 40px 0;
@@ -1153,21 +1158,26 @@ export const Tools = styled.section`
       border-bottom: 1px solid var(--cr-line-1);
 
       &::after {
+        z-index: -1;
         content: "";
         display: block;
         width: 100%;
-        height: 1px;
-        background: var(--cr-line-1);
+        height: 80%;
+        padding: 8px 24px;
+        right: -24px;
+        background: var(--cr-white);
         position: absolute;
-        bottom: 0;
-        transform: scaleX(0);
-        transition: var(--ease-2);
+        transform: scale(0.97);
+        transition: var(--ease-3);
+        border-radius: var(--radius-6);
+        opacity: 0;
       }
 
       &:hover {
+        border-color: transparent;
         h5 {
           color: var(--cr-blue-1);
-          transform: translateX(2px);
+          /* transform: translateX(2px); */
 
           span {
             opacity: 1;
@@ -1181,7 +1191,9 @@ export const Tools = styled.section`
 
         &::after {
           transform: scaleX(1);
-          background: var(--cr-blue-1);
+          opacity: 1;
+          box-shadow: var(--shadow-4);
+          /* background: var(--cr-blue-1); */
         }
       }
 
@@ -1190,7 +1202,7 @@ export const Tools = styled.section`
         color: var(--cr-font-1);
         margin-bottom: var(--mg-16);
         transition: var(--ease-2);
-        transform: translateX(-13px);
+        /* transform: translateX(-13px); */
 
         span {
           opacity: 0;
@@ -1220,9 +1232,9 @@ export const Tools = styled.section`
         top: 40px;
         padding: 4px 8px;
         border-radius: var(--radius-4);
-        background: var(--cr-bg-1);
+        background: var(--cr-font-1);
         font: var(--font-12);
-        color: var(--cr-font-2);
+        color: var(--cr-white);
         transition: var(--ease-2);
       }
     }
@@ -1273,7 +1285,7 @@ export const Blog = styled.section`
   .blog-wrap {
     width: 100%;
     max-width: 1200px;
-    padding: 160px 0 180px 0;
+    padding: 120px 0 180px 0;
     display: grid;
     justify-self: center;
     grid-template-rows: 1fr;
@@ -1523,7 +1535,8 @@ export const FooterSection = styled.footer`
 
         .feedback {
           a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             font: var(--font-14);
             font-weight: 500;
             box-shadow: var(--shadow-1);
@@ -1533,6 +1546,10 @@ export const FooterSection = styled.footer`
             padding: 12px 24px;
             transition: var(--ease-1);
             margin-top: var(--mg-24);
+
+            span {
+              margin-right: 6px;
+            }
           }
         }
 

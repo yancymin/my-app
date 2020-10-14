@@ -26,6 +26,7 @@ import {
   figma,
   behance,
   twitter,
+  footerFeedback
 } from "./assets/svg";
 import {
   data_nav,
@@ -354,7 +355,7 @@ class App extends Component {
                 return (
                   <div className="tools-list-item">
                     <h5>
-                      <InlineSVG icon={cardArrow} />
+                      {/* <InlineSVG icon={cardArrow} /> */}
                       {item.title}
                     </h5>
                     <p>{item.des}</p>
@@ -415,6 +416,7 @@ class App extends Component {
                   <h6>{data_footer.input.feedback.title}</h6>
                   <p>{data_footer.input.feedback.des}</p>
                   <a href="/" className="btn">
+                    <InlineSVG icon={footerFeedback} />
                     {data_footer.input.feedback.btn}
                   </a>
                 </div>
