@@ -61,6 +61,8 @@ import comp_col_1 from "./assets/comp/col-1.png";
 import comp_col_2 from "./assets/comp/col-2.png";
 import comp_col_3 from "./assets/comp/col-3.png";
 import comp_col_4 from "./assets/comp/col-4.png";
+import comp_col_5 from "./assets/comp/col-5.png";
+import comp_col_6 from "./assets/comp/col-6.png";
 import search_modal from "./assets/search_modal.png";
 import comp_card from "./assets/comp/comp-card.png";
 import tools_pic from "./assets/tools/tools-pic.png";
@@ -300,12 +302,16 @@ class App extends Component {
               <p className="sectionDes">{sectionTitles[2][2]}</p>
             </div>
             <div className="window-wrap">
-              <img src={comp_card} alt="comp_card" id="comp-card" />
+              {/* <img src={comp_card} alt="comp_card" id="comp-card" /> */}
               <div className="window" id="window">
-                <img src={comp_col_1} alt="comp_col" className="col-1 col" />
-                <img src={comp_col_2} alt="comp_col" className="col-2 col" />
-                <img src={comp_col_3} alt="comp_col" className="col-3 col" />
-                <img src={comp_col_4} alt="comp_col" className="col-4 col" />
+                <div className="comp-pic-all">
+                  <img src={comp_col_1} alt="comp_col" className="col-1 col" />
+                  <img src={comp_col_2} alt="comp_col" className="col-2 col" />
+                  <img src={comp_col_3} alt="comp_col" className="col-3 col" />
+                  <img src={comp_col_4} alt="comp_col" className="col-4 col" />
+                  <img src={comp_col_5} alt="comp_col" className="col-5 col" />
+                  <img src={comp_col_6} alt="comp_col" className="col-6 col" />
+                </div>
               </div>
             </div>
           </Comp>
@@ -498,6 +504,18 @@ class App extends Component {
       y: 0,
     });
 
+    gsap.to("#nav2", {
+      scrollTrigger: {
+        trigger: "#designPr",
+        toggleActions: "play none none reset",
+        id: "nav2",
+        start: "-10%",
+        end: "-9%",
+        scrub: 1,
+      },
+      y: -100,
+    });
+
     //------- HERO SECTION --------//
 
     gsap.from(childSplit.chars, {
@@ -611,6 +629,8 @@ class App extends Component {
     //------------ COMP SECTION ---------//
 
     gsap.to("#comp-title", {
+      yPercent: -10,
+      autoAlpha: 1,
       scrollTrigger: {
         trigger: "#designPr",
         toggleActions: "play none none reset",
@@ -629,7 +649,7 @@ class App extends Component {
       // yes, we can add it to an entire timeline!
       yPercent: 20,
       // onStart: () => {
- 
+
       // },
       scrollTrigger: {
         trigger: "#comp",
@@ -650,25 +670,12 @@ class App extends Component {
       },
     });
 
-    
-    gsap.to("#nav2", {
-      scrollTrigger: {
-        trigger: "#designPr",
-        toggleActions: "play none none reset",
-        id: "nav2",
-        start: "-10%",
-        end: "-9%",
-        scrub: 1,
-      },
-      y: -100,
-    });
-
     // add animations and labels to the timeline
     tl.addLabel("start")
       .to(
         ".col",
         { yPercent: -30, autoAlpha: 1 },
-        TweenMax.staggerFrom(".col", 20, {
+        TweenMax.staggerFrom(".col", 6, {
           // y: 40,
           // delay: 1,
           ease: "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -676,8 +683,20 @@ class App extends Component {
       )
       .addLabel("cover")
       .to("#cover", { y: "105%", autoAlpha: 1 })
+      .addLabel("all")
+      .to("#window", { scale: 1.6, autoAlpha: 1 })
+      .addLabel("all")
+      .to(".comp-pic-all", { scale: 0.5, autoAlpha: 1 })
+      .addLabel("cover-hidde")
+      .to("#cover", { opacity: 0, autoAlpha: 1 })
       .addLabel("right")
-      .to("#window", { x: "40%", autoAlpha: 1 })
+      .to("#window", {
+        // x: "70%",
+        yPercent: -25,
+        autoAlpha: 1,
+        background: "transparent",
+        boxShadow: "none",
+      })
       .addLabel("end");
 
     // gsap.to("#cover", {
