@@ -56,15 +56,16 @@ export const Container = styled.main`
   }
 
   #comp-card {
-    mix-blend-mode: difference;
-    width: 366px;
     position: absolute;
+    width: 751px;
+    bottom: -250px;
   }
 
   .window-wrap {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   #cover {
@@ -980,8 +981,13 @@ export const Comp = styled.section`
 `;
 
 export const GetStarted = styled.section`
-  padding: 0 0 160px 0;
-  max-width: 1200px;
+  margin-top: var(--mg-80);
+  padding: 160px 0 160px 0;
+  width: 100%;
+  border-top: 1px solid var(--cr-line-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .title {
     text-align: center;
@@ -999,6 +1005,7 @@ export const GetStarted = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 24px;
     grid-column-gap: 24px;
+    align-self: center;
 
     .card {
       position: relative;
