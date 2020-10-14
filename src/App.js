@@ -302,7 +302,7 @@ class App extends Component {
               <p className="sectionDes">{sectionTitles[2][2]}</p>
             </div>
             <div className="window-wrap">
-              <img src={comp_card} alt="comp_card" id="comp-card" />
+              {/* <img src={comp_card} alt="comp_card" id="comp-card" /> */}
               <div className="window" id="window">
                 <div className="comp-pic-all">
                   <img src={comp_col_1} alt="comp_col" className="col-1 col" />
@@ -692,12 +692,12 @@ class App extends Component {
       .addLabel("right")
       .to("#window", {
         // x: "70%",
-        yPercent: -25,
+        y: 40,
+        yPercent: -40,
         autoAlpha: 1,
         background: "transparent",
         boxShadow: "none",
       })
-      .addLabel("end");
 
     // gsap.to("#cover", {
     //   yPercent: 0,

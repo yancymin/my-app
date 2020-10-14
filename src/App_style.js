@@ -56,9 +56,19 @@ export const Container = styled.main`
   }
 
   #comp-card {
+    z-index: 99;
     position: absolute;
-    width: 751px;
-    bottom: -250px;
+    width: 871px;
+    bottom: -300px;
+    padding: 60px;
+    background: var(--cr-bg-1);
+    border-radius: var(--radius-16);
+    transition: var(--ease-1);
+
+    /* &:hover {
+      background: var(--cr-white);
+      box-shadow: var(--shadow-4);
+    } */
   }
 
   .window-wrap {
@@ -981,10 +991,10 @@ export const Comp = styled.section`
 `;
 
 export const GetStarted = styled.section`
-  margin-top: var(--mg-80);
+  margin-top: -380px;
   padding: 160px 0 160px 0;
   width: 100%;
-  border-top: 1px solid var(--cr-line-1);
+  /* border-top: 1px solid var(--cr-line-1); */
   display: flex;
   flex-direction: column;
   align-items: center;
