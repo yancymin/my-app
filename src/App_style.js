@@ -1416,7 +1416,7 @@ export const FooterSection = styled.footer`
       .right {
         position: absolute;
         display: grid;
-        row-gap: 40px;
+        row-gap: 64px;
         right: 0;
 
         h6 {
@@ -1460,33 +1460,45 @@ export const FooterSection = styled.footer`
             font: var(--font-14);
             font-weight: 500;
             box-shadow: var(--shadow-1);
-            background: var(--cr-white);
+            background: hsl(230 59% 38% / 1);
             border-radius: var(--radius-6);
-            color: var(--cr-blue-1);
+            color: var(--cr-white);
             padding: 12px 24px;
             transition: var(--ease-1);
             border: none;
             width: 100%;
+            border: none;
+
+            &:focus ~ .submit {
+              opacity: 1;
+              transform: scale(1);
+            }
           }
 
           input::placeholder {
             color: var(--cr-font-3);
             font-weight: 300;
+            opacity: 0.4;
           }
 
-          a {
+          .submit {
+            opacity: 0;
             position: absolute;
             right: 3px;
             top: 3px;
-            display: inline-block;
             font: var(--font-14);
             font-weight: 500;
             box-shadow: var(--shadow-1);
-            background: var(--cr-blue-1);
+            background: #ffffff;
             border-radius: var(--radius-4);
-            color: var(--cr-white);
-            padding: 12px 16px;
-            transition: var(--ease-1);
+            color: var(--cr-blue-1);
+            transition: var(--ease-3);
+            width: 80px;
+            transform: scale(0.96);
+
+            &:hover {
+              opacity: 0.95;
+            }
           }
         }
       }
@@ -1497,7 +1509,7 @@ export const FooterSection = styled.footer`
       width: 100%;
       display: flex;
       justify-content: space-between;
-      margin-top: var(--mg-180);
+      margin-top: var(--mg-160);
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding: 40px 0;
 
@@ -1529,8 +1541,6 @@ export const FooterSection = styled.footer`
             content: "";
             display: block;
             position: absolute;
-            /* top: 0;
-            left: 0; */
             border-radius: 100%;
             width: 126%;
             height: 126%;

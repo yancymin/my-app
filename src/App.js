@@ -414,13 +414,21 @@ class App extends Component {
                 <div className="newsletter">
                   <h6>{data_footer.input.newsletter.title}</h6>
                   <p>{data_footer.input.newsletter.des}</p>
-                  <div className="input-wrap">
+                  <form className="input-wrap">
                     <input
-                      type="text"
+                      type="email"
+                      id="email"
                       placeholder={data_footer.input.newsletter.placeholder}
+                      required
                     />
-                    <a href="/">{data_footer.input.newsletter.btn}</a>
-                  </div>
+                    <input
+                    className="submit"
+                      type="submit"
+                      for="email"
+                      value={data_footer.input.newsletter.btn}
+                    ></input>
+                    {/* <a href="/">{data_footer.input.newsletter.btn}</a> */}
+                  </form>
                 </div>
               </div>
             </div>
