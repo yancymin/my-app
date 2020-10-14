@@ -1363,7 +1363,7 @@ export const Blog = styled.section`
 
 export const FooterSection = styled.footer`
   position: fixed;
-  bottom: -130px;
+  bottom: 0;
   z-index: -1;
   width: 100%;
   padding: 120px 0 0 0;

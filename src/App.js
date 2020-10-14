@@ -717,20 +717,6 @@ class App extends Component {
         maker: false,
       },
     });
-    //------------ FOOTER SECTION ---------//
-
-    gsap.to("#footer", {
-      yPercent: -20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#footer",
-        toggleActions: "play none none reset",
-        start: "top",
-        // end: "bottom top",
-        scrub: true,
-        maker: false,
-      },
-    });
   }
 }
 
