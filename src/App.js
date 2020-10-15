@@ -28,10 +28,6 @@ import {
   behance,
   twitter,
   footerFeedback,
-  featureIcon_1,
-  featureIcon_2,
-  featureIcon_3,
-  featureIcon_4,
 } from "./assets/svg";
 import {
   data_nav,
@@ -70,7 +66,6 @@ import comp_col_4 from "./assets/comp/col-4.png";
 import comp_col_5 from "./assets/comp/col-5.png";
 import comp_col_6 from "./assets/comp/col-6.png";
 import search_modal from "./assets/search_modal.png";
-import comp_card from "./assets/comp/comp-card.png";
 import tools_pic from "./assets/tools/tools-pic.png";
 
 const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
@@ -758,7 +753,7 @@ class App extends Component {
         maker: false,
       },
     });
-    
+
     //------------ GET START SECTION ---------//
 
     gsap.to("#get-start", {

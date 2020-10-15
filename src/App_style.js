@@ -1579,8 +1579,7 @@ export const FooterSection = styled.footer`
           a {
             display: inline-flex;
             align-items: center;
-            font: var(--font-14);
-            font-weight: 500;
+            font: var(--font-14-500);
             box-shadow: var(--shadow-1);
             background: var(--cr-white);
             border-radius: var(--radius-6);
@@ -1607,8 +1606,7 @@ export const FooterSection = styled.footer`
           input {
             position: absolute;
             display: inline-block;
-            font: var(--font-14);
-            font-weight: 500;
+            font: var(--font-14-500);
             background: hsl(230 59% 38% / 1);
             border-radius: var(--radius-6);
             color: var(--cr-white);
@@ -1641,8 +1639,7 @@ export const FooterSection = styled.footer`
             position: absolute;
             right: 3px;
             top: 3px;
-            font: var(--font-14);
-            font-weight: 500;
+            font: var(--font-14-500);
             box-shadow: var(--shadow-1);
             background: #ffffff;
             border-radius: var(--radius-4);
