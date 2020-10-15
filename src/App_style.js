@@ -991,7 +991,7 @@ export const Comp = styled.section`
 `;
 
 export const GetStarted = styled.section`
-  margin-top: -380px;
+  margin-top: -260px;
   padding: 160px 0 160px 0;
   width: 100%;
   /* border-top: 1px solid var(--cr-line-1); */

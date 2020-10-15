@@ -673,13 +673,13 @@ class App extends Component {
     // add animations and labels to the timeline
     tl.addLabel("start")
       .to(
-        ".col",
-        { yPercent: -30, autoAlpha: 1, force3D: true },
-        TweenMax.staggerFrom(".col", 6, {
-          // y: 40,
-          // delay: 1,
-          ease: "cubic-bezier(0.16, 1, 0.3, 1)",
-        })
+        ".col",2,
+        { yPercent: -40, autoAlpha: 1, force3D: true },
+        // TweenMax.staggerFrom(".col", 6, {
+        //   // y: 40,
+        //   // delay: 1,
+        //   ease: "cubic-bezier(0.16, 1, 0.3, 1)",
+        // })
       )
       .addLabel("cover")
       .to("#cover", { y: "105%", autoAlpha: 1 })
@@ -692,8 +692,8 @@ class App extends Component {
       .addLabel("right")
       .to("#window", {
         // x: "70%",
-        y: 40,
-        yPercent: -40,
+        // y: 40,
+        // yPercent: -40,
         autoAlpha: 1,
         background: "transparent",
         boxShadow: "none",
