@@ -155,7 +155,7 @@ class App extends Component {
             <section className="left parallax-1">
               <picture id="scene">
                 <img
-                  data-depth="0.2"
+                  data-depth="0.23"
                   src={hero_1}
                   alt="hero_1"
                   className="hero"
@@ -167,7 +167,7 @@ class App extends Component {
                   className="hero"
                 />
                 <img
-                  data-depth="0.2"
+                  data-depth="0.23"
                   src={hero_3}
                   alt="hero_3"
                   className="hero"
