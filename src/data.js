@@ -197,7 +197,7 @@ export const data_footer = {
 export const data_feature = [
     {
         title: "支持主流前端框架",
-        des: "覆盖 React、Vue、Flutter 三种前端框架，满足各个项目的技术栈需求。",
+        des: "覆盖 React、Vue、Flutter 三种前端框架，满足项目的技术栈需求。",
         img: featureIcon_1
     },
     {
@@ -211,7 +211,7 @@ export const data_feature = [
         img: featureIcon_3
     },
     {
-        title: "支持主题配置",
+        title: "支持主题定制",
         des: "使用 Arco Theme Lab 主题实验室，让 Arco UI 更贴合你的品牌。",
         img: featureIcon_4
     },

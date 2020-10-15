@@ -610,6 +610,9 @@ export const StartSection = styled.section`
     grid-column-gap: 40px;
 
     .card-1 {
+      p {
+        margin-bottom: var(--mg-56) !important;
+      }
       .right {
         position: absolute;
         bottom: -51px;
