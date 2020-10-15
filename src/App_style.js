@@ -1013,8 +1013,7 @@ export const GetStarted = styled.section`
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-row-gap: 24px;
-    grid-column-gap: 24px;
+    grid-column-gap: 40px;
     align-self: center;
 
     .card {
