@@ -674,7 +674,7 @@ class App extends Component {
     tl.addLabel("start")
       .to(
         ".col",
-        { yPercent: -30, autoAlpha: 1 },
+        { yPercent: -30, autoAlpha: 1, force3D: true },
         TweenMax.staggerFrom(".col", 6, {
           // y: 40,
           // delay: 1,
@@ -697,7 +697,8 @@ class App extends Component {
         autoAlpha: 1,
         background: "transparent",
         boxShadow: "none",
-      })
+        force3D: true,
+      });
 
     // gsap.to("#cover", {
     //   yPercent: 0,

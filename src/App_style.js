@@ -1381,6 +1381,10 @@ export const Blog = styled.section`
         border-color: transparent;
         box-shadow: var(--shadow-4);
 
+        img {
+          transform: scale(1.04);
+        }
+
         h5 {
           color: var(--cr-blue-1);
         }
@@ -1410,6 +1414,8 @@ export const Blog = styled.section`
 
       img {
         height: 200px;
+        transform-origin: bottom;
+        transition: var(--ease-2);
       }
 
       .bottom {
@@ -1611,7 +1617,9 @@ export const FooterSection = styled.footer`
             border: none;
 
             &:hover {
-              background: hsl(230 59% 32% / 1);
+              &:first-child {
+                background: hsl(230 59% 32% / 1);
+              }
             }
 
             &:focus ~ .submit {
