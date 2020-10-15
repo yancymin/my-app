@@ -536,6 +536,18 @@ class App extends Component {
       },
       y: -100,
     });
+    
+    gsap.to("#nav2", {
+      scrollTrigger: {
+        trigger: "#get-start",
+        toggleActions: "play none none reset",
+        id: "nav2",
+        start: "top",
+        end: "top",
+        scrub: 1,
+      },
+      y: 0,
+    });
 
     //------- HERO SECTION --------//
 
@@ -742,7 +754,7 @@ class App extends Component {
     //------------ GET START SECTION ---------//
 
     gsap.to("#feature", {
-      yPercent: -20,
+      yPercent: -10,
       ease: "none",
       scrollTrigger: {
         trigger: "#feature",
@@ -787,7 +799,7 @@ class App extends Component {
     //------------ BLOG SECTION ---------//
 
     gsap.to("#blog", {
-      yPercent: -20,
+      yPercent: 0,
       ease: "none",
       scrollTrigger: {
         trigger: "#blog",

@@ -1717,7 +1717,7 @@ export const CompFeature = styled.section`
   max-width: 1200px;
   padding: 0 0 160px 0;
   background: var(--cr-white);
-  margin-top: -200px;
+  margin-top: -150px;
   z-index: 1;
 
   .feature-wrap {
