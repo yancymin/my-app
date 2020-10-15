@@ -321,7 +321,7 @@ class App extends Component {
               </div>
             </div>
           </Comp>
-          <CompFeature>
+          <CompFeature id="feature">
             <div className="feature-wrap">
               <div className="list">
                 {data_feature.map((item, index) => {
@@ -744,6 +744,21 @@ class App extends Component {
     //   y: 0,
     // });
 
+    //------------ GET START SECTION ---------//
+
+    gsap.to("#feature", {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#feature",
+        toggleActions: "play none none reset",
+        start: "top",
+        // end: "bottom top",
+        scrub: true,
+        maker: false,
+      },
+    });
+    
     //------------ GET START SECTION ---------//
 
     gsap.to("#get-start", {
