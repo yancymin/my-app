@@ -12,6 +12,7 @@ import {
   Tools,
   Blog,
   FooterSection,
+  CompFeature,
 } from "./App_style.js";
 import InlineSVG from "inline-svg-react";
 import {
@@ -27,6 +28,10 @@ import {
   behance,
   twitter,
   footerFeedback,
+  featureIcon_1,
+  featureIcon_2,
+  featureIcon_3,
+  featureIcon_4,
 } from "./assets/svg";
 import {
   data_nav,
@@ -37,6 +42,7 @@ import {
   data_tools,
   data_blog,
   data_footer,
+  data_feature,
 } from "./data";
 import { gsap, TweenMax } from "gsap";
 import { SplitText } from "./SplitText";
@@ -315,6 +321,26 @@ class App extends Component {
               </div>
             </div>
           </Comp>
+          <CompFeature>
+            <div className="feature-wrap">
+              <div className="list">
+                {data_feature.map((item, index) => {
+                  return (
+                    <div className={"list-item item-" + (index + 1)}>
+                      <div className="title">
+                        <InlineSVG icon={item.img} />
+                        <h5>{item.title}</h5>
+                      </div>
+                      <p className="des">{item.des}</p>
+                    </div>
+                  );
+                })}
+              </div>
+              <a href="/" className="btn">
+                开始使用
+              </a>
+            </div>
+          </CompFeature>
           <GetStarted id="get-start">
             <div className="title">
               <span className="sectionEye">{sectionTitles[3][0]}</span>
@@ -673,8 +699,9 @@ class App extends Component {
     // add animations and labels to the timeline
     tl.addLabel("start")
       .to(
-        ".col",2,
-        { yPercent: -40, autoAlpha: 1, force3D: true },
+        ".col",
+        2,
+        { yPercent: -40, autoAlpha: 1, force3D: true }
         // TweenMax.staggerFrom(".col", 6, {
         //   // y: 40,
         //   // delay: 1,

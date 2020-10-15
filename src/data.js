@@ -13,6 +13,7 @@ import blog_pic_2 from "./assets/blog/pic-2.png";
 import blog_pic_3 from "./assets/blog/pic-3.png";
 import blog_pic_4 from "./assets/blog/pic-4.png";
 import blog_pic_5 from "./assets/blog/pic-5.png";
+import { featureIcon_1, featureIcon_2, featureIcon_3, featureIcon_4 } from "../src/assets/svg";
 
 export const data_nav = ["设计", "组件", "主题", "资源", "团队"];
 export const sectionTitles = [
@@ -192,3 +193,26 @@ export const data_footer = {
     },
     other: "2020 Ⓡ ByteDance Co., Ltd. All rights reserved."
 }
+
+export const data_feature = [
+    {
+        title: "支持主流前端框架",
+        des: "覆盖 React、Vue、Flutter 三种前端框架，满足各个项目的技术栈需求。",
+        img: featureIcon_1
+    },
+    {
+        title: "丰富的组件类型",
+        des: "几十种企业级业务常用组件，深入业务场景的每个细节。",
+        img: featureIcon_2
+    },
+    {
+        title: "Figma 设计资源库",
+        des: "设计资源库和前端代码无缝对齐，设计师快速上手无压力。",
+        img: featureIcon_3
+    },
+    {
+        title: "支持主题配置",
+        des: "使用 Arco Theme Lab 主题实验室，让 Arco UI 更贴合你的品牌。",
+        img: featureIcon_4
+    },
+]

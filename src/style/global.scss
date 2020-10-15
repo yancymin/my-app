@@ -18,6 +18,12 @@ body {
   margin-bottom: 650px;
 }
 
+::selection {
+  background: #324ac0;
+  text-shadow: none;
+  color: white;
+}
+
 #root {
   width: 100%;
   display: flex;
@@ -70,7 +76,7 @@ body {
     0px 22.3363px 17.869px rgba(122, 124, 131, 0.0590076),
     0px 12.5216px 10.0172px rgba(122, 124, 131, 0.0526212),
     0px 6.6501px 5.32008px rgba(122, 124, 131, 0.0453961),
-    0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191);  //card hover
+    0px 2.76726px 2.21381px rgba(122, 124, 131, 0.0341191); //card hover
   --radius-4: 4px;
   --radius-6: 6px;
   --radius-16: 16px;
