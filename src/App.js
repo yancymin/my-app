@@ -58,12 +58,24 @@ import logo_3 from "./assets/logos/3.svg";
 import logo_4 from "./assets/logos/4.svg";
 import logo_5 from "./assets/logos/5.svg";
 import logo_6 from "./assets/logos/6.svg";
+import logo_7 from "./assets/logos/7.svg";
+import logo_8 from "./assets/logos/8.svg";
+import logo_9 from "./assets/logos/9.svg";
+import logo_10 from "./assets/logos/10.svg";
+import logo_11 from "./assets/logos/11.svg";
+import logo_12 from "./assets/logos/12.svg";
 import logo_g1 from "./assets/logos/gray-1.svg";
 import logo_g2 from "./assets/logos/gray-2.svg";
 import logo_g3 from "./assets/logos/gray-3.svg";
 import logo_g4 from "./assets/logos/gray-4.svg";
 import logo_g5 from "./assets/logos/gray-5.svg";
 import logo_g6 from "./assets/logos/gray-6.svg";
+import logo_g7 from "./assets/logos/gray-7.svg";
+import logo_g8 from "./assets/logos/gray-8.svg";
+import logo_g9 from "./assets/logos/gray-9.svg";
+import logo_g10 from "./assets/logos/gray-10.svg";
+import logo_g11 from "./assets/logos/gray-11.svg";
+import logo_g12 from "./assets/logos/gray-12.svg";
 import card_1 from "./assets/cards/1.png";
 import comp_col_1 from "./assets/comp/col-1.png";
 import comp_col_2 from "./assets/comp/col-2.png";
@@ -81,7 +93,34 @@ const data_logos = [
   [logo_g4, logo_4],
   [logo_g5, logo_5],
   [logo_g6, logo_6],
+  [logo_g7, logo_7],
+  [logo_g8, logo_8],
+  [logo_g9, logo_9],
+  [logo_g10, logo_10],
+  [logo_g11, logo_11],
+  [logo_g12, logo_12],
 ];
+
+// Random Array
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+
+let data_logos_random = shuffle(data_logos).slice(6);
+
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Draggable);
 
@@ -226,7 +265,7 @@ class App extends Component {
                 <LogoWall className="logo-wall">
                   <h3>使用 Arco Design System 构建</h3>
                   <div className="logos-wrap">
-                    {data_logos.map((item) => {
+                    {data_logos_random.map((item) => {
                       return (
                         <div>
                           <img
@@ -830,6 +869,10 @@ class App extends Component {
         maker: false,
       },
     });
+
+    // gsap.to(".logo-wall-item", 0.3,{
+
+    // })
   }
 }
 
