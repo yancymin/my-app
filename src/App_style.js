@@ -421,6 +421,8 @@ export const Header = styled.header`
       height: 640px;
       max-height: fit-content;
       margin-top: -6%;
+      transition: var(--ease-1);
+      filter: var(--filter-1);
 
       img {
         position: absolute;
@@ -643,7 +645,6 @@ export const StartSection = styled.section`
   margin: var(--mg-160) 0;
   max-width: 1200px;
   width: 100%;
-  background: var(--cr-white);
 
   .card-wrap {
     width: 100%;

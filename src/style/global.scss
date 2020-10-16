@@ -89,15 +89,16 @@ body {
   --ease-2: all 0.15s ease-out;
   --ease-3: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   --blend: multiply;
+  --filter-1: none;
 }
 
 .darkmode {
-  --cr-white: #0F0F13;
+  --cr-white: #0f0f13;
   --cr-bg-1: #1e1e25;
-  --cr-bg-2: #141419;
+  --cr-bg-2: #1e1e25;
   --cr-bg-3: hsl(203, 90%, 98%);
   --cr-icon-1: #667093;
-  --cr-blue-1: #3F8CFF;
+  --cr-blue-1: #3f8cff;
   --cr-blue-2: var(--cr-white);
   --cr-font-1: hsl(227, 12%, 80%);
   --cr-font-2: hsl(227, 12%, 40%);
@@ -109,4 +110,5 @@ body {
   --shadow-3: 0 2px 16px rgba(103, 110, 144, 0.15);
   --shadow-4: 0 0 0 2px rgba(211, 211, 211, 0.2);
   --blend: none;
+  --filter-1: invert(1) hue-rotate(-120deg);
 }
