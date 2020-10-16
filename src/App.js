@@ -708,7 +708,7 @@ class App extends Component {
     }, 3000);
 
     gsap.to("header", {
-      yPercent: -20,
+      yPercent: -8,
       ease: "none",
       scrollTrigger: {
         trigger: "header",

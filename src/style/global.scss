@@ -34,7 +34,7 @@ body {
 
 :root {
   --cr-white: #ffffff;
-  --cr-bg-1: hsl(240, 7%, 97%);
+  --cr-bg-1: #F7F9FC;
   --cr-bg-2: hsl(203, 100%, 97%);
   --cr-bg-3: hsl(203, 90%, 98%);
   --cr-icon-1: #667093;
@@ -110,5 +110,5 @@ body {
   --shadow-3: 0 2px 16px rgba(103, 110, 144, 0.15);
   --shadow-4: 0 0 0 2px rgba(211, 211, 211, 0.2);
   --blend: none;
-  --filter-1: invert(1) hue-rotate(-120deg);
+  --filter-1: invert(1) hue-rotate(200deg) contrast(1.1);
 }
