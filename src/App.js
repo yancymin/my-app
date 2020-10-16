@@ -17,6 +17,7 @@ import {
 import InlineSVG from "inline-svg-react";
 import {
   iconSearch,
+  iconDark,
   iconLang,
   heroLogo,
   cardArrow,
@@ -174,7 +175,7 @@ class App extends Component {
                   className="icon dark-switcher"
                   onClick={() => this.handleDarkSwitch()}
                 >
-                  <InlineSVG icon={iconSearch} />
+                  <InlineSVG icon={iconDark} />
                 </i>
                 <a href="/" className="icon">
                   <InlineSVG icon={iconLang} />
@@ -211,7 +212,7 @@ class App extends Component {
                   className="icon dark-switcher"
                   onClick={() => this.handleDarkSwitch()}
                 >
-                  <InlineSVG icon={iconSearch} />
+                  <InlineSVG icon={iconDark} />
                 </i>
                 <a href="/" className="icon">
                   <InlineSVG icon={iconLang} />

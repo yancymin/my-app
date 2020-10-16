@@ -345,7 +345,7 @@ export const Nav = styled.nav`
       padding: 8px;
       border-radius: var(--radius-6);
       cursor: pointer;
-      margin-right: 20px;
+      margin-right: 16px;
 
       svg path {
         transition: var(--ease-1);
