@@ -6,7 +6,25 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: var(--ease-1);
   background: var(--cr-white);
+
+  .comp-card-1-dark {
+    filter: invert(1) hue-rotate(-181deg) brightness(2) saturate(0.7);
+  }
+  .comp-card-234-dark {
+    &:hover {
+      .right {
+        z-index: -1 !important;
+        filter: invert(0.94) hue-rotate(180deg) brightness(1);
+      }
+    }
+    .right {
+      z-index: 0 !important;
+      filter: invert(0.97) hue-rotate(180deg) brightness(1);
+      mix-blend-mode: lighten;
+    }
+  }
 
   .col {
     margin-right: 40px;
@@ -164,7 +182,7 @@ export const Container = styled.main`
     z-index: 999;
     position: fixed;
     display: inline-flex;
-    background: rgb(255 255 255 / 1);
+    background: var(--cr-white);
     /* backdrop-filter: blur(20px); */
     transition: var(--ease-1);
     animation: none;
@@ -388,6 +406,7 @@ export const Header = styled.header`
   justify-content: space-between;
   overflow: hidden;
   background: var(--cr-white);
+  transition: var(--ease-1);
 
   section {
     position: absolute;
@@ -433,6 +452,7 @@ export const Header = styled.header`
       animation: heroBgShow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
       transform-origin: left;
       opacity: 0;
+      transition: var(--ease-1);
 
       @keyframes heroBgShow {
         from {
@@ -623,6 +643,7 @@ export const StartSection = styled.section`
   margin: var(--mg-160) 0;
   max-width: 1200px;
   width: 100%;
+  background: var(--cr-white);
 
   .card-wrap {
     width: 100%;
@@ -718,7 +739,7 @@ export const StartSection = styled.section`
       border-radius: var(--radius-16);
       overflow: hidden;
       transition: var(--ease-1);
-      mix-blend-mode: multiply;
+      mix-blend-mode: var(--blend);
 
       &::after {
         z-index: -1;
@@ -1024,6 +1045,7 @@ export const GetStarted = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--cr-white);
 
   .title {
     text-align: center;
@@ -1052,7 +1074,6 @@ export const GetStarted = styled.section`
       border-radius: var(--radius-16);
       overflow: hidden;
       transition: var(--ease-1);
-      mix-blend-mode: multiply;
 
       &::after {
         z-index: -1;
@@ -1340,6 +1361,7 @@ export const Blog = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
+  background: var(--cr-white);
 
   .blog-wrap {
     width: 100%;
@@ -1529,7 +1551,7 @@ export const FooterSection = styled.footer`
   z-index: -1;
   width: 100%;
   padding: 120px 0 0 0;
-  background: var(--cr-blue-1);
+  background: var(--cr-blue-2);
   display: flex;
   justify-content: center;
 
@@ -1664,7 +1686,7 @@ export const FooterSection = styled.footer`
             top: 3px;
             font: var(--font-14-500);
             box-shadow: var(--shadow-1);
-            background: #ffffff;
+            background: var(--cr-white);
             border-radius: var(--radius-4);
             color: var(--cr-blue-1);
             transition: var(--ease-3);

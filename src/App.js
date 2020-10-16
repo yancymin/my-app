@@ -130,12 +130,18 @@ class App extends Component {
     this.state = {
       isNavScroll: true,
       isSearch: false,
+      isDark: false,
     };
   }
 
   handleSearchClick() {
     this.setState({ isSearch: !this.state.isSearch });
-    console.log(this.state.isSearch);
+  }
+
+  handleDarkSwitch() {
+    this.setState({ isDark: !this.state.isDark });
+    const body = document.querySelector("body");
+    body.classList.toggle("darkmode");
   }
 
   render() {
@@ -162,6 +168,12 @@ class App extends Component {
               </div>
               <div className="right">
                 <i className="icon" onClick={() => this.handleSearchClick()}>
+                  <InlineSVG icon={iconSearch} />
+                </i>
+                <i
+                  className="icon dark-switcher"
+                  onClick={() => this.handleDarkSwitch()}
+                >
                   <InlineSVG icon={iconSearch} />
                 </i>
                 <a href="/" className="icon">
@@ -193,6 +205,12 @@ class App extends Component {
                   })}
                 </div>
                 <i className="icon" onClick={() => this.handleSearchClick()}>
+                  <InlineSVG icon={iconSearch} />
+                </i>
+                <i
+                  className="icon dark-switcher"
+                  onClick={() => this.handleDarkSwitch()}
+                >
                   <InlineSVG icon={iconSearch} />
                 </i>
                 <a href="/" className="icon">
@@ -295,7 +313,7 @@ class App extends Component {
               {data_start.map((item, index) => {
                 if (index === 0) {
                   return (
-                    <div className="card card-1">
+                    <div className="card card-1 multiply">
                       <div className="left">
                         <h4>{item.title}</h4>
                         <p>{item.des}</p>
@@ -311,13 +329,25 @@ class App extends Component {
                         </div>
                       </div>
                       <div className="right">
-                        <img src={card_1} alt="" />
+                        <img
+                          src={card_1}
+                          alt=""
+                          className={
+                            this.state.isDark ? "comp-card-1-dark" : null
+                          }
+                        />
                       </div>
                     </div>
                   );
                 }
                 return (
-                  <div className="card card-2">
+                  <div
+                    className={
+                      this.state.isDark
+                        ? "card card-2 comp-card-234-dark "
+                        : "card card-2"
+                    }
+                  >
                     <div className="left">
                       <h4>{item.title}</h4>
                       <p>{item.des}</p>

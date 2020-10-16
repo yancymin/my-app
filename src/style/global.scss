@@ -16,6 +16,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   margin-bottom: 650px;
+  background: var(--cr-white);
 }
 
 ::selection {
@@ -38,6 +39,7 @@ body {
   --cr-bg-3: hsl(203, 90%, 98%);
   --cr-icon-1: #667093;
   --cr-blue-1: #324ac0;
+  --cr-blue-2: #324ac0;
   --cr-font-1: #00114b;
   --cr-font-2: #667093;
   --cr-font-3: #c7cbd5;
@@ -86,4 +88,25 @@ body {
   --ease-1: all 0.25s ease-out;
   --ease-2: all 0.15s ease-out;
   --ease-3: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --blend: multiply;
+}
+
+.darkmode {
+  --cr-white: #0F0F13;
+  --cr-bg-1: #1e1e25;
+  --cr-bg-2: #141419;
+  --cr-bg-3: hsl(203, 90%, 98%);
+  --cr-icon-1: #667093;
+  --cr-blue-1: #3F8CFF;
+  --cr-blue-2: var(--cr-white);
+  --cr-font-1: hsl(227, 12%, 80%);
+  --cr-font-2: hsl(227, 12%, 40%);
+  --cr-font-3: hsla(225, 12%, 80%, 0.3);
+  --cr-line-1: hsl(220, 6%, 15%);
+  --cr-line-2: hsl(230, 13%, 95%);
+  --shadow-1: 0 0 0 1px rgba(211, 211, 211, 0.2);
+  --shadow-2: 0 0 0 1px rgba(211, 211, 211, 0.822);
+  --shadow-3: 0 2px 16px rgba(103, 110, 144, 0.15);
+  --shadow-4: 0 0 0 2px rgba(211, 211, 211, 0.2);
+  --blend: none;
 }
