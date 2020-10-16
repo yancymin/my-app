@@ -52,12 +52,18 @@ import hero_2 from "./assets/hero_pic/2.png";
 import hero_3 from "./assets/hero_pic/3.png";
 import hero_4 from "./assets/hero_pic/4.png";
 import hero_5 from "./assets/hero_pic/5.png";
-import logo_1 from "./assets/logos/1.png";
-import logo_2 from "./assets/logos/2.png";
-import logo_3 from "./assets/logos/3.png";
-import logo_4 from "./assets/logos/4.png";
-import logo_5 from "./assets/logos/5.png";
-import logo_6 from "./assets/logos/6.png";
+import logo_1 from "./assets/logos/1.svg";
+import logo_2 from "./assets/logos/2.svg";
+import logo_3 from "./assets/logos/3.svg";
+import logo_4 from "./assets/logos/4.svg";
+import logo_5 from "./assets/logos/5.svg";
+import logo_6 from "./assets/logos/6.svg";
+import logo_g1 from "./assets/logos/gray-1.svg";
+import logo_g2 from "./assets/logos/gray-2.svg";
+import logo_g3 from "./assets/logos/gray-3.svg";
+import logo_g4 from "./assets/logos/gray-4.svg";
+import logo_g5 from "./assets/logos/gray-5.svg";
+import logo_g6 from "./assets/logos/gray-6.svg";
 import card_1 from "./assets/cards/1.png";
 import comp_col_1 from "./assets/comp/col-1.png";
 import comp_col_2 from "./assets/comp/col-2.png";
@@ -68,7 +74,14 @@ import comp_col_6 from "./assets/comp/col-6.png";
 import search_modal from "./assets/search_modal.png";
 import tools_pic from "./assets/tools/tools-pic.png";
 
-const data_logos = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_6];
+const data_logos = [
+  [logo_g1, logo_1],
+  [logo_g2, logo_2],
+  [logo_g3, logo_3],
+  [logo_g4, logo_4],
+  [logo_g5, logo_5],
+  [logo_g6, logo_6],
+];
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Draggable);
 
@@ -215,11 +228,18 @@ class App extends Component {
                   <div className="logos-wrap">
                     {data_logos.map((item) => {
                       return (
-                        <img
-                          src={item}
-                          className="logo-wall-item"
-                          alt="logo-wall"
-                        />
+                        <div>
+                          <img
+                            src={item[0]}
+                            className="logo-wall-item"
+                            alt="logo-wall"
+                          />
+                          <img
+                            src={item[1]}
+                            className="logo-wall-item"
+                            alt="logo-wall"
+                          />
+                        </div>
                       );
                     })}
                   </div>
@@ -536,7 +556,7 @@ class App extends Component {
       },
       y: -100,
     });
-    
+
     gsap.to("#nav2", {
       scrollTrigger: {
         trigger: "#get-start",

@@ -575,7 +575,7 @@ export const LogoWall = styled.div`
   }
 
   h3 {
-    font: vacr(--font-16-300);
+    font: var(--font-16-300);
     color: var(--cr-font-2);
     margin-bottom: var(--mg-32);
   }
@@ -587,11 +587,33 @@ export const LogoWall = styled.div`
     flex-wrap: wrap;
     margin-left: -10px;
 
-    img {
-      height: 40px;
-      filter: saturate(0.3) contrast(1.4);
+    div {
+      width: 138px;
+      height: 46px;
       margin-right: var(--mg-24);
       margin-bottom: var(--mg-16);
+    }
+
+    img {
+      position: absolute;
+      height: 46px;
+      opacity: 0.85;
+      transition: var(--ease-1);
+
+      &:nth-of-type(1) {
+        z-index: 1;
+
+        &:hover {
+          opacity: 0 !important;
+
+          & ~ img {
+            opacity: 1 !important;
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
     }
   }
 `;
