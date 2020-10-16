@@ -600,6 +600,7 @@ export const StartSection = styled.section`
   text-align: center;
   margin: var(--mg-160) 0;
   max-width: 1200px;
+  width: 100%;
 
   .card-wrap {
     width: 100%;
@@ -687,7 +688,7 @@ export const StartSection = styled.section`
 
     .card {
       position: relative;
-      height: 420px;
+      height: 460px;
       text-align: left;
       background: var(--cr-bg-1);
       /* border: 1px solid var(--cr-line-1); */
