@@ -187,7 +187,7 @@ export const Container = styled.main`
     transition: var(--ease-1);
     animation: none;
     /* border-bottom: 1px solid var(--cr-line-2); */
-    /* box-shadow: var(--shadow-3); */
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.04);
 
     .logo-s {
       margin-right: 16px;
