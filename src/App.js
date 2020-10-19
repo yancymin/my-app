@@ -470,9 +470,7 @@ class App extends Component {
               {data_tools.map((item) => {
                 return (
                   <div className="tools-list-item">
-                    <h5>
-                      {item.title}
-                    </h5>
+                    <h5>{item.title}</h5>
                     <p>{item.des}</p>
                     <i>{item.tag}</i>
                   </div>
@@ -765,40 +763,55 @@ class App extends Component {
       yPercent: 20,
       scrollTrigger: {
         trigger: "#comp",
-        pin: true, 
+        pin: true,
         pinSpacing: true,
-        start: "400px", 
+        start: "400px",
         end: "bottom",
         toggleActions: "play none none reset",
         markers: false,
         id: "cover",
-        scrub: 1, 
+        scrub: 1,
       },
     });
 
-
     tl.addLabel("start")
+      .to(".col", 4, { yPercent: -40, autoAlpha: 1, force3D: true }, "start")
+      .to("#cover", { y: "105%", autoAlpha: 1, delay: 0.2 }, "start")
+      .to("#window", 2, { scale: 1.6, autoAlpha: 1, delay: 0.4 }, "start")
+      .addLabel("end")
+      .to(".comp-pic-all", 1.6, { scale: 0.5, autoAlpha: 1 }, "end")
+      .to("#cover", { opacity: 0, autoAlpha: 1 }, "end")
       .to(
-        ".col",
-        2,
-        { yPercent: -40, autoAlpha: 1, force3D: true }
-      )
-      .addLabel("cover")
-      .to("#cover", { y: "105%", autoAlpha: 1 })
-      .addLabel("all")
-      .to("#window", { scale: 1.6, autoAlpha: 1 })
-      .addLabel("all")
-      .to(".comp-pic-all", { scale: 0.5, autoAlpha: 1 })
-      .addLabel("cover-hidde")
-      .to("#cover", { opacity: 0, autoAlpha: 1 })
-      .addLabel("right")
-      .to("#window", {
-        autoAlpha: 1,
-        background: "transparent",
-        boxShadow: "none",
-        force3D: true,
-      });
+        "#window",
+        {
+          autoAlpha: 1,
+          background: "transparent",
+          boxShadow: "none",
+          force3D: true,
+        },
+        "end"
+      );
 
+    // tl.addLabel("start")
+    //   .to(".col", 2, { yPercent: -40, autoAlpha: 1, force3D: true })
+    //   .addLabel("cover")
+    //   .to("#cover", { y: "105%", autoAlpha: 1 })
+    //   .addLabel("all")
+    //   .to("#window", { scale: 1.6, autoAlpha: 1 })
+    //   .addLabel("all")
+    //   .to(".comp-pic-all", { scale: 0.5, autoAlpha: 1 })
+    //   .addLabel("cover-hidde")
+    //   .to("#cover", { opacity: 0, autoAlpha: 1 })
+    //   .addLabel("end")
+    //   .to(
+    //     "#window",
+    //     {
+    //       autoAlpha: 1,
+    //       background: "transparent",
+    //       boxShadow: "none",
+    //       force3D: true,
+    //     }
+    //   );
 
     //------------ GET START SECTION ---------//
 

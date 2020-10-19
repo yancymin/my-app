@@ -431,7 +431,7 @@ export const Header = styled.header`
       content: "";
       display: block;
       z-index: -1;
-      background: var(--cr-bg-2);
+      background: var(--cr-bg-1);
       width: 100%;
       height: 100%;
       animation: heroBgShow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
