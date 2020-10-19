@@ -846,7 +846,7 @@ class App extends Component {
     });
 
     tl.addLabel("start")
-      .to(".col", 4, { yPercent: -40, autoAlpha: 1, force3D: true }, "start")
+      .to(".col", 6, { yPercent: -40, autoAlpha: 1, force3D: true }, "start")
       .to("#cover", { y: "105%", autoAlpha: 1, delay: 0.2 }, "start")
       .to("#window", 2, { scale: 1.6, autoAlpha: 1, delay: 0.4 }, "start")
       .addLabel("end")
