@@ -424,11 +424,10 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
 
-    &::after {
+    i {
       position: absolute;
       left: 0;
       top: 0;
-      content: "";
       display: block;
       z-index: -1;
       background: var(--cr-bg-1);
@@ -1012,7 +1011,7 @@ export const Comp = styled.section`
     max-width: 1200px;
     border-radius: var(--radius-32);
     overflow: hidden;
-    box-shadow: 0 0 0 16px rgb(41 50 60 / 10%);
+    box-shadow: 0 0 0 16px var(--cr-line-2);
     /* background: var(--cr-bg-1); */
     /* 
     img {

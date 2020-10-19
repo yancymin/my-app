@@ -225,6 +225,7 @@ class App extends Component {
           </Nav>
           <Header>
             <section className="left parallax-1">
+              <i id="hero-bg"></i>
               <picture id="scene">
                 <img
                   data-depth="0.23"
@@ -603,7 +604,7 @@ class App extends Component {
         trigger: "header",
         toggleActions: "play none none reset",
         id: "nav2",
-        start: "65% top",
+        start: "50% top",
         end: "bottom bottom",
         scrub: 1,
       },
@@ -712,6 +713,44 @@ class App extends Component {
       },
     });
 
+    gsap.to("header .right", {
+      yPercent: -5,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "header",
+        start: "top",
+        scrub: 1,
+        maker: false,
+      },
+    });
+
+    gsap.to("header .left", {
+      yPercent: 5,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "header",
+        start: "top",
+        scrub: 1,
+        maker: false,
+      },
+    });
+
+    // gsap.to("#hero-bg", 0.4, {
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: "header",
+    //     toggleActions: "play none none reset",
+    //     start: "50%",
+    //     end: "51%",
+    //     scrub: false,
+    //     markers: false,
+    //     pin: false,
+    //     pinSpacing: false,
+    //     force3D: true,
+    //   },
+    //   width: "200%",
+    // });
+
     //------------ START SECTION ---------//
 
     gsap.to("#start-card", {
@@ -791,27 +830,6 @@ class App extends Component {
         },
         "end"
       );
-
-    // tl.addLabel("start")
-    //   .to(".col", 2, { yPercent: -40, autoAlpha: 1, force3D: true })
-    //   .addLabel("cover")
-    //   .to("#cover", { y: "105%", autoAlpha: 1 })
-    //   .addLabel("all")
-    //   .to("#window", { scale: 1.6, autoAlpha: 1 })
-    //   .addLabel("all")
-    //   .to(".comp-pic-all", { scale: 0.5, autoAlpha: 1 })
-    //   .addLabel("cover-hidde")
-    //   .to("#cover", { opacity: 0, autoAlpha: 1 })
-    //   .addLabel("end")
-    //   .to(
-    //     "#window",
-    //     {
-    //       autoAlpha: 1,
-    //       background: "transparent",
-    //       boxShadow: "none",
-    //       force3D: true,
-    //     }
-    //   );
 
     //------------ GET START SECTION ---------//
 
