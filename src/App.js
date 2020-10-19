@@ -373,16 +373,19 @@ class App extends Component {
                 <p className="sectionDes">{sectionTitles[1][2]}</p>
               </div>
               <div className="right">
-                {data_designPr.map((item, index) => {
-                  return (
-                    <div className="design-card">
-                      <img src={item.img} alt="design" />
-                      <h5>{item.title}</h5>
-                      <p>{item.des}</p>
-                      <img src={item.img} alt="design" />
-                    </div>
-                  );
-                })}
+                <div className="card-wrap">
+                  {data_designPr.map((item, index) => {
+                    return (
+                      <div className={"design-card design-card-" + (index + 1)}>
+                        <img src={item.img} alt="design" />
+                        <div className="title">
+                          <h5>{item.title}</h5>
+                          <p>{item.des}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </DesignPr>
@@ -616,9 +619,8 @@ class App extends Component {
         trigger: "#designPr",
         toggleActions: "play none none reset",
         id: "nav2",
-        start: "-10%",
-        end: "-9%",
-        scrub: 1,
+        start: "64%",
+        scrub: 0,
       },
       y: -100,
     });
@@ -779,6 +781,58 @@ class App extends Component {
       },
     });
 
+    // ----- DESIGNPR CARDS -------//
+
+    let designPrtl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#designPr",
+        toggleActions: "play none none none",
+        duration: 1,
+        pin: true,
+        pinSpacing: true,
+        start: "-200px",
+        // end: "bottom",
+        markers: false,
+        id: "designPr",
+        scrub: 0,
+      },
+    });
+
+    designPrtl
+      .to(".design-card-1", 1, {
+        autoAlpha: 1,
+        y: -80,
+        // zIndex: 0,
+      })
+      .to(".design-card-1", 0.2, {
+        scale: 0.9,
+        autoAlpha: 0.4,
+      })
+      .to(".design-card-2", 1, {
+        autoAlpha: 1,
+        y: -60,
+        // zIndex: 1,
+      })
+      .to(".design-card-2", 0.2, {
+        scale: 0.93,
+        autoAlpha: 0.4,
+      })
+      .to(".design-card-3", 1, {
+        autoAlpha: 1,
+        y: -40,
+        // zIndex: 2,
+      })
+      .to(".design-card-3", 0.2, {
+        scale: 0.965,
+        autoAlpha: 0.4,
+      })
+      .to(".design-card-4", 0.2, {
+        autoAlpha: 1,
+        y: -20,
+        // zIndex: 3,
+        scale: 1,
+      });
+
     //------------ COMP SECTION ---------//
 
     gsap.to("#comp-title", {
@@ -890,10 +944,6 @@ class App extends Component {
         maker: false,
       },
     });
-
-    // gsap.to(".logo-wall-item", 0.3,{
-
-    // })
   }
 }
 

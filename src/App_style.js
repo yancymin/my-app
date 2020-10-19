@@ -846,10 +846,11 @@ export const DesignPr = styled.section`
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding: 40px 0;
+  height: 600px;
   background: var(--cr-blue-1);
 
   .container {
+    position: relative;
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -858,6 +859,7 @@ export const DesignPr = styled.section`
     .left {
       display: flex;
       flex-direction: column;
+      justify-content: center;
 
       h2 {
         color: var(--cr-white);
@@ -866,6 +868,7 @@ export const DesignPr = styled.section`
       .sectionEye {
         opacity: 0.4;
         color: var(--cr-white);
+        margin-top: 0;
       }
 
       .sectionDes {
@@ -876,21 +879,32 @@ export const DesignPr = styled.section`
     }
 
     .right {
-      display: grid;
-      grid-template-rows: 2fr;
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 20px;
-      grid-column-gap: 20px;
+      width: 416px;
+      height: 85%;
+      position: absolute;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .card-wrap {
+        position: relative;
+      }
 
       .design-card {
-        position: relative;
+        position: absolute;
         display: flex;
-        flex-direction: column;
-        padding: 40px;
+        padding: 40px 60px;
         border-radius: var(--radius-16);
-        /* background: var(--cr-white); */
+        background: var(--cr-white);
         transition: var(--ease-1);
         overflow: hidden;
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
 
         img {
           &:last-child {
@@ -902,24 +916,24 @@ export const DesignPr = styled.section`
           }
         }
 
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: -1;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background: transparent;
-          transform: scale(0.9);
+        &:nth-of-type(1) {
+          z-index: 0;
+          /* opacity: 0; */
+        }
+        &:nth-of-type(2) {
+          z-index: 1;
           opacity: 0;
-          transition: all 0.3s ease-out;
-          transform-origin: top;
-          border-radius: var(--radius-16);
+        }
+        &:nth-of-type(3) {
+          z-index: 2;
+          opacity: 0;
+        }
+        &:nth-of-type(4) {
+          z-index: 3;
+          opacity: 0;
         }
 
-        &:hover {
+        /* &:hover {
           h5 {
             color: var(--cr-blue-1);
             transform: translateY(-130px);
@@ -945,26 +959,29 @@ export const DesignPr = styled.section`
               transform: translateY(-47%) scale(1.4);
             }
           }
-        }
+        } */
       }
 
       h5 {
         font: var(--font-28);
-        color: var(--cr-white);
+        color: var(--cr-font-1);
         margin-bottom: var(--mg-16);
         transition: var(--ease-1);
+        width: 80px;
       }
 
       p {
         font: var(--font-16-300);
-        color: var(--cr-white);
+        color: var(--cr-font-2);
         opacity: 0.7;
         transition: var(--ease-1);
+        word-break: keep-all;
       }
 
       img {
         width: 120px;
-        margin-bottom: var(--mg-24);
+        height: 120px;
+        margin-right: var(--mg-24);
         transition: var(--ease-1);
       }
     }

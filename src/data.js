@@ -60,22 +60,22 @@ export const data_start = [
 
 export const data_designPr = [
     {
-        title: "清晰",
-        des: "清晰的指向亦是效率的提升",
-        img: designPr_1,
-    },
-    {
-        title: "一致",
+        title: "一致 Agreement",
         des: "一致的设计产生品牌信赖感",
         img: designPr_2,
     },
     {
-        title: "韵律",
+        title: "韵律 Rhythm",
         des: "跳动的韵律构建字节的美感",
         img: designPr_3,
     },
     {
-        title: "开放",
+        title: "清晰 Clear",
+        des: "清晰的指向亦是效率的提升",
+        img: designPr_1,
+    },
+    {
+        title: "开放 Open",
         des: "开放包容是解决问题的思路",
         img: designPr_4,
     },
