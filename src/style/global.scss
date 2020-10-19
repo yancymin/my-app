@@ -104,13 +104,17 @@ body {
   --cr-font-2: hsl(227, 12%, 40%);
   --cr-font-3: hsla(225, 12%, 80%, 0.3);
   --cr-line-1: hsl(220, 6%, 15%);
-  --cr-line-2: hsl(230, 13%, 95%);
+  --cr-line-2: hsl(220, 6%, 15%);
   --shadow-1: 0 0 0 1px rgba(211, 211, 211, 0.2);
   --shadow-2: 0 0 0 1px rgba(211, 211, 211, 0.822);
   --shadow-3: 0 2px 16px rgba(103, 110, 144, 0.15);
   --shadow-4: 0 0 0 2px rgba(211, 211, 211, 0.2);
   --blend: none;
   --filter-1: invert(1) hue-rotate(200deg) contrast(1.1);
+
+  .col {
+      filter: invert(1);
+  }
 
   .comp-card-1-dark {
     opacity: 0;

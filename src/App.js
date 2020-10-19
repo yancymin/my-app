@@ -715,28 +715,6 @@ class App extends Component {
       },
     });
 
-    gsap.to("header .right", {
-      yPercent: -5,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "header",
-        start: "top",
-        scrub: 1,
-        maker: false,
-      },
-    });
-
-    gsap.to("header .left", {
-      yPercent: 5,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "header",
-        start: "top",
-        scrub: 1,
-        maker: false,
-      },
-    });
-
     // gsap.to("#hero-bg", 0.4, {
     //   ease: "none",
     //   scrollTrigger: {
@@ -879,7 +857,7 @@ class App extends Component {
         {
           autoAlpha: 1,
           background: "transparent",
-          boxShadow: "none",
+          boxShadow: "0 0 0 0 transparent",
           force3D: true,
         },
         "end"
