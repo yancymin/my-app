@@ -393,7 +393,6 @@ class App extends Component {
               <p className="sectionDes">{sectionTitles[2][2]}</p>
             </div>
             <div className="window-wrap">
-              {/* <img src={comp_card} alt="comp_card" id="comp-card" /> */}
               <div className="window" id="window">
                 <div className="comp-pic-all">
                   <img src={comp_col_1} alt="comp_col" className="col-1 col" />
@@ -472,7 +471,6 @@ class App extends Component {
                 return (
                   <div className="tools-list-item">
                     <h5>
-                      {/* <InlineSVG icon={cardArrow} /> */}
                       {item.title}
                     </h5>
                     <p>{item.des}</p>
@@ -553,7 +551,6 @@ class App extends Component {
                       for="email"
                       value={data_footer.input.newsletter.btn}
                     ></input>
-                    {/* <a href="/">{data_footer.input.newsletter.btn}</a> */}
                   </form>
                 </div>
               </div>
@@ -647,7 +644,6 @@ class App extends Component {
       yPercent: 100,
       stagger: 0.018,
       delay: 1.1,
-      // Remove the extra markup when it's done
       onComplete: () => {
         parentSplit.revert();
         childSplit.revert();
@@ -713,7 +709,6 @@ class App extends Component {
       scrollTrigger: {
         trigger: "header",
         start: "top",
-        // end: "bottom top",
         scrub: true,
         maker: false,
       },
@@ -728,7 +723,6 @@ class App extends Component {
         trigger: "#start-card",
         toggleActions: "play none none reset",
         start: "top",
-        // end: "bottom top",
         scrub: true,
         maker: false,
       },
@@ -743,7 +737,6 @@ class App extends Component {
         trigger: "#designPr",
         toggleActions: "play none none reset",
         start: "top",
-        // end: "bottom top",
         scrub: true,
         maker: false,
       },
@@ -769,41 +762,26 @@ class App extends Component {
     });
 
     let tl = gsap.timeline({
-      // yes, we can add it to an entire timeline!
       yPercent: 20,
-      // onStart: () => {
-
-      // },
       scrollTrigger: {
         trigger: "#comp",
-        pin: true, // pin the trigger element while active
+        pin: true, 
         pinSpacing: true,
-        start: "400px", // when the top of the trigger hits the top of the viewport
-        end: "bottom", // end after scrolling 500px beyond the start
+        start: "400px", 
+        end: "bottom",
         toggleActions: "play none none reset",
         markers: false,
         id: "cover",
-        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        // snap: {
-        //   snapTo: "labels", // snap to the closest label in the timeline
-        //   duration: 0.3, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-        //   // delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-        //   ease: "none", // the ease of the snap animation ("power3" by default)
-        // },
+        scrub: 1, 
       },
     });
 
-    // add animations and labels to the timeline
+
     tl.addLabel("start")
       .to(
         ".col",
         2,
         { yPercent: -40, autoAlpha: 1, force3D: true }
-        // TweenMax.staggerFrom(".col", 6, {
-        //   // y: 40,
-        //   // delay: 1,
-        //   ease: "cubic-bezier(0.16, 1, 0.3, 1)",
-        // })
       )
       .addLabel("cover")
       .to("#cover", { y: "105%", autoAlpha: 1 })
@@ -815,31 +793,12 @@ class App extends Component {
       .to("#cover", { opacity: 0, autoAlpha: 1 })
       .addLabel("right")
       .to("#window", {
-        // x: "70%",
-        // y: 40,
-        // yPercent: -40,
         autoAlpha: 1,
         background: "transparent",
         boxShadow: "none",
         force3D: true,
       });
 
-    // gsap.to("#cover", {
-    //   yPercent: 0,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: "#comp .window",
-    //     toggleActions: "play none none reset",
-    //     start: "top",
-    //     end: "bottom",
-    //     scrub: 1,
-    //     markers: true,
-    //     id: "cover",
-    //     pin: true,
-    //     pinSpacing: true,
-    //   },
-    //   y: 0,
-    // });
 
     //------------ GET START SECTION ---------//
 

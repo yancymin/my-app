@@ -9,23 +9,6 @@ export const Container = styled.main`
   transition: var(--ease-1);
   background: var(--cr-white);
 
-  .comp-card-1-dark {
-    filter: invert(1) hue-rotate(-181deg) brightness(2) saturate(0.7);
-  }
-  .comp-card-234-dark {
-    &:hover {
-      .right {
-        z-index: -1 !important;
-        filter: invert(0.94) hue-rotate(180deg) brightness(1);
-      }
-    }
-    .right {
-      z-index: 0 !important;
-      filter: invert(0.97) hue-rotate(180deg) brightness(1);
-      mix-blend-mode: lighten;
-    }
-  }
-
   .col {
     margin-right: 40px;
 

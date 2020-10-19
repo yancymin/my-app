@@ -34,7 +34,7 @@ body {
 
 :root {
   --cr-white: #ffffff;
-  --cr-bg-1: #F7F9FC;
+  --cr-bg-1: #f7f9fc;
   --cr-bg-2: hsl(203, 100%, 97%);
   --cr-bg-3: hsl(203, 90%, 98%);
   --cr-icon-1: #667093;
@@ -99,7 +99,7 @@ body {
   --cr-bg-3: hsl(203, 90%, 98%);
   --cr-icon-1: #667093;
   --cr-blue-1: #3f8cff;
-  --cr-blue-2: var(--cr-white);
+  --cr-blue-2: var(--cr-bg-1);
   --cr-font-1: hsl(227, 12%, 80%);
   --cr-font-2: hsl(227, 12%, 40%);
   --cr-font-3: hsla(225, 12%, 80%, 0.3);
@@ -111,4 +111,29 @@ body {
   --shadow-4: 0 0 0 2px rgba(211, 211, 211, 0.2);
   --blend: none;
   --filter-1: invert(1) hue-rotate(200deg) contrast(1.1);
+
+  .comp-card-1-dark {
+    opacity: 0;
+    filter: invert(1) hue-rotate(-181deg) brightness(2) saturate(0.7);
+
+    svg path {
+      fill: var(--cr-bg-1);
+    }
+  }
+  .comp-card-234-dark {
+    .right {
+      opacity: 0;
+    }
+    &:hover {
+      .right {
+        z-index: -1 !important;
+        filter: invert(0.94) hue-rotate(180deg) brightness(1);
+      }
+    }
+    .right {
+      z-index: 0 !important;
+      filter: invert(0.97) hue-rotate(180deg) brightness(1);
+      mix-blend-mode: lighten;
+    }
+  }
 }
