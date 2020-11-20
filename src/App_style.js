@@ -368,15 +368,15 @@ export const Nav = styled.nav`
       padding: 13px 32px;
       box-shadow: var(--shadow-1);
       border-radius: var(--radius-6);
-      color: var(--cr-blue-1);
+      color: var(--cr-font-2);
       line-height: 15px;
       transition: var(--ease-1);
       background-color: var(--cr-white);
 
       &:hover {
-        /* color: var(--cr-blue-1);
-        box-shadow: 0 0 0 transparent;
-        background-color: var(--cr-bg-3); */
+        color: var(--cr-blue-1);
+        /* box-shadow: 0 0 0 transparent;
+        background-color: var(--cr-bg-3);  */
       }
     }
   }
@@ -460,7 +460,7 @@ export const Header = styled.header`
     align-items: center;
 
     .right-wrap {
-      margin-top: var(--mg-40);
+      /* margin-top: var(--mg-40); */
     }
 
     .hero-logo {
@@ -562,13 +562,17 @@ export const Header = styled.header`
 `;
 
 export const LogoWall = styled.div`
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-top: var(--mg-140);
+  /* align-items: flex-start; */
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  margin: var(--mg-120) 0 var(--mg-40) 0;
   width: 100%;
-
+  /* 
   &::before {
     content: "";
     display: block;
@@ -576,7 +580,7 @@ export const LogoWall = styled.div`
     height: 1px;
     background: var(--cr-line-1);
     margin-bottom: var(--mg-56);
-  }
+  } */
 
   h3 {
     font: var(--font-16-300);
@@ -586,21 +590,20 @@ export const LogoWall = styled.div`
 
   .logos-wrap {
     display: flex;
-    justify-content: flex-start;
-    width: 560px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
     margin-left: -10px;
 
     div {
-      width: 138px;
-      height: 46px;
+      width: 144px;
+      height: 52px;
       margin-right: var(--mg-24);
       margin-bottom: var(--mg-16);
     }
 
     img {
       position: absolute;
-      height: 46px;
+      height: 52px;
       opacity: 0.85;
       transition: var(--ease-1);
 
@@ -747,7 +750,7 @@ export const StartSection = styled.section`
         box-shadow: var(--shadow-4);
 
         h4 {
-          color: var(--cr-blue-1);
+          /* color: var(--cr-blue-1); */
         }
 
         &::after {
@@ -1628,7 +1631,7 @@ export const FooterSection = styled.footer`
             box-shadow: var(--shadow-1);
             background: var(--cr-white);
             border-radius: var(--radius-6);
-            color: var(--cr-blue-1);
+            color: var(--cr-font-2);
             padding: 12px 24px;
             transition: var(--ease-1);
             margin-top: var(--mg-24);
@@ -1652,7 +1655,7 @@ export const FooterSection = styled.footer`
             position: absolute;
             display: inline-block;
             font: var(--font-14-500);
-            background: hsl(230 59% 38% / 1);
+            background: var(--cr-bg-1);
             border-radius: var(--radius-6);
             color: var(--cr-white);
             padding: 12px 24px;

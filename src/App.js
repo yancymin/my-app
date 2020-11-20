@@ -1,5 +1,8 @@
 /* eslint-disable no-unreachable */
 import React, { Component } from "react";
+import GlobalFooter from "./components/GlobalFooter";
+import Team from "./pages/Team";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
   Container,
   Header,
@@ -282,30 +285,30 @@ class App extends Component {
                     设计语言
                   </a>
                 </div>
-                <LogoWall className="logo-wall">
-                  <h3>使用 Arco Design System 构建</h3>
-                  <div className="logos-wrap">
-                    {data_logos_random.map((item) => {
-                      return (
-                        <div>
-                          <img
-                            src={item[0]}
-                            className="logo-wall-item"
-                            alt="logo-wall"
-                          />
-                          <img
-                            src={item[1]}
-                            className="logo-wall-item"
-                            alt="logo-wall"
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </LogoWall>
               </div>
             </section>
           </Header>
+          <LogoWall className="logo-wall">
+            <h3>使用 Arco Design System 构建</h3>
+            <div className="logos-wrap">
+              {data_logos_random.map((item) => {
+                return (
+                  <div>
+                    <img
+                      src={item[0]}
+                      className="logo-wall-item"
+                      alt="logo-wall"
+                    />
+                    <img
+                      src={item[1]}
+                      className="logo-wall-item"
+                      alt="logo-wall"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </LogoWall>
           <StartSection id="start-card">
             <div className="title">
               <span className="sectionEye">{sectionTitles[0][0]}</span>
@@ -513,62 +516,13 @@ class App extends Component {
             </div>
           </Blog>
         </Container>
-        <FooterSection id="footer">
-          <div className="footer-wrap">
-            <div className="top">
-              <div className="left">
-                {data_footer.main.map((item) => {
-                  return (
-                    <ul className="link-list">
-                      <h6>{item.title}</h6>
-                      {item.links.map((item_2) => {
-                        return <li key={item_2}>{item_2}</li>;
-                      })}
-                    </ul>
-                  );
-                })}
-              </div>
-              <div className="right">
-                <div className="feedback">
-                  <h6>{data_footer.input.feedback.title}</h6>
-                  <p>{data_footer.input.feedback.des}</p>
-                  <a href="/" className="btn">
-                    <InlineSVG icon={footerFeedback} />
-                    {data_footer.input.feedback.btn}
-                  </a>
-                </div>
-                <div className="newsletter">
-                  <h6>{data_footer.input.newsletter.title}</h6>
-                  <p>{data_footer.input.newsletter.des}</p>
-                  <form className="input-wrap">
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder={data_footer.input.newsletter.placeholder}
-                      required
-                    />
-                    <input
-                      className="submit"
-                      type="submit"
-                      for="email"
-                      value={data_footer.input.newsletter.btn}
-                    ></input>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div className="bottom">
-              <p>{data_footer.other}</p>
-              <InlineSVG className="footer-logo" icon={footerLogo} />
-              <div className="social">
-                <InlineSVG icon={dribbble} />
-                <InlineSVG icon={figma} />
-                <InlineSVG icon={behance} />
-                <InlineSVG icon={twitter} />
-              </div>
-            </div>
-          </div>
-        </FooterSection>
+        <GlobalFooter />
+        {this.props.children}
+        <Router>
+          <Route path="/" component={App}>
+            <Route path="team" component={Team} />
+          </Route>
+        </Router>
       </>
     );
   }
